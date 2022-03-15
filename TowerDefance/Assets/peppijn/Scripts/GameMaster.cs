@@ -10,13 +10,15 @@ public class GameMaster : MonoBehaviour
     
     public GameObject enemyToSpawn;
     public Transform spawnPoint;
-    public float difficulty;
+    public int difficulty;
     private int currentWave = 1;
-    private int waveSize;
+    public List<GameObject> enemyWave;
+    public int waveSize;
     public float spawnTime = 2f;
 
     void Start()
     {
+        enemyWave = new List<GameObject>();
     }
 
     void Update()
@@ -28,27 +30,40 @@ public class GameMaster : MonoBehaviour
 
     private void SpawnWave()
     {
-
-
-
-
-
-
-
-        if (spawnTime == 0)
+        if (enemyWave.Count == 0 && waveSize == 0)
         {
-            
-            int i = Random.Range(0,100);
-            if (i > 25)
+            waveSize = currentWave * difficulty * 3;
+            currentWave++;
+        }
+
+
+
+
+
+        if (waveSize > 0) 
+        {
+            if (spawnTime == 0)
             {
-                enemyToSpawn = enemy_1;
+
+                int i = Random.Range(0, 100);
+                if (i > 25)
+                {
+                    enemyToSpawn = enemy_1;
+                    waveSize = waveSize - 1;
+                }
+                else if (i < 25)
+                {
+                    enemyToSpawn = enemy_2;
+                    waveSize = waveSize - 2;
+                }
+                GameObject enemyTemp = Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
+                enemyWave.Add(enemyTemp);
+                spawnTime = 2;
             }
-            else if (i < 25)
-            {
-                enemyToSpawn = enemy_2;
-            }
-            Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
-            spawnTime = 2;
+        }
+        if (waveSize < 0)
+        {
+            waveSize = 0;
         }
     }
 

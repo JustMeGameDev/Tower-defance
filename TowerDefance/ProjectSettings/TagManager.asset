@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CheckPoint
   - TargetEnd
+  - GameMaster
   layers:
   - Default
   - TransparentFX

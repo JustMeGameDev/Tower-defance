@@ -7,7 +7,13 @@ public class PlayerController : MonoBehaviour
 {
     public UnityEngine.AI.NavMeshAgent navAgent;
     public Transform target;
-    // Update is called once per frame
+    public GameMaster gameMaster;
+
+    void Awake()
+    {
+        gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
+    }
+
     void Update()
     {
         GetTarget();
@@ -31,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "TargetEnd")
         {
+            gameMaster.enemyWave.Remove(gameObject);
             Destroy(gameObject);
         }
     }
