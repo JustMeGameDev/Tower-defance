@@ -3,51 +3,57 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerPlace : MonoBehaviour
-{ 
+{
     RaycastHit hit;
+    [SerializeField]
+    GameObject prefab;
 
-    public GameObject prefab;
-    public Material nonPlaceMat;
-    Material startMat;
+    public Material[] nonPlaceMat;
+    [SerializeField]
+    Material[] startMats;
+    [SerializeField]
     MeshRenderer mr;
+    
+   public MeshRenderer mr2;
     bool isPlaceAble;
 
-     void Start()
+    void Start()
     {
-        mr = GetComponent<MeshRenderer>();
-        startMat = mr.material;
+        mr = GetComponentInChildren<MeshRenderer>();
+        startMats = mr.materials;       
     }
     void Update()
     {
-     
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 50000.0f, 1 << 6))
         {
             transform.position = hit.point;
-           isPlaceAble = true;
-            mr.material = startMat;
+            isPlaceAble = true;
 
+            mr.materials = startMats;         
         }
         else
         {
-           isPlaceAble = false;
-            mr.material = nonPlaceMat;
+            isPlaceAble = false;
+            mr.materials = nonPlaceMat;    
         }
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.75f, 1 << 8);
-      
-        if(hitColliders.Length < 1)
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f, 1 << 8);
+
+        if (hitColliders.Length < 1)
         {
-            
-           if (Input.GetMouseButton(0) && isPlaceAble == true)
-           {                           
-                    Instantiate(prefab, transform.position, transform.rotation); // Fix Transform 
-                    Destroy(gameObject);            
-           }
-        } else
-        {
-            mr.material = nonPlaceMat;
+
+            if (Input.GetMouseButton(0) && isPlaceAble == true)
+            {
+                Instantiate(prefab, transform.position, transform.rotation); 
+                Destroy(gameObject);
+            }
         }
+        else
+        {
+             mr.materials = nonPlaceMat;
+        }
+ 
     }
 }
