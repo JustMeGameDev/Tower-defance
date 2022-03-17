@@ -124,6 +124,9 @@ MonoBehaviour:
   navAgent: {fileID: 4573896178895134507}
   target: {fileID: 0}
   gameMaster: {fileID: 0}
+  health: 0
+  maxHealth: 100
+  baseValue: 20
 --- !u!54 &947354748
 Rigidbody:
   m_ObjectHideFlags: 0

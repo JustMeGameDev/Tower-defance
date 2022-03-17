@@ -9,9 +9,15 @@ public class PlayerController : MonoBehaviour
     public Transform target;
     public GameMaster gameMaster;
 
+    
+    public float health;
+    public float maxHealth;
+    public int baseValue;
+
     void Awake()
     {
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
+        health = maxHealth;
     }
 
     void Update()
