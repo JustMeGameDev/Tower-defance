@@ -11,10 +11,18 @@ public class GameMaster : MonoBehaviour
     public GameObject enemyToSpawn;
     public Transform spawnPoint;
     public int difficulty;
-    private int currentWave = 1;
+    public int currentWave = 1;
     public List<GameObject> enemyWave;
     public int waveSize;
     public float spawnTime = 2f;
+
+
+    //Econemy
+    public int money = 0;
+    private int roundReward = 15;
+    private float ecoTimer = 1;
+    private int passiveIncome = 10;
+
 
     void Start()
     {
@@ -24,7 +32,8 @@ public class GameMaster : MonoBehaviour
     void Update()
     {
         SpawnWave();
-        SpawnTimer();
+        Timer();
+        HandleEconemy();
     }
 
 
@@ -34,6 +43,7 @@ public class GameMaster : MonoBehaviour
         {
             waveSize = currentWave * difficulty * 3;
             currentWave++;
+            roundReward = roundReward * 1.02f;
         }
 
 
@@ -67,8 +77,16 @@ public class GameMaster : MonoBehaviour
         }
     }
 
-    private void SpawnTimer() 
+    private void Timer() 
     {
+        if (spawnTime > 0)
+        {
+            spawnTime -= Time.deltaTime;
+        }
+        if (spawnTime < 0)
+        {
+            spawnTime = 0;
+        }
         if (spawnTime > 0)
         {
             spawnTime -= Time.deltaTime;
@@ -79,4 +97,8 @@ public class GameMaster : MonoBehaviour
         }
     }
 
+    public void HandleEconemy()
+    {
+
+    }
 }
