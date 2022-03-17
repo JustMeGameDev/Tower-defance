@@ -97,7 +97,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1923039037
   m_Radius: 0.50001
-  m_Speed: 3
+  m_Speed: 4.5
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -124,6 +124,9 @@ MonoBehaviour:
   navAgent: {fileID: 3057195974647288670}
   target: {fileID: 0}
   gameMaster: {fileID: 0}
+  health: 0
+  maxHealth: 175
+  baseValue: 20
 --- !u!54 &1519096113542721545
 Rigidbody:
   m_ObjectHideFlags: 0

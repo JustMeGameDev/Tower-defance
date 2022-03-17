@@ -43,8 +43,17 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "TargetEnd")
         {
-            gameMaster.enemyWave.Remove(gameObject);
-            Destroy(gameObject);
+            Die(true);
+        }
+    }
+
+    private void Die(bool ReachedEnd)
+    {
+        gameMaster.enemyWave.Remove(gameObject);
+        Destroy(gameObject);
+        if (!ReachedEnd)
+        {
+            gameMaster.money = gameMaster.money + baseValue;
         }
     }
 }

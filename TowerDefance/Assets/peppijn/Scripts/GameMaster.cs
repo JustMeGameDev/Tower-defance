@@ -45,6 +45,7 @@ public class GameMaster : MonoBehaviour
             waveSize = currentWave * difficulty * 3;
             currentWave++;
             roundReward = roundReward * 1.05f;
+            money = money + roundReward;
             ecoCounter++;
             if (ecoCounter == 5)
             {
@@ -95,18 +96,22 @@ public class GameMaster : MonoBehaviour
         {
             spawnTime = 0;
         }
-        if (spawnTime > 0)
+        if (ecoTimer > 0)
         {
-            spawnTime -= Time.deltaTime;
+            ecoTimer -= Time.deltaTime;
         }
-        if (spawnTime < 0)
+        if (ecoTimer < 0)
         {
-            spawnTime = 0;
+            ecoTimer = 0;
         }
     }
 
     public void HandleEconemy()
     {
-
+        if (ecoTimer == 0)
+        {
+            money = money + passiveIncome;
+            ecoTimer++;
+        }
     }
 }
