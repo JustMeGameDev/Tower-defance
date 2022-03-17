@@ -18,10 +18,11 @@ public class GameMaster : MonoBehaviour
 
 
     //Econemy
-    public int money = 0;
-    private int roundReward = 15;
+    public float money = 0;
+    private float roundReward = 15;
     private float ecoTimer = 1;
-    private int passiveIncome = 10;
+    private float passiveIncome = 10;
+    private int ecoCounter;
 
 
     void Start()
@@ -43,7 +44,14 @@ public class GameMaster : MonoBehaviour
         {
             waveSize = currentWave * difficulty * 3;
             currentWave++;
-            roundReward = roundReward * 1.02f;
+            roundReward = roundReward * 1.05f;
+            ecoCounter++;
+            if (ecoCounter == 5)
+            {
+                passiveIncome = passiveIncome * 1.1f;
+                ecoCounter = 0;
+            }
+            
         }
 
 
