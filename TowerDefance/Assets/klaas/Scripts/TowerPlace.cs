@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TowerPlace : MonoBehaviour
 {
+    public canvasCheck CanvasCheck;
     RaycastHit hit;
     [SerializeField]
     GameObject prefab;
@@ -14,13 +15,17 @@ public class TowerPlace : MonoBehaviour
     [SerializeField]
     MeshRenderer mr;
     
-   public MeshRenderer mr2;
+   
     bool isPlaceAble;
 
     void Start()
     {
         mr = GetComponentInChildren<MeshRenderer>();
         startMats = mr.materials;       
+    }
+    private void Awake()
+    {
+        CanvasCheck = GameObject.FindWithTag("GameMaster").GetComponent<canvasCheck>();
     }
     void Update()
     {
@@ -46,7 +51,9 @@ public class TowerPlace : MonoBehaviour
 
             if (Input.GetMouseButton(0) && isPlaceAble == true)
             {
-                Instantiate(prefab, transform.position, transform.rotation); 
+                GameObject TowerTemp = Instantiate(prefab, transform.position, transform.rotation);
+                PopUp popupTemp = TowerTemp.GetComponent<PopUp>();
+                CanvasCheck.Towers.Add(popupTemp);
                 Destroy(gameObject);
             }
         }

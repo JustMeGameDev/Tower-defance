@@ -6,7 +6,8 @@ using UnityEngine.UIElements.Experimental;
 public class PopUp : MonoBehaviour
 {
     public Canvas canvas;
-    private bool IsOpen = false;
+    public bool IsOpen = false;
+    public canvasCheck CanvasCheck;
     public void open()
     {
         if (!IsOpen)
@@ -19,6 +20,17 @@ public class PopUp : MonoBehaviour
             canvas.enabled = false;
             IsOpen = false;
         }
+    }
+    private void Update()
+    {
+        if (!IsOpen)
+        {
+            canvas.enabled = false;
+        }
+    }
+    public bool GetIsOpen()
+    {
+        return IsOpen;
     }
    
 }
