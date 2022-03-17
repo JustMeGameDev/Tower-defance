@@ -7,6 +7,7 @@ TagManager:
   - CheckPoint
   - TargetEnd
   - GameMaster
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,9 +15,9 @@ TagManager:
   - 
   - Water
   - UI
-  - death
-  - ground
-  - 
+  - PlaceGround
+  - EnemyGround
+  - Tower
   - 
   - 
   - 
