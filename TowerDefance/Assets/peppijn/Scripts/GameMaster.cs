@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
+    [Header("Enemy Prefabs")]
     public GameObject enemy_1;
     public GameObject enemy_2;
     
-    
+    [Header("Wave System")]
     public GameObject enemyToSpawn;
     public Transform spawnPoint;
     public int difficulty;
@@ -17,17 +18,22 @@ public class GameMaster : MonoBehaviour
     public float spawnTime = 2f;
 
 
-    //Econemy
+    [Header("Economy")]
     public float money = 0;
     private float roundReward = 15;
     private float ecoTimer = 1;
     private float passiveIncome = 10;
     private int ecoCounter;
 
+    [Header("Pop Up")]
+    public List<PopUp> Towers;
+    public PopUp OpenTower;
+
 
     void Start()
     {
         enemyWave = new List<GameObject>();
+        Towers = new List<PopUp>();
     }
 
     void Update()
@@ -35,6 +41,10 @@ public class GameMaster : MonoBehaviour
         SpawnWave();
         Timer();
         HandleEconemy();
+    }
+    void FixedUpdate()
+    {
+        PopUpHandler();
     }
 
 
@@ -112,6 +122,22 @@ public class GameMaster : MonoBehaviour
         {
             money = money + passiveIncome;
             ecoTimer++;
+        }
+    }
+
+    private void PopUpHandler()
+    {
+        foreach (PopUp i in Towers)
+        {
+            if (OpenTower == null)
+            {
+                OpenTower = i;
+            }
+            if (i.GetIsOpen() == true && OpenTower != i)
+            {
+                OpenTower.IsOpen = false;
+                OpenTower = i;
+            }
         }
     }
 }

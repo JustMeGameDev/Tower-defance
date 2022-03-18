@@ -5,7 +5,15 @@ using UnityEngine;
 public class TowerTest : MonoBehaviour
 {
     private Transform target;
-    private float range = 15;
+    
+    
+    [Header("Stats")]
+    public float range = 15;
+    public float damage = 10;
+    public float attackSpeed = 10;
+    
+    [Header("GameMaster")]
+    public GameMaster gameMaster;
 
     [Header("Aim Setup")]
     [SerializeField]

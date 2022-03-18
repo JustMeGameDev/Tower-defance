@@ -51,6 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370ef4a15b50dcb40870667c52b4cd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 15
+  damage: 10
+  attackSpeed: 10
+  gameMaster: {fileID: 0}
   rotator: {fileID: 7695947064884691079}
 --- !u!65 &5486208613704667447
 BoxCollider:
@@ -105,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 4649178107088961270}
+  IsOpen: 0
 --- !u!1 &2891637872953504866
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,8 +498,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: pop-up
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 947012722935150299}
+    - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Upgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeCannon, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 305260105482804508, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
+--- !u!114 &116853783311474257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4982836392110483376, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 4952185708238518753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4649178107088961269 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 305260105423505172, guid: 60a24a16f3d3ef04dbe62be76c339949,
@@ -507,3 +540,28 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 4952185708238518753}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4649178107150083328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 305260105482804449, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 4952185708238518753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &947012722935150299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4649178107150083328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472951339d06e464994633171b575c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerTest: {fileID: 7229958937136067735}
+  gameMaster: {fileID: 0}
+  costMultiplier: 2
+  cost: 200
+  level: 0
+  maxLevel: 3
+  levelText: {fileID: 116853783311474257}

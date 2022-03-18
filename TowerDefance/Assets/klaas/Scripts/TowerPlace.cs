@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TowerPlace : MonoBehaviour
 {
-    public canvasCheck CanvasCheck;
+    public GameMaster gameMaster;
+    
     RaycastHit hit;
     [SerializeField]
     GameObject prefab;
@@ -25,7 +26,7 @@ public class TowerPlace : MonoBehaviour
     }
     private void Awake()
     {
-        CanvasCheck = GameObject.FindWithTag("GameMaster").GetComponent<canvasCheck>();
+        gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
     }
     void Update()
     {
@@ -53,7 +54,7 @@ public class TowerPlace : MonoBehaviour
             {
                 GameObject TowerTemp = Instantiate(prefab, transform.position, transform.rotation);
                 PopUp popupTemp = TowerTemp.GetComponent<PopUp>();
-                CanvasCheck.Towers.Add(popupTemp);
+                gameMaster.Towers.Add(popupTemp);
                 Destroy(gameObject);
             }
         }

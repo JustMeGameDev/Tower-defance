@@ -7,7 +7,6 @@ public class PopUp : MonoBehaviour
 {
     public Canvas canvas;
     public bool IsOpen = false;
-    public canvasCheck CanvasCheck;
     public void open()
     {
         if (!IsOpen)
