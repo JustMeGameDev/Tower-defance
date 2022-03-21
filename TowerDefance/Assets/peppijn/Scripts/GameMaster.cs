@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameMaster : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class GameMaster : MonoBehaviour
     private float ecoTimer = 1;
     private float passiveIncome = 10;
     private int ecoCounter;
+    public TextMeshProUGUI moneyText;
 
     [Header("Pop Up")]
     public List<PopUp> Towers;
@@ -41,6 +43,7 @@ public class GameMaster : MonoBehaviour
         SpawnWave();
         Timer();
         HandleEconemy();
+        moneyText.text = Mathf.Round(money) + "$";
     }
     void FixedUpdate()
     {

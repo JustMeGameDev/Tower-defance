@@ -25,10 +25,11 @@ public class UpgradeCannon : MonoBehaviour
         {
             towerTest.range = towerTest.range * 1.15f;
             towerTest.damage = towerTest.damage * 1.5f;
-            cost = cost * costMultiplier;
             level++;
             levelText.text = "level: " + level;
             gameMaster.money = gameMaster.money - cost;
+            cost = cost * costMultiplier;
+            return;
         }
     }
 }
