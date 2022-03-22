@@ -398,7 +398,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panSpeed: 20
-  rotSpeed: 15
   panBorderThickness: 10
   panLimit: {x: 20, y: 50}
   scrollSpeed: 20
@@ -1306,7 +1305,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1237668177}
         m_TargetAssemblyTypeName: TowerBluePrint, Assembly-CSharp
-        m_MethodName: spawn_barracks_blueprint
+        m_MethodName: SpawnTowerBlueprint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1314,7 +1313,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1237668179
 MonoBehaviour:
@@ -2115,7 +2114,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2128465137}
         m_TargetAssemblyTypeName: TowerBluePrint, Assembly-CSharp
-        m_MethodName: spawn_barracks_blueprint
+        m_MethodName: SpawnTowerBlueprint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2123,7 +2122,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2128465139
 MonoBehaviour:

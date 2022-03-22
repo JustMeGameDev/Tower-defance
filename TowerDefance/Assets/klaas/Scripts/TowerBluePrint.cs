@@ -5,12 +5,8 @@ using UnityEngine;
 public class TowerBluePrint : MonoBehaviour
 {
     public GameObject barracks_blueprint;
-   
-    public void spawn_barracks_blueprint()
+    public void SpawnTowerBlueprint()
     {
-       
-            Instantiate(barracks_blueprint);
-            
-      
+        Instantiate(barracks_blueprint);
     }
 }
