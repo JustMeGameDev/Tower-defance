@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 4730452394558238818}
   m_Layer: 8
   m_Name: 'BluePrint Tower1Def '
-  m_TagString: Untagged
+  m_TagString: TowerPlace
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db6dddb76c6503468866689a146e62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMaster: {fileID: 0}
   prefab: {fileID: 755689551483155672, guid: ce8b92ad70e488641b1ff40de77d4d6d, type: 3}
+  Close: {fileID: 0}
+  Placing: 0
   nonPlaceMat:
   - {fileID: 2100000, guid: 11c1474a6490eca49865ba8071e194fd, type: 2}
   - {fileID: 2100000, guid: 11c1474a6490eca49865ba8071e194fd, type: 2}
@@ -142,7 +145,6 @@ MonoBehaviour:
   startMats:
   - {fileID: 0}
   mr: {fileID: 0}
-  mr2: {fileID: 0}
 --- !u!1 &3432170734423191844
 GameObject:
   m_ObjectHideFlags: 0

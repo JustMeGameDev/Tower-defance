@@ -5,19 +5,21 @@ using UnityEngine;
 public class TowerBluePrint : MonoBehaviour
 {
     public GameObject barracks_blueprint;
-    public GameObject ShopMenu;
+    
     public PopUpZonderCheck Close;
+    
 
-    private void Start()
+    private void Awake()
     {
-        Close = ShopMenu.gameObject.GetComponent<PopUpZonderCheck>();
+        Close = GameObject.FindWithTag("ShopMenu").GetComponent<PopUpZonderCheck>();
+      
     }
     public void spawn_barracks_blueprint()
     {
        
-            Instantiate(barracks_blueprint);
-            Close.IsOpen = false;
-            
-      
+        Instantiate(barracks_blueprint);
+        Close.IsOpen = false;
+        Close.canvas.enabled = false;
+        Close.Placing = true;
     }
 }

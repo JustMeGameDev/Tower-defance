@@ -15,21 +15,25 @@ public class TowerPlace : MonoBehaviour
     Material[] startMats;
     [SerializeField]
     MeshRenderer mr;
-    
-   
+    public PopUpZonderCheck Close;
+
+
     bool isPlaceAble;
 
     void Start()
     {
         mr = GetComponentInChildren<MeshRenderer>();
-        startMats = mr.materials;       
+        startMats = mr.materials;
+        
     }
     private void Awake()
     {
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
+        Close = GameObject.FindWithTag("ShopMenu").GetComponent<PopUpZonderCheck>();
     }
     void Update()
     {
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 50000.0f, 1 << 6))
@@ -52,11 +56,14 @@ public class TowerPlace : MonoBehaviour
 
             if (Input.GetMouseButton(0) && isPlaceAble == true)
             {
+                
                 GameObject TowerTemp = Instantiate(prefab, transform.position, transform.rotation);
                 PopUp popupTemp = TowerTemp.GetComponent<PopUp>();
                 
                 gameMaster.Towers.Add(popupTemp);
+                Close.Placing = false;
                 Destroy(gameObject);
+                //return;
             }
         }
         else

@@ -7,9 +7,17 @@ public class PopUpZonderCheck : MonoBehaviour
 {
     public Canvas canvas;
     public bool IsOpen = false;
+    public TowerPlace towerPlace;
+    public bool Placing;
+
+    private void Start()
+    {
+        
+    }
     public void open()
     {
-        if (!IsOpen)
+        
+        if (!IsOpen && !Placing)
         {
         canvas.enabled = true;
             IsOpen = true;
@@ -18,14 +26,6 @@ public class PopUpZonderCheck : MonoBehaviour
         {
             canvas.enabled = false;
             IsOpen = false;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (!IsOpen)
-        {
-            canvas.enabled = false;
         }
     }
 }
