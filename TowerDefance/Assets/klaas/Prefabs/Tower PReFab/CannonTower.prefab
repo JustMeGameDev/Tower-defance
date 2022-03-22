@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4402465179157586793}
   - component: {fileID: 6923015379194435783}
   m_Layer: 8
-  m_Name: Tower1Def
+  m_Name: CannonTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,6 @@ Transform:
   m_Children:
   - {fileID: 7695947064884691079}
   - {fileID: 4833253995085716909}
-  - {fileID: 5306645288221085517}
   - {fileID: 4649178107088961269}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,8 +62,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.462965, y: 6.3764935, z: 1}
-  m_Center: {x: -0.80603886, y: 3.1919918, z: 0}
+  m_Size: {x: 8.010421, y: 6.3764935, z: 4.9889984}
+  m_Center: {x: -0.032310963, y: 3.1919918, z: 0.00000011920929}
 --- !u!114 &4402465179157586793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 4649178107088961270}
+  IsOpen: 0
+  CanvasCheck: {fileID: 0}
 --- !u!1 &2891637872953504866
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,12 +130,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2891637872953504866}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.44, z: 2}
+  m_LocalPosition: {x: 0, y: 0.5500002, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 87660798814514786}
-  m_RootOrder: 2
+  m_Father: {fileID: 7695947064884691079}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3748399980917196681
 GameObject:
@@ -167,7 +168,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7695947064884691079}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!33 &5532034314559549900
 MeshFilter:
@@ -342,6 +343,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5306645288221085517}
   - {fileID: 6523292533272515512}
   m_Father: {fileID: 87660798814514786}
   m_RootOrder: 0
@@ -366,7 +368,7 @@ PrefabInstance:
     - target: {fileID: 305260105423505172, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 305260105423505172, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
