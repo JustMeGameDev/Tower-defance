@@ -163,7 +163,7 @@ PrefabInstance:
     - target: {fileID: 7243801155715285916, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -28896.52
+      value: -3861.7627
       objectReference: {fileID: 0}
     - target: {fileID: 7243801155818726469, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
@@ -369,7 +369,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 687407974}
+      objectReference: {fileID: 1509882722}
     - target: {fileID: 7243801156723860712, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -378,12 +378,12 @@ PrefabInstance:
     - target: {fileID: 7243801156723860712, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: spawn_barracks_blueprint
+      value: spawn_Cannon_blueprint
       objectReference: {fileID: 0}
     - target: {fileID: 7243801156723860712, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowerBluePrint, Assembly-CSharp
+      value: ShopMaster, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7243801156723860712, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
@@ -410,6 +410,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7243801156723860718, guid: 91812e6dc9970a944848530bb729dfeb,
+        type: 3}
+      propertyPath: m_Name
+      value: Cannon
+      objectReference: {fileID: 0}
     - target: {fileID: 7243801156973200928, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -418,6 +423,11 @@ PrefabInstance:
     - target: {fileID: 7243801156973200928, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243801156973200928, guid: 91812e6dc9970a944848530bb729dfeb,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7243801157201366220, guid: 91812e6dc9970a944848530bb729dfeb,
@@ -1516,6 +1526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1509882721}
+  - component: {fileID: 1509882722}
   m_Layer: 0
   m_Name: ShopMaster
   m_TagString: Untagged
@@ -1540,6 +1551,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1509882722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509882720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3639f62c1dc36c149b08ade341ad96c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cannon_blueprint: {fileID: 2544779024465157044, guid: c75f56a399ceca946a5fbc30f63347b5,
+    type: 3}
+  priceCannon: 25
+  Close: {fileID: 0}
+  gameMaster: {fileID: 0}
+  Message: {fileID: 0}
 --- !u!1 &1560189968
 GameObject:
   m_ObjectHideFlags: 0
