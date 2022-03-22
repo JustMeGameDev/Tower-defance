@@ -163,7 +163,7 @@ PrefabInstance:
     - target: {fileID: 7243801155715285916, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3861.7627
+      value: -76685.71
       objectReference: {fileID: 0}
     - target: {fileID: 7243801155818726469, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
@@ -614,7 +614,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panSpeed: 20
-  rotSpeed: 15
   panBorderThickness: 10
   panLimit: {x: 20, y: 50}
   scrollSpeed: 20
@@ -873,9 +872,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ed34175ae98a946ae6422465f8d836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barracks_blueprint: {fileID: 2544779024465157044, guid: c75f56a399ceca946a5fbc30f63347b5,
-    type: 3}
-  Close: {fileID: 1686158907}
 --- !u!1 &701032557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,7 +1559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3639f62c1dc36c149b08ade341ad96c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cannon_blueprint: {fileID: 2544779024465157044, guid: c75f56a399ceca946a5fbc30f63347b5,
+  Cannon_blueprint: {fileID: 169401267267749871, guid: e96d38caf4dd635439a97470d129b170,
     type: 3}
   priceCannon: 25
   Close: {fileID: 0}
