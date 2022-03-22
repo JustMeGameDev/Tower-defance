@@ -54,6 +54,7 @@ public class TowerPlace : MonoBehaviour
             {
                 GameObject TowerTemp = Instantiate(prefab, transform.position, transform.rotation);
                 PopUp popupTemp = TowerTemp.GetComponent<PopUp>();
+                
                 gameMaster.Towers.Add(popupTemp);
                 Destroy(gameObject);
             }

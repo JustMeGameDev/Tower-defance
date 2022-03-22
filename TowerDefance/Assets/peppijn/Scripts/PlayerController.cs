@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    public UnityEngine.AI.NavMeshAgent navAgent;
+    public NavMeshAgent navAgent;
     public Transform target;
     public GameMaster gameMaster;
 
