@@ -8,12 +8,13 @@ public class TowerPlace : MonoBehaviour
     RaycastHit hit;
     [SerializeField]
     GameObject prefab;
-
+    
     public Material[] nonPlaceMat;
     [SerializeField]
     Material[] startMats;
     [SerializeField]
     MeshRenderer mr;
+    
     
    
     bool isPlaceAble;
@@ -26,6 +27,9 @@ public class TowerPlace : MonoBehaviour
     private void Awake()
     {
         CanvasCheck = GameObject.FindWithTag("GameMaster").GetComponent<canvasCheck>();
+        
+        
+
     }
     void Update()
     {
