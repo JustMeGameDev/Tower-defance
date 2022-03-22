@@ -10,6 +10,8 @@ public class ShopMaster : MonoBehaviour
     public PopUpZonderCheck Close;
     public GameMaster gameMaster;
     public TextMeshProUGUI Message;
+    public GameObject Mage_blueprint;
+    public float priceMage = 45f;
 
     private void Awake()
     {
@@ -26,6 +28,22 @@ public class ShopMaster : MonoBehaviour
             Close.canvas.enabled = false;
             Close.Placing = true;
             gameMaster.money -= priceCannon;
+        }
+        else
+        {
+            Message.text = "Not Enough Funds";
+        }
+    }
+    public void spawn_Mage_blueprint()
+    {
+        if (gameMaster.money >= priceCannon)
+        {
+            Instantiate(Mage_blueprint);
+            Close.IsOpen = false;
+            Close.canvas.enabled = false;
+            Close.Placing = true;
+            gameMaster.money -= priceCannon;
+
         }
         else
         {
