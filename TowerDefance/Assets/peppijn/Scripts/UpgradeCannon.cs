@@ -12,11 +12,13 @@ public class UpgradeCannon : MonoBehaviour
     public int level;
     public int maxLevel;
     public TextMeshProUGUI levelText;
+    public TextMeshProUGUI CostText;
 
 
     void Awake()
     {
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
+        CostText.text = "Cost: " + cost + " $";
     }
     
     public void Upgrade()
@@ -29,6 +31,7 @@ public class UpgradeCannon : MonoBehaviour
             levelText.text = "level: " + level;
             gameMaster.money = gameMaster.money - cost;
             cost = cost * costMultiplier;
+            CostText.text = "Cost: " + cost + " $";
             return;
         }
     }

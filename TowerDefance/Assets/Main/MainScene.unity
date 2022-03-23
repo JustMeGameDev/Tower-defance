@@ -133,7 +133,42 @@ PrefabInstance:
     - target: {fileID: 7243801155486127872, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243801155486127873, guid: 91812e6dc9970a944848530bb729dfeb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243801155486127873, guid: 91812e6dc9970a944848530bb729dfeb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243801155486127873, guid: 91812e6dc9970a944848530bb729dfeb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1509882722}
+    - target: {fileID: 7243801155486127873, guid: 91812e6dc9970a944848530bb729dfeb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243801155486127873, guid: 91812e6dc9970a944848530bb729dfeb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: spawn_Mage_blueprint
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243801155486127873, guid: 91812e6dc9970a944848530bb729dfeb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ShopMaster, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243801155486127873, guid: 91812e6dc9970a944848530bb729dfeb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7243801155486127878, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
@@ -155,6 +190,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7243801155486127879, guid: 91812e6dc9970a944848530bb729dfeb,
+        type: 3}
+      propertyPath: m_Name
+      value: mage
+      objectReference: {fileID: 0}
     - target: {fileID: 7243801155715285916, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -163,7 +203,7 @@ PrefabInstance:
     - target: {fileID: 7243801155715285916, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -76685.71
+      value: -18685.643
       objectReference: {fileID: 0}
     - target: {fileID: 7243801155818726469, guid: 91812e6dc9970a944848530bb729dfeb,
         type: 3}
@@ -1559,8 +1599,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3639f62c1dc36c149b08ade341ad96c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mage_blueprint: {fileID: 6202045098474668463, guid: ad28750a0edc46b43af685481ec677ba,
+    type: 3}
+  Morter_blueprint: {fileID: 0}
   Cannon_blueprint: {fileID: 169401267267749871, guid: e96d38caf4dd635439a97470d129b170,
     type: 3}
+  priceMage: 45
+  priceMorter: 65
   priceCannon: 25
   Close: {fileID: 0}
   gameMaster: {fileID: 0}
