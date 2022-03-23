@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         GetTarget();
         MoveToTarget();
-        
+        Health();
     }
 
     private void GetTarget()
@@ -44,6 +44,14 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "TargetEnd")
         {
             Die(true);
+        }
+    }
+
+    private void Health()
+    {
+        if(health <= 0)
+        {
+            Die(false);
         }
     }
 

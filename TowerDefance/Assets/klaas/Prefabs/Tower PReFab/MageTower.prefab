@@ -253,7 +253,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370ef4a15b50dcb40870667c52b4cd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 15
+  damage: 10
+  attackSpeed: 10
+  gameMaster: {fileID: 0}
   rotator: {fileID: 6834914860576591932}
+  firePoint: {fileID: 4712158325359069770}
+  lineRenderer: {fileID: 607075905559204429}
+  useLaser: 1
 --- !u!65 &-3348640085873074538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -308,7 +315,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 2038904032668361694}
   IsOpen: 0
-  CanvasCheck: {fileID: 0}
 --- !u!114 &-1223114501631689628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,8 +369,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 9, z: 5}
-  - {x: 0, y: 9, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -372,8 +378,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.88255453
-        value: 0.05084449
+        time: 1
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -416,8 +422,8 @@ LineRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-    shadowBias: 0.5
-    generateLightingData: 0
+    shadowBias: 1
+    generateLightingData: 1
   m_UseWorldSpace: 1
   m_Loop: 0
 --- !u!1 &5348857313216718380
@@ -430,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4712158325359069770}
   m_Layer: 0
-  m_Name: ExitPoint
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
