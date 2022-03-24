@@ -379,7 +379,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 1
-        value: 1
+        value: 0.3043478
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -579,6 +579,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: pop-up
       objectReference: {fileID: 0}
+    - target: {fileID: 1394083266207025831, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: towerTest
+      value: 
+      objectReference: {fileID: -1656680797454660470}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
 --- !u!224 &2038904032668361693 stripped
