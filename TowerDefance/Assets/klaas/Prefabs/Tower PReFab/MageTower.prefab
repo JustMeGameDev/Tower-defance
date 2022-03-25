@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 8921807740671476530}
   - component: {fileID: -1223114501631689628}
   - component: {fileID: 607075905559204429}
+  - component: {fileID: 3788107827490540287}
   m_Layer: 8
   m_Name: MageTower
   m_TagString: Untagged
@@ -261,6 +262,7 @@ MonoBehaviour:
   firePoint: {fileID: 4712158325359069770}
   lineRenderer: {fileID: 607075905559204429}
   useLaser: 1
+  lightningBolt: {fileID: 3788107827490540287}
 --- !u!65 &-3348640085873074538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -334,7 +336,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3231408739980937859}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -347,7 +349,9 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd09bca91e42c8548840d0bdf5d1a3f0, type: 2}
+  - {fileID: 2100000, guid: 02d22a64daa120542b4215115693e884, type: 2}
+  - {fileID: 2100000, guid: 4de36ea0be987c54d965ef5ee0f7b3bc, type: 2}
+  - {fileID: 2100000, guid: b3fa1459de80bc44a9b3e01397db8235, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -378,8 +382,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 1
-        value: 0.3043478
+        time: 0.0386734
+        value: 0.39752197
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -426,6 +430,29 @@ LineRenderer:
     generateLightingData: 1
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &3788107827490540287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231408739980937859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb4d413de9f1d541915329635c9f2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartObject: {fileID: 1793393722467545776}
+  StartPosition: {x: 0, y: 0, z: 0}
+  EndObject: {fileID: 0}
+  EndPosition: {x: 0, y: 0, z: 0}
+  Generations: 6
+  Duration: 0.05
+  ChaosFactor: 0.15
+  ManualMode: 0
+  Rows: 1
+  Columns: 1
+  AnimationMode: 3
 --- !u!1 &5348857313216718380
 GameObject:
   m_ObjectHideFlags: 0

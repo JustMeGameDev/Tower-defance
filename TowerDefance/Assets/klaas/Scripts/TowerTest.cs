@@ -25,7 +25,7 @@ public class TowerTest : MonoBehaviour
     [Header("Laser")]
     public LineRenderer lineRenderer = null;
     public bool useLaser;
-
+    public LightningBoltScript lightningBolt = null;
     void Start()
     {
         InvokeRepeating("SelectTarget", 0, 1f);
@@ -64,7 +64,8 @@ public class TowerTest : MonoBehaviour
 
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
-
+       // lightningBolt.EndObject = nearestEnemy;
+      
         Collider[] colliders = Physics.OverlapSphere(transform.position, range);
         foreach (Collider c in colliders)
         {
@@ -80,6 +81,7 @@ public class TowerTest : MonoBehaviour
         }
         if (nearestEnemy != null && shortestDistance < range)
         {
+            
             target = nearestEnemy.transform;
         }
         else
@@ -103,9 +105,9 @@ public class TowerTest : MonoBehaviour
         {
             lineRenderer.enabled = true;
         }
-
-        lineRenderer.SetPosition(0, firePoint.position);
-        lineRenderer.SetPosition(1, target.position);
+        lightningBolt.EndPosition = target.position;
+      //  lineRenderer.SetPosition(0, firePoint.position);
+      //  lineRenderer.SetPosition(1, target.position);
 
         target.gameObject.GetComponent<PlayerController>().health -= damage *Time.deltaTime;
        
