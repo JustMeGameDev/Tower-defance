@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    public UnityEngine.AI.NavMeshAgent navAgent;
+    public NavMeshAgent navAgent;
     public Transform target;
     public GameMaster gameMaster;
 
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         GetTarget();
         MoveToTarget();
-        
+        Health();
     }
 
     private void GetTarget()
@@ -43,8 +43,25 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "TargetEnd")
         {
-            gameMaster.enemyWave.Remove(gameObject);
-            Destroy(gameObject);
+            Die(true);
+        }
+    }
+
+    private void Health()
+    {
+        if(health <= 0)
+        {
+            Die(false);
+        }
+    }
+
+    private void Die(bool ReachedEnd)
+    {
+        gameMaster.enemyWave.Remove(gameObject);
+        Destroy(gameObject);
+        if (!ReachedEnd)
+        {
+            gameMaster.money = gameMaster.money + baseValue;
         }
     }
 }

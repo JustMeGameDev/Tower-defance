@@ -5,13 +5,26 @@ using UnityEngine;
 public class TowerTest : MonoBehaviour
 {
     private Transform target;
-    private float range = 15;
+    
+    
+    [Header("Stats")]
+    public float range = 15;
+    public float damage = 10;
+    public float attackSpeed = 10;
+    
+    [Header("GameMaster")]
+    public GameMaster gameMaster;
 
     [Header("Aim Setup")]
     [SerializeField]
     Transform rotator;
+    public Transform firePoint;
     float turnSpeed = 10;
     string enemyTag = "Enemy";
+
+    [Header("Laser")]
+    public LineRenderer lineRenderer = null;
+    public bool useLaser;
 
     void Start()
     {
@@ -21,10 +34,29 @@ public class TowerTest : MonoBehaviour
     void Update()
     {
 
-        if (target != null)
+        if (target == null) //!=
         {
-            LookAtTarget();
+           
+              if (useLaser)
+              {
+                  if (lineRenderer.enabled)
+                  {
+                      lineRenderer.enabled = false;
+                  }
+              }
+
+              return;
+           
         }
+        LookAtTarget();
+
+        if (useLaser)
+        {
+            Laser();
+        }/* else
+        {
+            Shoot Function 
+        } */
     }
 
     void SelectTarget()
@@ -63,5 +95,19 @@ public class TowerTest : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(rotator.rotation, lookRotation, turnSpeed * Time.deltaTime).eulerAngles;
         rotator.rotation = Quaternion.Euler(0, rotation.y, 0);
+    }
+
+    void Laser()
+    {
+        if (!lineRenderer.enabled)
+        {
+            lineRenderer.enabled = true;
+        }
+
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
+
+        target.gameObject.GetComponent<PlayerController>().health -= damage *Time.deltaTime;
+       
     }
 }

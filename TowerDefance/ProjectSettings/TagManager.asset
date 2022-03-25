@@ -8,6 +8,8 @@ TagManager:
   - TargetEnd
   - GameMaster
   - Enemy
+  - ShopMenu
+  - TowerPlace
   layers:
   - Default
   - TransparentFX
