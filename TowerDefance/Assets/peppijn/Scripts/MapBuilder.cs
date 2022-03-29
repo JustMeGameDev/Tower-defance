@@ -103,36 +103,26 @@ public class MapBuilder : MonoBehaviour
         }
         for (int i = 0; i < transformPoints.Count; i++)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transformPoints[i].position, 5.2f, 1 << 7);
+            Collider[] hitColliders = Physics.OverlapSphere(transformPoints[i].position, 5.5f, 1 << 7);
 
-            if (hitColliders.Length >= 1)
+            if (hitColliders.Length > 1)
             {
 
                 transformPoints.RemoveAt(i);
             }
         }
-        int rd = Random.Range(0, transformPoints.Count);
-        switch (rd)
-        {
-            case 0:
-                placePoint = transformPoints[0];
-                break;
-            case 1:
-                placePoint = transformPoints[1];
-                break;
-            case 2:
-                placePoint = transformPoints[2];
-                break;
-            case 3:
-                placePoint = transformPoints[3];
-                break;
-        }
+        int rd = Random.Range(0,transformPoints.Count);
+        Debug.Log(rd);
+        placePoint = transformPoints[rd];
+        
+        
         return placePoint;
     }
 
     private void PlaceTile(Transform Point, GameObject tile)
     {
         activeTile = Instantiate(tile, placePoint.position, placePoint.rotation);
+
     }
 
     private void FillWorld()
