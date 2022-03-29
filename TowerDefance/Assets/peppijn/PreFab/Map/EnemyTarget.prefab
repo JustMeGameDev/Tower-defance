@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155585953681119229}
-  m_Layer: 0
+  - component: {fileID: 982780870001773038}
+  m_Layer: 7
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: TargetEnd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 5806381085445582491}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &982780870001773038
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451093516472616294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.4622965, y: 1, z: 4.7781506}
+  m_Center: {x: 0.104043484, y: 0, z: -0.032119393}
 --- !u!1 &2152414904842154589
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +57,8 @@ GameObject:
   - component: {fileID: 425868888061762793}
   - component: {fileID: 2412304545045519709}
   - component: {fileID: 2930287542492768122}
-  m_Layer: 0
+  - component: {fileID: 8427435011119604718}
+  m_Layer: 7
   m_Name: EnemyTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,3 +144,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8427435011119604718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2152414904842154589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e7aebd639faa64a9cdac1aca1fe27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point1: {fileID: 0}
+  point2: {fileID: 0}
+  point3: {fileID: 0}
+  point4: {fileID: 0}
