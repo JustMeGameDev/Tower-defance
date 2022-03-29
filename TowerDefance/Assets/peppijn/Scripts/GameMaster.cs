@@ -2,28 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+//using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
     [Header("Enemy Prefabs")]
     public GameObject enemy_1;
     public GameObject enemy_2;
-    
+    public Image Coin;
+
     [Header("Wave System")]
     public GameObject enemyToSpawn;
     public Transform spawnPoint;
     public int difficulty;
-    public int currentWave = 1;
+    public int currentWave;
     public List<GameObject> enemyWave;
     public int waveSize;
-    public float spawnTime = 2f;
-
+    public float spawnTime = 0f;
+    public TextMeshProUGUI WaveCounter;
 
     [Header("Economy")]
-    public float money = 0;
-    private float roundReward = 15;
+    public float money = 1000;
+    private float roundReward = 25;
     private float ecoTimer = 1;
-    private float passiveIncome = 10;
+    private float passiveIncome = 12;
+    public float StartMoney = 900;
     private int ecoCounter;
     public TextMeshProUGUI moneyText;
 
@@ -31,11 +35,25 @@ public class GameMaster : MonoBehaviour
     public List<PopUp> Towers;
     public PopUp OpenTower;
 
+    [Header("PlayerHealth")]
+    public float PlayerHealth;
+    public bool isAlive;
+    public float PlayerMaxHealth;
+    public Slider healthbar;
+    public TextMeshProUGUI health;
+
 
     void Start()
     {
         enemyWave = new List<GameObject>();
         Towers = new List<PopUp>();
+        money = money + StartMoney;
+        WaveCounter.text = "Wave: " + currentWave;
+        PlayerHealth = PlayerMaxHealth;
+        healthbar.maxValue = PlayerMaxHealth;
+        healthbar.minValue = 0;
+        healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
+        isAlive = true;
     }
 
     void Update()
@@ -43,7 +61,26 @@ public class GameMaster : MonoBehaviour
         SpawnWave();
         Timer();
         HandleEconemy();
-        moneyText.text = Mathf.Round(money) + "$";
+        if (money > 1000)
+        {
+           
+           string keep = (money / 1000).ToString("F") + "K";
+            moneyText.text = keep;
+        }
+        else
+        {
+            moneyText.text = Mathf.Round(money) + "";
+        }
+        healthbar.value = PlayerHealth;
+        health.text = PlayerHealth + " / " + PlayerMaxHealth;
+        if (PlayerHealth <= 0)
+        {
+            isAlive = false;
+        }
+        if (!isAlive)
+        {
+            Time.timeScale = 0;
+        }
     }
     void FixedUpdate()
     {
@@ -61,6 +98,7 @@ public class GameMaster : MonoBehaviour
         {
             waveSize = currentWave * difficulty * 3;
             currentWave++;
+            WaveCounter.text = "Wave: " + currentWave;
             roundReward = roundReward * 1.05f;
             money = money + roundReward;
             ecoCounter++;
@@ -69,6 +107,7 @@ public class GameMaster : MonoBehaviour
                 passiveIncome = passiveIncome * 1.1f;
                 ecoCounter = 0;
             }
+
             
         }
 
@@ -92,9 +131,10 @@ public class GameMaster : MonoBehaviour
                     enemyToSpawn = enemy_2;
                     waveSize = waveSize - 2;
                 }
+
                 GameObject enemyTemp = Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
                 enemyWave.Add(enemyTemp);
-                spawnTime = 2;
+                spawnTime = 1;
             }
         }
         if (waveSize < 0)

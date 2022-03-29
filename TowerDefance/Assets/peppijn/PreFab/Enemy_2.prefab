@@ -127,6 +127,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 175
   baseValue: 20
+  Damage: 10
 --- !u!54 &1519096113542721545
 Rigidbody:
   m_ObjectHideFlags: 0

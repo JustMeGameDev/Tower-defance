@@ -8,8 +8,9 @@ TagManager:
   - TargetEnd
   - GameMaster
   - Enemy
-  - spawnPoint
-  - point
+  - ShopMenu
+  - TowerPlace
+  - Healthbar
   layers:
   - Default
   - TransparentFX

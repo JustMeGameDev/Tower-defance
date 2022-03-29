@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UpgradeCannon : MonoBehaviour
+public class UpgradeMage : MonoBehaviour
 {
     public TowerTest towerTest;
     public GameMaster gameMaster;
