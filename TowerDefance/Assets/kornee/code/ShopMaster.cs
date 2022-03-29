@@ -38,7 +38,7 @@ public class ShopMaster : MonoBehaviour
     }
     public void spawn_Mage_blueprint()
     {
-        if (gameMaster.money >= priceCannon)
+        if (gameMaster.money >= priceMage)
         {
             Instantiate(Mage_blueprint);
             Close.IsOpen = false;

@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     public NavMeshAgent navAgent;
     public Transform target;
     public GameMaster gameMaster;
 
-    
+    [Header("EnemyValu's")]
     public float health;
     public float maxHealth;
     public int baseValue;
+    public int Damage;
+    
 
     void Awake()
     {
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
         health = maxHealth;
+
     }
 
     void Update()
@@ -43,6 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "TargetEnd")
         {
+            gameMaster.PlayerHealth -= Damage;
             Die(true);
         }
     }

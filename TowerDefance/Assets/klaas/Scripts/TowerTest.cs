@@ -107,7 +107,7 @@ public class TowerTest : MonoBehaviour
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
 
-        target.gameObject.GetComponent<PlayerController>().health -= damage *Time.deltaTime;
+        target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
        
     }
 }
