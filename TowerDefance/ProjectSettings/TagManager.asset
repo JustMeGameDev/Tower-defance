@@ -8,6 +8,8 @@ TagManager:
   - TargetEnd
   - GameMaster
   - Enemy
+  - spawnPoint
+  - point
   layers:
   - Default
   - TransparentFX

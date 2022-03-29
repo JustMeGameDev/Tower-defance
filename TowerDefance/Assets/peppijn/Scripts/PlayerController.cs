@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     {
         GetTarget();
         MoveToTarget();
-        
     }
 
     private void GetTarget()

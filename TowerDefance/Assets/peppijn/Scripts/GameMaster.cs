@@ -53,6 +53,10 @@ public class GameMaster : MonoBehaviour
 
     private void SpawnWave()
     {
+        if (spawnPoint == null)
+        {
+            spawnPoint = GameObject.FindWithTag("spawnPoint").transform;
+        }
         if (enemyWave.Count == 0 && waveSize == 0)
         {
             waveSize = currentWave * difficulty * 3;
