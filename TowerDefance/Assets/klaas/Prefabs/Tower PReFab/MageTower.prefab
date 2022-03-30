@@ -263,7 +263,7 @@ MonoBehaviour:
   lightningBolt: {fileID: 3788107827490540287}
   lineRenderer: {fileID: 607075905559204429}
   useNormal: 0
-  useLightning: 0
+  useLightning: 1
   useFire: 0
   useMage: 1
 --- !u!65 &-3348640085873074538
