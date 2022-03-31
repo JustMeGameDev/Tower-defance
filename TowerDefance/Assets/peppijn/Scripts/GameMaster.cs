@@ -56,7 +56,7 @@ public class GameMaster : MonoBehaviour
         healthbar.minValue = 0;
         healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
         isAlive = true;
-        enemyController = GameObject.FindWithTag("EnemyController").GetComponent<EnemyController>();
+        
 
     }
 
@@ -68,8 +68,8 @@ public class GameMaster : MonoBehaviour
         if (money > 1000)
         {
            
-           string keep = (money / 1000).ToString("F") + "K";
-            moneyText.text = keep;
+           string TempMoney = (money / 1000).ToString("F") + "K";
+            moneyText.text = TempMoney;
         }
         else
         {

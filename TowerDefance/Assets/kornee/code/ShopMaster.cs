@@ -11,6 +11,9 @@ public class ShopMaster : MonoBehaviour
     public float priceMage = 45f;
     public float priceMorter = 65f;
     public float priceCannon = 25f;
+    public TextMeshProUGUI CannonPrice;
+    public TextMeshProUGUI MorterPrice;
+    public TextMeshProUGUI MagePrice;
     public PopUpZonderCheck Close;
     public GameMaster gameMaster;
     public TextMeshProUGUI Message;
@@ -19,6 +22,10 @@ public class ShopMaster : MonoBehaviour
     {
         Close = GameObject.FindWithTag("ShopMenu").GetComponent<PopUpZonderCheck>();
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
+        CannonPrice.text = "$ " + priceCannon;
+        MorterPrice.text = "$ " + MorterPrice;
+        MagePrice.text = "$ " + priceMage;
+
 
     }
     public void spawn_Cannon_blueprint()
