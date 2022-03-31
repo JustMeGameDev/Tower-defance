@@ -1815,8 +1815,14 @@ PrefabInstance:
     - target: {fileID: 2815073933936092340, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0025024414
+      value: -10860.461
       objectReference: {fileID: 0}
+    - target: {fileID: 4870080142580125481, guid: 29123bd7613c82a49a984b4f21b9c21c,
+        type: 3}
+      propertyPath: Mage_blueprint
+      value: 
+      objectReference: {fileID: 6202045098474668463, guid: ad28750a0edc46b43af685481ec677ba,
+        type: 3}
     - target: {fileID: 4870080142580125482, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
       propertyPath: m_RootOrder

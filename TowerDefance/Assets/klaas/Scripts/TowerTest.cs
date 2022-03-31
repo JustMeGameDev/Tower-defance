@@ -25,7 +25,7 @@ public class TowerTest : MonoBehaviour
     [Header("Mage")]
     public LightningBoltScript lightningBolt = null;
     public LineRenderer lineRenderer = null;
-    public bool useNormal;
+    public bool useNormal = false;
     public bool useLightning = false;
     public bool useFire = false;
     public bool useMage;
@@ -38,7 +38,7 @@ public class TowerTest : MonoBehaviour
     void Update()
     {
 
-        if (target == null) //!=
+        if (target == null) 
         {
            
               if (useMage)
@@ -111,12 +111,11 @@ public class TowerTest : MonoBehaviour
            
         }
 
-<<<<<<< HEAD
-        lineRenderer.SetPosition(0, firePoint.position);
-        lineRenderer.SetPosition(1, target.position);
+
+        
 
         target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
-=======
+
         if(useLightning)
         {
             lightningBolt.EndPosition = target.position;
@@ -124,12 +123,12 @@ public class TowerTest : MonoBehaviour
         }
         if (useNormal)
         {
-           lineRenderer.SetPosition(0, firePoint.position);
+            lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, target.position);
             lightningBolt.Generations = 0;
         }
-        target.gameObject.GetComponent<PlayerController>().health -= damage *Time.deltaTime;
->>>>>>> MageAttack2
+        target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
+
        
     }
 }
