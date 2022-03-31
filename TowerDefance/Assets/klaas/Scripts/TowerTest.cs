@@ -112,20 +112,21 @@ public class TowerTest : MonoBehaviour
         }
 
 
-        
 
         target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
 
         if(useLightning)
         {
             lightningBolt.EndPosition = target.position;
-            lightningBolt.Generations = 6;
+            lightningBolt.Generations = 8;
+            lightningBolt.enabled = true;
         }
         if (useNormal)
         {
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, target.position);
             lightningBolt.Generations = 0;
+            lightningBolt.enabled = false;
         }
         target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
 

@@ -56,7 +56,6 @@ public class GameMaster : MonoBehaviour
         healthbar.minValue = 0;
         healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
         isAlive = true;
-        enemyController = GameObject.FindWithTag("EnemyController").GetComponent<EnemyController>();
 
     }
 
