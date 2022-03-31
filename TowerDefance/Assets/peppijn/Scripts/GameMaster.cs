@@ -41,6 +41,8 @@ public class GameMaster : MonoBehaviour
     public float PlayerMaxHealth;
     public Slider healthbar;
     public TextMeshProUGUI health;
+    public EnemyController enemyController;
+    
 
 
     void Start()
@@ -54,6 +56,8 @@ public class GameMaster : MonoBehaviour
         healthbar.minValue = 0;
         healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
         isAlive = true;
+        enemyController = GameObject.FindWithTag("EnemyController").GetComponent<EnemyController>();
+
     }
 
     void Update()
@@ -71,7 +75,7 @@ public class GameMaster : MonoBehaviour
         {
             moneyText.text = Mathf.Round(money) + "";
         }
-        healthbar.value = PlayerHealth;
+        //healthbar.value = health / Time.deltaTime;
         health.text = PlayerHealth + " / " + PlayerMaxHealth;
         if (PlayerHealth <= 0)
         {

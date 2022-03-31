@@ -17,15 +17,19 @@ public class TowerTest : MonoBehaviour
 
     [Header("Aim Setup")]
     [SerializeField]
-    Transform rotator;
-    public Transform firePoint;
+    Transform rotator = null;
+    public Transform firePoint = null;
     float turnSpeed = 10;
     string enemyTag = "Enemy";
 
-    [Header("Laser")]
+    [Header("Mage")]
+    public LightningBoltScript lightningBolt = null;
     public LineRenderer lineRenderer = null;
-    public bool useLaser;
-
+    public bool useNormal = false;
+    public bool useLightning = false;
+    public bool useFire = false;
+    public bool useMage;
+   
     void Start()
     {
         InvokeRepeating("SelectTarget", 0, 1f);
@@ -34,10 +38,10 @@ public class TowerTest : MonoBehaviour
     void Update()
     {
 
-        if (target == null) //!=
+        if (target == null) 
         {
            
-              if (useLaser)
+              if (useMage)
               {
                   if (lineRenderer.enabled)
                   {
@@ -50,7 +54,7 @@ public class TowerTest : MonoBehaviour
         }
         LookAtTarget();
 
-        if (useLaser)
+        if (useMage)
         {
             Laser();
         }/* else
@@ -64,7 +68,8 @@ public class TowerTest : MonoBehaviour
 
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
-
+       // lightningBolt.EndObject = nearestEnemy;
+      
         Collider[] colliders = Physics.OverlapSphere(transform.position, range);
         foreach (Collider c in colliders)
         {
@@ -80,6 +85,7 @@ public class TowerTest : MonoBehaviour
         }
         if (nearestEnemy != null && shortestDistance < range)
         {
+            
             target = nearestEnemy.transform;
         }
         else
@@ -97,17 +103,32 @@ public class TowerTest : MonoBehaviour
         rotator.rotation = Quaternion.Euler(0, rotation.y, 0);
     }
 
-    void Laser()
+    void Laser()   // Fix Bools
     {
         if (!lineRenderer.enabled)
         {
             lineRenderer.enabled = true;
+           
         }
 
-        lineRenderer.SetPosition(0, firePoint.position);
-        lineRenderer.SetPosition(1, target.position);
+
+        
 
         target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
+
+        if(useLightning)
+        {
+            lightningBolt.EndPosition = target.position;
+            lightningBolt.Generations = 6;
+        }
+        if (useNormal)
+        {
+            lineRenderer.SetPosition(0, firePoint.position);
+            lineRenderer.SetPosition(1, target.position);
+            lightningBolt.Generations = 0;
+        }
+        target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
+
        
     }
 }
