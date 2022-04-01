@@ -38,10 +38,11 @@ public class TowerTest : MonoBehaviour
     float fireDelay = 1f;
 
     [Header("Updrage")]
+    public GameObject fireRotation;
+    public GameObject lightingFX;
     public MeshRenderer[] towerMsh;
-    public Material[] towerMat;
     public Material[] fireUpgrade;
-    public Material lightingUpgrade;
+    public Material[] lightingUpgrade;
     
     void Start()
     {
@@ -125,13 +126,11 @@ public class TowerTest : MonoBehaviour
            
         }
 
-
-
-        target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
+       // target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
 
         if(useLightning)
-        { 
-
+        {
+            LightingUpgrade();
             lightningBolt.EndPosition = target.position;
             lightningBolt.Generations = 8;
             lightningBolt.enabled = true;
@@ -142,8 +141,8 @@ public class TowerTest : MonoBehaviour
 
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, target.position);
-            lightningBolt.Generations = 0;
-            //lightningBolt.enabled = false;
+            //lightningBolt.Generations = 0;
+            lightningBolt.enabled = false;
             target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
         }
         if (useFire)
@@ -163,9 +162,17 @@ public class TowerTest : MonoBehaviour
         }
         
     }
-
+    void LightingUpgrade()
+    {
+        useNormal = false;
+        lightingFX.SetActive(true);
+        towerMsh[1].material = lightingUpgrade[0];
+        towerMsh[0].materials = lightingUpgrade;
+    }
     void FireUpgrade()
     {
+        useNormal = false;
+        fireRotation.SetActive(true);
         towerMsh[1].material = fireUpgrade[0];
         towerMsh[0].materials = fireUpgrade;
     }
