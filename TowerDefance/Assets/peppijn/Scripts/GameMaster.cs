@@ -19,7 +19,8 @@ public class GameMaster : MonoBehaviour
     public int currentWave;
     public List<GameObject> enemyWave;
     public int waveSize;
-    public float spawnTime = 0f;
+    public int spawnTimeValue;
+    private float spawnTime = 0f;
     public TextMeshProUGUI WaveCounter;
 
     [Header("Economy")]
@@ -136,7 +137,7 @@ public class GameMaster : MonoBehaviour
 
                 GameObject enemyTemp = Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
                 enemyWave.Add(enemyTemp);
-                spawnTime = 1;
+                spawnTime = spawnTimeValue;
             }
         }
         if (waveSize < 0)
