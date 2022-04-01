@@ -36,9 +36,16 @@ public class TowerTest : MonoBehaviour
     public bool useFire = false;
     public bool useMage;
     float fireDelay = 1f;
-   
+
+    [Header("Updrage")]
+    public MeshRenderer[] towerMsh;
+    public Material[] towerMat;
+    public Material[] fireUpgrade;
+    public Material lightingUpgrade;
+    
     void Start()
     {
+        //towerMat = towerMsh[0].materials;
         InvokeRepeating("SelectTarget", 0, 1f);
     }
   
@@ -123,7 +130,8 @@ public class TowerTest : MonoBehaviour
         target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
 
         if(useLightning)
-        {
+        { 
+
             lightningBolt.EndPosition = target.position;
             lightningBolt.Generations = 8;
             lightningBolt.enabled = true;
@@ -131,14 +139,17 @@ public class TowerTest : MonoBehaviour
         }
         if (useNormal)
         {
+
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, target.position);
             lightningBolt.Generations = 0;
-            lightningBolt.enabled = false;
+            //lightningBolt.enabled = false;
             target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
         }
         if (useFire)
         {
+            FireUpgrade();
+            
             fireDelay -= Time.deltaTime;
 
             lineRenderer.enabled = false;
@@ -148,9 +159,14 @@ public class TowerTest : MonoBehaviour
                 projFireBall.GetComponent<FireBall>().target = target;
                 fireDelay = 1f;
             }
-        }
-       
 
-       
+        }
+        
+    }
+
+    void FireUpgrade()
+    {
+        towerMsh[1].material = fireUpgrade[0];
+        towerMsh[0].materials = fireUpgrade;
     }
 }

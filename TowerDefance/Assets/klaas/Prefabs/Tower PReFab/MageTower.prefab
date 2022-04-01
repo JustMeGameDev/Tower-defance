@@ -96,7 +96,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -6478536213147159724, guid: 97ddde0a28a981a4b81e79e1cf74fc9d, type: 3}
-  - {fileID: 2100000, guid: 64fe9d3bd8d7c6742892348240847d28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -179,11 +178,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 64fe9d3bd8d7c6742892348240847d28, type: 2}
   - {fileID: -876546973899608171, guid: 97ddde0a28a981a4b81e79e1cf74fc9d, type: 3}
   - {fileID: 4874126678125670354, guid: 97ddde0a28a981a4b81e79e1cf74fc9d, type: 3}
   - {fileID: -6922793697723135513, guid: 97ddde0a28a981a4b81e79e1cf74fc9d, type: 3}
-  - {fileID: 2100000, guid: 64fe9d3bd8d7c6742892348240847d28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -275,6 +272,17 @@ MonoBehaviour:
   useLightning: 0
   useFire: 1
   useMage: 1
+  towerMsh:
+  - {fileID: 2240944769408983325}
+  - {fileID: 8955585941541777056}
+  towerMat: []
+  fireUpgrade:
+  - {fileID: 2100000, guid: 64fe9d3bd8d7c6742892348240847d28, type: 2}
+  - {fileID: -876546973899608171, guid: 97ddde0a28a981a4b81e79e1cf74fc9d, type: 3}
+  - {fileID: 4874126678125670354, guid: 97ddde0a28a981a4b81e79e1cf74fc9d, type: 3}
+  - {fileID: -6922793697723135513, guid: 97ddde0a28a981a4b81e79e1cf74fc9d, type: 3}
+  - {fileID: 2100000, guid: 64fe9d3bd8d7c6742892348240847d28, type: 2}
+  lightingUpgrade: {fileID: 2100000, guid: 9713fb89004ea4c4db9322745b221833, type: 2}
 --- !u!65 &-3348640085873074538
 BoxCollider:
   m_ObjectHideFlags: 0
