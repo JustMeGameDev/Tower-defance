@@ -17,6 +17,8 @@ public class TowerPlace : MonoBehaviour
     MeshRenderer mr;
     public PopUpZonderCheck Close;
 
+    public LayerMask layerMask;
+
 
     bool isPlaceAble;
 
@@ -49,7 +51,7 @@ public class TowerPlace : MonoBehaviour
             mr.materials = nonPlaceMat;    
         }
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f, 1 << 8);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f, layerMask);
 
         if (hitColliders.Length < 1)
         {

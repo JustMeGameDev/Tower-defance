@@ -55,6 +55,9 @@ MonoBehaviour:
   startMats: []
   mr: {fileID: 0}
   Close: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 384
 --- !u!1 &2175699363892056778
 GameObject:
   m_ObjectHideFlags: 0

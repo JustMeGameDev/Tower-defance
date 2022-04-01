@@ -211,8 +211,12 @@ MonoBehaviour:
   gameMaster: {fileID: 0}
   rotator: {fileID: 2336372346730696254}
   firePoint: {fileID: 0}
+  lightningBolt: {fileID: 0}
   lineRenderer: {fileID: 0}
-  useLaser: 0
+  useNormal: 0
+  useLightning: 0
+  useFire: 0
+  useMage: 0
 --- !u!65 &5224493230730295084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -361,6 +365,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4884980925914213781}
     m_Modifications:
+    - target: {fileID: 305260105039807168, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8379727484735660369}
+    - target: {fileID: 305260105039807168, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Upgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105039807168, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeTower, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 305260105423505172, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: m_Pivot.x
@@ -511,8 +530,51 @@ PrefabInstance:
       propertyPath: costMultiplier
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: cost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: CostText
+      value: 
+      objectReference: {fileID: 5355692813096082139}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: maxLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: levelText
+      value: 
+      objectReference: {fileID: 1032669508375712933}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: towerTest
+      value: 
+      objectReference: {fileID: 5224493230730295091}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: costMultiplier
+      value: 1.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3352965189805100705, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
+--- !u!114 &1032669508375712933 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4982836392110483376, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 5436495928292733717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5355692813096082139 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 81467226729392590, guid: 60a24a16f3d3ef04dbe62be76c339949,
@@ -537,3 +599,15 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 5436495928292733717}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8379727484735660369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 5436495928292733717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148c7257656e28440acb7abe93d8e83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

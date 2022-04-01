@@ -859,6 +859,7 @@ GameObject:
   - component: {fileID: 305260105039807230}
   - component: {fileID: 305260105039807231}
   - component: {fileID: 305260105039807168}
+  - component: {fileID: 4555555408101626436}
   - component: {fileID: 305260105039807229}
   - component: {fileID: 3352965189805100705}
   m_Layer: 0
@@ -983,6 +984,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4555555408101626436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305260105039807170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148c7257656e28440acb7abe93d8e83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerTest: {fileID: 0}
+  gameMaster: {fileID: 0}
+  costMultiplier: 0
+  cost: 0
+  level: 0
+  maxLevel: 0
+  levelText: {fileID: 0}
+  CostText: {fileID: 0}
 --- !u!114 &305260105039807229
 MonoBehaviour:
   m_ObjectHideFlags: 0

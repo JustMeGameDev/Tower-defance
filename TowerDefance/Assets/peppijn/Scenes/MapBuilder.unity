@@ -201,14 +201,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210868056}
-  m_LocalRotation: {x: 0.4102735, y: -0, z: -0, w: 0.91196257}
-  m_LocalPosition: {x: 0, y: 48.3, z: -72.4}
+  m_LocalRotation: {x: 0.5707852, y: 0, z: 0, w: 0.82109946}
+  m_LocalPosition: {x: 0, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 48.444, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 69.61, y: 0, z: 0}
 --- !u!114 &210868060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,8 +255,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panSpeed: 20
-  panBorderThickness: 10
-  panLimit: {x: 20, y: 50}
+  panBorderThickness: 30
+  panLimit: {x: 30, y: 30}
+  panLimitNegative: {x: 50, y: 50}
   scrollSpeed: 20
   minY: 20
   maxY: 120
@@ -435,7 +436,7 @@ PrefabInstance:
     - target: {fileID: 2815073933936092340, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -900.43994
+      value: -87773.67
       objectReference: {fileID: 0}
     - target: {fileID: 4870080142580125482, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
@@ -697,8 +698,80 @@ PrefabInstance:
       propertyPath: WaveCounter
       value: 
       objectReference: {fileID: 1905771313}
+    - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
+        type: 3}
+      propertyPath: PlayerMaxHealth
+      value: 100000000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea2ff639793346142871d56ad4e5da7f, type: 3}
+--- !u!1 &1333156288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1333156291}
+  - component: {fileID: 1333156290}
+  - component: {fileID: 1333156289}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1333156289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333156288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1333156290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333156288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1333156291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333156288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1905771309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1122,6 +1195,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3015944786359741361, guid: 08ba92574c35d034aa42524ec9c5c319,
         type: 3}
+      propertyPath: mapSize
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015944786359741361, guid: 08ba92574c35d034aa42524ec9c5c319,
+        type: 3}
       propertyPath: navOgre
       value: 
       objectReference: {fileID: 786524300}
@@ -1140,6 +1218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: useRandomSeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015944786359741361, guid: 08ba92574c35d034aa42524ec9c5c319,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 3015944786359741362, guid: 08ba92574c35d034aa42524ec9c5c319,
         type: 3}

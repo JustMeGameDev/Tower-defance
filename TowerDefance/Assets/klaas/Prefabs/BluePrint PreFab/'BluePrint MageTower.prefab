@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db6dddb76c6503468866689a146e62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasCheck: {fileID: 0}
+  gameMaster: {fileID: 0}
   prefab: {fileID: 3231408739980937859, guid: 1e7ca3ad84772e74697128fb37533474, type: 3}
   nonPlaceMat:
   - {fileID: 2100000, guid: 11c1474a6490eca49865ba8071e194fd, type: 2}
@@ -171,6 +171,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 11c1474a6490eca49865ba8071e194fd, type: 2}
   startMats: []
   mr: {fileID: 0}
+  Close: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 384
 --- !u!1 &7073246392658360732
 GameObject:
   m_ObjectHideFlags: 0
