@@ -11,7 +11,11 @@ public class TowerTest : MonoBehaviour
     public float range = 15;
     public float damage = 10;
     public float attackSpeed = 10;
-    
+
+    [Header("Special Stats")]
+    public float fireDamage;
+    public float burnDamage;
+
     [Header("GameMaster")]
     public GameMaster gameMaster;
 
@@ -24,11 +28,14 @@ public class TowerTest : MonoBehaviour
 
     [Header("Mage")]
     public LightningBoltScript lightningBolt = null;
+    public ParticleSystem fireParticleSystem = null;
     public LineRenderer lineRenderer = null;
+    public GameObject fireBall = null;
     public bool useNormal = false;
     public bool useLightning = false;
     public bool useFire = false;
     public bool useMage;
+    float fireDelay = 1f;
    
     void Start()
     {
@@ -120,6 +127,7 @@ public class TowerTest : MonoBehaviour
             lightningBolt.EndPosition = target.position;
             lightningBolt.Generations = 8;
             lightningBolt.enabled = true;
+            target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
         }
         if (useNormal)
         {
@@ -127,8 +135,21 @@ public class TowerTest : MonoBehaviour
             lineRenderer.SetPosition(1, target.position);
             lightningBolt.Generations = 0;
             lightningBolt.enabled = false;
+            target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
         }
-        target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
+        if (useFire)
+        {
+            fireDelay -= Time.deltaTime;
+
+            lineRenderer.enabled = false;
+            if (fireDelay <= 0)
+            {
+                GameObject projFireBall = Instantiate(fireBall, firePoint.position, Quaternion.identity);
+                projFireBall.GetComponent<FireBall>().target = target;
+                fireDelay = 1f;
+            }
+        }
+       
 
        
     }
