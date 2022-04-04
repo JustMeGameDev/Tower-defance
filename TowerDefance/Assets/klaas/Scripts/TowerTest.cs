@@ -164,6 +164,7 @@ public class TowerTest : MonoBehaviour
     }
     void LightingUpgrade()
     {
+        useLightning = true;
         useNormal = false;
         lightingFX.SetActive(true);
         towerMsh[1].material = lightingUpgrade[0];
@@ -171,6 +172,7 @@ public class TowerTest : MonoBehaviour
     }
     void FireUpgrade()
     {
+        useFire = true;
         useNormal = false;
         fireRotation.SetActive(true);
         towerMsh[1].material = fireUpgrade[0];

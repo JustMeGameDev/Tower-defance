@@ -14,7 +14,7 @@ public class TowerPlace : MonoBehaviour
     [SerializeField]
     Material[] startMats;
     [SerializeField]
-    MeshRenderer mr;
+    MeshRenderer[] mr;
     public PopUpZonderCheck Close;
 
 
@@ -22,9 +22,9 @@ public class TowerPlace : MonoBehaviour
 
     void Start()
     {
-        mr = GetComponentInChildren<MeshRenderer>();
-        startMats = mr.materials;
-        
+       // mr = GetComponentInChildren<MeshRenderer>();
+        startMats = mr[0].materials;
+        startMats = mr[1].materials;
     }
     private void Awake()
     {
@@ -41,12 +41,15 @@ public class TowerPlace : MonoBehaviour
             transform.position = hit.point;
             isPlaceAble = true;
 
-            mr.materials = startMats;         
+            mr[0].materials = startMats;
+            mr[1].materials = startMats;
+
         }
         else
         {
             isPlaceAble = false;
-            mr.materials = nonPlaceMat;    
+            mr[0].materials = nonPlaceMat;
+            mr[1].materials = nonPlaceMat;
         }
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f, 1 << 8);
@@ -68,8 +71,14 @@ public class TowerPlace : MonoBehaviour
         }
         else
         {
-             mr.materials = nonPlaceMat;
+            mr[0].materials = nonPlaceMat;
+            mr[1].materials = nonPlaceMat;
         }
- 
+   if (Input.GetKey(KeyCode.Escape))
+        {
+    
+            Close.Placing = false;
+            Destroy(gameObject);
+        }
     }
 }
