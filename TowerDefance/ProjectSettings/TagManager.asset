@@ -11,6 +11,7 @@ TagManager:
   - ShopMenu
   - TowerPlace
   - Healthbar
+  - Environment
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - PlaceGround
   - EnemyGround
   - Tower
-  - 
+  - Environment
   - 
   - 
   - 

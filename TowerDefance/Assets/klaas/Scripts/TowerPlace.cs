@@ -17,6 +17,7 @@ public class TowerPlace : MonoBehaviour
     MeshRenderer[] mr;
     public PopUpZonderCheck Close;
 
+    public LayerMask layerMask;
 
     bool isPlaceAble;
 
@@ -53,20 +54,24 @@ public class TowerPlace : MonoBehaviour
         }
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f, 1 << 8);
-
-        if (hitColliders.Length < 1)
-        {
+        Collider[] EnvCollider = Physics.OverlapSphere(transform.position, 4f, 1 << 9);
+       if (hitColliders.Length < 1)
+           {
 
             if (Input.GetMouseButton(0) && isPlaceAble == true)
-            {
-                
+            {               
                 GameObject TowerTemp = Instantiate(prefab, transform.position, transform.rotation);
                 PopUp popupTemp = TowerTemp.GetComponent<PopUp>();
                 
                 gameMaster.Towers.Add(popupTemp);
                 Close.Placing = false;
+
+                foreach(Collider c in EnvCollider)
+                {
+                    Destroy(c.gameObject);
+                }
+
                 Destroy(gameObject);
-                //return;
             }
         }
         else
