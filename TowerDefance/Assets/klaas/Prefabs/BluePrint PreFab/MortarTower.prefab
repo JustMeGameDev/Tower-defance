@@ -141,9 +141,17 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 11c1474a6490eca49865ba8071e194fd, type: 2}
   - {fileID: 2100000, guid: 11c1474a6490eca49865ba8071e194fd, type: 2}
   - {fileID: 2100000, guid: 11c1474a6490eca49865ba8071e194fd, type: 2}
+  - {fileID: 2100000, guid: 11c1474a6490eca49865ba8071e194fd, type: 2}
+  - {fileID: 2100000, guid: 11c1474a6490eca49865ba8071e194fd, type: 2}
+  - {fileID: 2100000, guid: 11c1474a6490eca49865ba8071e194fd, type: 2}
   startMats: []
-  mr: {fileID: 0}
+  mr:
+  - {fileID: 205308190470704436}
+  - {fileID: 2012281337894402431}
   Close: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &8537675668233171524
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +448,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pop-up
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105423505176, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}

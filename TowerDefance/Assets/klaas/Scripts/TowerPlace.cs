@@ -14,17 +14,17 @@ public class TowerPlace : MonoBehaviour
     [SerializeField]
     Material[] startMats;
     [SerializeField]
-    MeshRenderer mr;
+    MeshRenderer[] mr;
     public PopUpZonderCheck Close;
 
+    public LayerMask layerMask;
 
     bool isPlaceAble;
 
     void Start()
     {
-        mr = GetComponentInChildren<MeshRenderer>();
-        startMats = mr.materials;
-        
+        startMats = mr[0].materials;
+        startMats = mr[1].materials;
     }
     private void Awake()
     {
@@ -32,8 +32,7 @@ public class TowerPlace : MonoBehaviour
         Close = GameObject.FindWithTag("ShopMenu").GetComponent<PopUpZonderCheck>();
     }
     void Update()
-    {
-        
+    {   
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 50000.0f, 1 << 6))
@@ -41,35 +40,49 @@ public class TowerPlace : MonoBehaviour
             transform.position = hit.point;
             isPlaceAble = true;
 
-            mr.materials = startMats;         
+            mr[0].materials = startMats;
+            mr[1].materials = startMats;
+
         }
         else
         {
             isPlaceAble = false;
-            mr.materials = nonPlaceMat;    
+            mr[0].materials = nonPlaceMat;
+            mr[1].materials = nonPlaceMat;
         }
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f, 1 << 8);
-
-        if (hitColliders.Length < 1)
-        {
+        Collider[] EnvCollider = Physics.OverlapSphere(transform.position, 4f, 1 << 9);
+       if (hitColliders.Length < 1)
+           {
 
             if (Input.GetMouseButton(0) && isPlaceAble == true)
-            {
-                
+            {               
                 GameObject TowerTemp = Instantiate(prefab, transform.position, transform.rotation);
                 PopUp popupTemp = TowerTemp.GetComponent<PopUp>();
                 
                 gameMaster.Towers.Add(popupTemp);
                 Close.Placing = false;
+
+                foreach(Collider c in EnvCollider)
+                {
+                    Destroy(c.gameObject);
+                }
+
                 Destroy(gameObject);
-                //return;
             }
         }
         else
         {
-             mr.materials = nonPlaceMat;
+            mr[0].materials = nonPlaceMat;
+            mr[1].materials = nonPlaceMat;
         }
- 
+   if (Input.GetKey(KeyCode.Escape))
+        {
+    
+            Close.Placing = false;
+            
+            Destroy(gameObject);
+        }
     }
 }
