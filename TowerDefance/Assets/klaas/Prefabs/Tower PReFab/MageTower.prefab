@@ -278,7 +278,6 @@ MonoBehaviour:
   towerMsh:
   - {fileID: 2240944769408983325}
   - {fileID: 8955585941541777056}
-  towerMat: []
   fireUpgrade:
   - {fileID: 2100000, guid: 64fe9d3bd8d7c6742892348240847d28, type: 2}
   - {fileID: -876546973899608171, guid: 97ddde0a28a981a4b81e79e1cf74fc9d, type: 3}
@@ -5579,6 +5578,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2851787418860277817}
     m_Modifications:
+    - target: {fileID: 305260104097238881, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_text
+      value: Lightning
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260104592357887, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -1656680797454660470}
+    - target: {fileID: 305260104592357887, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FireUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260104592357887, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerTest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260104716872218, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_text
+      value: Fire
+      objectReference: {fileID: 0}
     - target: {fileID: 305260105423505172, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5693,6 +5717,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pop-up
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -1656680797454660470}
+    - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LightingUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerTest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1394083266207025831, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}

@@ -136,6 +136,7 @@ public class TowerTest : MonoBehaviour
             lightningBolt.enabled = true;
             target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
         }
+
         if (useNormal)
         {
 
@@ -145,6 +146,7 @@ public class TowerTest : MonoBehaviour
             lightningBolt.enabled = false;
             target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
         }
+
         if (useFire)
         {
             FireUpgrade();
@@ -162,7 +164,7 @@ public class TowerTest : MonoBehaviour
         }
         
     }
-    void LightingUpgrade()
+   public void LightingUpgrade()
     {
         useLightning = true;
         useNormal = false;
@@ -170,7 +172,7 @@ public class TowerTest : MonoBehaviour
         towerMsh[1].material = lightingUpgrade[0];
         towerMsh[0].materials = lightingUpgrade;
     }
-    void FireUpgrade()
+   public void FireUpgrade()
     {
         useFire = true;
         useNormal = false;

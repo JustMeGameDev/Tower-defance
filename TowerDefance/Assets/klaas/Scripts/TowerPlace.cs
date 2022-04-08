@@ -23,7 +23,6 @@ public class TowerPlace : MonoBehaviour
 
     void Start()
     {
-       // mr = GetComponentInChildren<MeshRenderer>();
         startMats = mr[0].materials;
         startMats = mr[1].materials;
     }
@@ -33,8 +32,7 @@ public class TowerPlace : MonoBehaviour
         Close = GameObject.FindWithTag("ShopMenu").GetComponent<PopUpZonderCheck>();
     }
     void Update()
-    {
-        
+    {   
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 50000.0f, 1 << 6))
@@ -83,6 +81,7 @@ public class TowerPlace : MonoBehaviour
         {
     
             Close.Placing = false;
+            
             Destroy(gameObject);
         }
     }

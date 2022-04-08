@@ -19,15 +19,9 @@ public class FireBall : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
-        if (dir.magnitude <= distanceThisFrame)
-        {
-           // HitTarget();
-        }
-
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
         transform.LookAt(target);
     }
-
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -36,10 +30,5 @@ public class FireBall : MonoBehaviour
             target.gameObject.GetComponent<EnemyController>().health -= damage;
             Destroy(gameObject);
         }
-    }
-    void HitTarget()
-    {
-        target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
-        Destroy(gameObject);
     }
 }
