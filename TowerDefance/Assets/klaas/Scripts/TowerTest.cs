@@ -25,6 +25,7 @@ public class TowerTest : MonoBehaviour
     public Transform firePoint = null;
     float turnSpeed = 10;
     string enemyTag = "Enemy";
+    public GameObject cannonBall = null;
 
     [Header("Mage")]
     public LightningBoltScript lightningBolt = null;
@@ -35,7 +36,7 @@ public class TowerTest : MonoBehaviour
     public bool useLightning = false;
     public bool useFire = false;
     public bool useMage;
-    float fireDelay = 1f;
+    public float fireDelay = 1f;
 
     [Header("Updrage")]
     public GameObject fireRotation;
@@ -72,10 +73,10 @@ public class TowerTest : MonoBehaviour
         if (useMage)
         {
             Laser();
-        }/* else
+        }else
         {
-            Shoot Function 
-        } */
+            CannonShoot();
+        }
     }
 
     void SelectTarget()
@@ -179,5 +180,17 @@ public class TowerTest : MonoBehaviour
         fireRotation.SetActive(true);
         towerMsh[1].material = fireUpgrade[0];
         towerMsh[0].materials = fireUpgrade;
+    }
+
+    void CannonShoot()
+    {
+        fireDelay -= Time.deltaTime;
+
+        if (fireDelay <= 0)
+        {
+            GameObject projCannonBall = Instantiate(cannonBall, firePoint.position, Quaternion.identity);
+            projCannonBall.GetComponent<Bullet>().target = target;
+            fireDelay = 1f;
+        }
     }
 }
