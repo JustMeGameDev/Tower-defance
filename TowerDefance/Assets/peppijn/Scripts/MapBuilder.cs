@@ -18,10 +18,12 @@ public class MapBuilder : MonoBehaviour
     public PathTile tile;
     public Transform[] transformTemp;
     public List<Transform> transformPoints;
+    public List<Transform> transformPointsFinal;
 
     [Header("Basic Map Parameters")]
     public int pathLength;
     public int mapSize;
+    public LayerMask layerMask;
 
     [Header("Seed Generator")]
     public string stringSeed = "seed string";
@@ -33,17 +35,29 @@ public class MapBuilder : MonoBehaviour
     public NavMeshSurface navHuman;
     public NavMeshSurface navOgre;
 
+    public float testTimerValue;
+    public float testTimer;
+    
 
 
     void Awake()
     {
-
         GenarateSeed();
         GenarateWorld();
     }
 
 
-
+    private void Update()
+    {
+        if (testTimer > 0)
+        {
+            testTimer -= Time.deltaTime;
+        }
+        if (testTimer < 0)
+        {
+            testTimer = 0;
+        }
+    }
 
 
     private void GenarateSeed()
@@ -63,36 +77,32 @@ public class MapBuilder : MonoBehaviour
 
     private void GenarateWorld()
     {
-            activeTile = Instantiate(pathTile, transform);
-            Transform spawntransform = activeTile.transform;
-            spawntransform.position = new Vector3(spawntransform.position.x, spawntransform.position.y + 5, spawntransform.position.z);
-            Instantiate(EnemySpawn, spawntransform);
+            activeTile = Instantiate(EnemySpawn, transform);
+
 
         for (int i = 0; i < pathLength; i++)
         {
-            tile = activeTile.GetComponent<PathTile>();
-            point = CheckBuild();
-            PlaceTile(point, pathTile);
-
+                point = CheckBuild();
+                PlaceTile(point, pathTile);
+                testTimer = testTimerValue;
         }
         point = CheckBuild();
         PlaceTile(point, EnemyTarget);
         for (int i = 0; i < mapSize; i++)
         {
             FillWorld();
-
-            navHuman.AddData();
-            navOgre.AddData();
-
-            navHuman.BuildNavMesh();
-            navOgre.BuildNavMesh();
-
         }
+        navHuman.AddData();
+        navOgre.AddData();
+
+        navHuman.BuildNavMesh();
+        navOgre.BuildNavMesh();
     }
 
     private Transform CheckBuild()
     {
         transformPoints = new List<Transform>();
+        transformPointsFinal = new List<Transform>();
         transformTemp = activeTile.GetComponentsInChildren<Transform>();
         for (int i = 0; i < transformTemp.Length; i++)
         {
@@ -101,19 +111,17 @@ public class MapBuilder : MonoBehaviour
                 transformPoints.Add(transformTemp[i]);
             }
         }
-        for (int i = 0; i < transformPoints.Count; i++)
+        
+        foreach (Transform i in transformPoints)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transformPoints[i].position, 5.5f, 1 << 7);
-
-            if (hitColliders.Length > 1)
+            Collider[] hitColliders = Physics.OverlapSphere(i.position, 7f, layerMask);
+            if (hitColliders.Length <= 1)
             {
-
-                transformPoints.RemoveAt(i);
+                transformPointsFinal.Add(i);
             }
         }
-        int rd = Random.Range(0,transformPoints.Count);
-        Debug.Log(rd);
-        placePoint = transformPoints[rd];
+        int rd = Random.Range(0,transformPointsFinal.Count);
+        placePoint = transformPointsFinal[rd];
         
         
         return placePoint;

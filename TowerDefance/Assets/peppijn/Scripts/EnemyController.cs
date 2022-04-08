@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     public Transform target;
     public GameMaster gameMaster;
 
-    [Header("EnemyValu's")]
+    [Header("EnemyValues")]
     public float health;
     public float maxHealth;
     public int baseValue;
@@ -62,10 +62,11 @@ public class EnemyController : MonoBehaviour
     private void Die(bool ReachedEnd)
     {
         gameMaster.enemyWave.Remove(gameObject);
-        Destroy(gameObject);
         if (!ReachedEnd)
         {
             gameMaster.money = gameMaster.money + baseValue;
         }
+        Destroy(gameObject);
+        return;
     }
 }
