@@ -115,8 +115,6 @@ public class MapBuilder : MonoBehaviour
         foreach (Transform i in transformPoints)
         {
             Collider[] hitColliders = Physics.OverlapSphere(i.position, 7f, layerMask);
-            Debug.Log(i.name);
-            Debug.Log(hitColliders.Length);
             if (hitColliders.Length <= 1)
             {
                 transformPointsFinal.Add(i);

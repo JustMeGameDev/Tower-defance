@@ -18,7 +18,7 @@ public class GameMaster : MonoBehaviour
     public int difficulty;
     public int currentWave;
     public List<GameObject> enemyWave;
-    public int waveSize;
+    public int waveSize = 1;
     public int spawnTimeValue;
     private float spawnTime = 0f;
     public TextMeshProUGUI WaveCounter;
@@ -56,7 +56,6 @@ public class GameMaster : MonoBehaviour
         healthbar.minValue = 0;
         healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
         isAlive = true;
-
     }
 
     void Update()
