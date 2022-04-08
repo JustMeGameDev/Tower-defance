@@ -208,11 +208,27 @@ MonoBehaviour:
   range: 15
   damage: 10
   attackSpeed: 10
+  fireDamage: 0
+  burnDamage: 0
   gameMaster: {fileID: 0}
   rotator: {fileID: 2336372346730696254}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 2336372347415852015}
+  cannonBall: {fileID: 313608266486151592, guid: 2e6b7dc0278cc7544a8bf52a21792987,
+    type: 3}
+  lightningBolt: {fileID: 0}
+  fireParticleSystem: {fileID: 0}
   lineRenderer: {fileID: 0}
-  useLaser: 0
+  fireBall: {fileID: 0}
+  useNormal: 0
+  useLightning: 0
+  useFire: 0
+  useMage: 0
+  fireDelay: 1
+  fireRotation: {fileID: 0}
+  lightingFX: {fileID: 0}
+  towerMsh: []
+  fireUpgrade: []
+  lightingUpgrade: []
 --- !u!65 &5224493230730295084
 BoxCollider:
   m_ObjectHideFlags: 0
