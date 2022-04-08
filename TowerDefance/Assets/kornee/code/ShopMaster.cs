@@ -8,12 +8,15 @@ public class ShopMaster : MonoBehaviour
     public GameObject Mage_blueprint;
     public GameObject Morter_blueprint;
     public GameObject Cannon_blueprint;
+    public GameObject Balista_blueprint;
     public float priceMage = 45f;
     public float priceMorter = 65f;
     public float priceCannon = 25f;
+    public float priceBalista = 50f;
     public TextMeshProUGUI CannonPrice;
     public TextMeshProUGUI MorterPrice;
     public TextMeshProUGUI MagePrice;
+    public TextMeshProUGUI BalisPrice;
     public PopUpZonderCheck Close;
     public GameMaster gameMaster;
     public TextMeshProUGUI Message;
@@ -25,6 +28,7 @@ public class ShopMaster : MonoBehaviour
         CannonPrice.text = "$ " + priceCannon;
         MorterPrice.text = "$ " + MorterPrice;
         MagePrice.text = "$ " + priceMage;
+        BalisPrice.text = "$ " + priceBalista;
 
 
     }
@@ -75,6 +79,23 @@ public class ShopMaster : MonoBehaviour
             Message.text = "Not Enough Funds";
         }
     }
+    public void spawn_Balsita_blueprint()
+    {
+        if (gameMaster.money >= priceBalista)
+        {
+            Instantiate(Balista_blueprint);
+            Close.IsOpen = false;
+            Close.canvas.enabled = false;
+            Close.Placing = true;
+            gameMaster.money -= priceBalista;
+
+        }
+        else
+        {
+            Message.text = "Not Enough Funds";
+        }
+    }
+
 
 
 }

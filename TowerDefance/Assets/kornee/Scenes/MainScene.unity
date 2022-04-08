@@ -281,6 +281,7 @@ MonoBehaviour:
   panSpeed: 20
   panBorderThickness: 10
   panLimit: {x: 20, y: 50}
+  panLimitNegative: {x: 20, y: 50}
   scrollSpeed: 20
   minY: 20
   maxY: 120
@@ -900,6 +901,11 @@ PrefabInstance:
         type: 3}
       propertyPath: currentWave
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
+        type: 3}
+      propertyPath: spawnTimeValue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
         type: 3}
@@ -1687,11 +1693,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2815073932140486920, guid: 29123bd7613c82a49a984b4f21b9c21c,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2815073932237007517, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1820,14 +1821,8 @@ PrefabInstance:
     - target: {fileID: 2815073933936092340, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2373.6995
+      value: -46743.05
       objectReference: {fileID: 0}
-    - target: {fileID: 4870080142580125481, guid: 29123bd7613c82a49a984b4f21b9c21c,
-        type: 3}
-      propertyPath: Mage_blueprint
-      value: 
-      objectReference: {fileID: 6202045098474668463, guid: ad28750a0edc46b43af685481ec677ba,
-        type: 3}
     - target: {fileID: 4870080142580125482, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
       propertyPath: m_RootOrder

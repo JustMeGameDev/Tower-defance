@@ -264,6 +264,7 @@ MonoBehaviour:
   gameMaster: {fileID: 0}
   rotator: {fileID: 6834914860576591932}
   firePoint: {fileID: 4712158325359069770}
+  cannonBall: {fileID: 0}
   lightningBolt: {fileID: 3788107827490540287}
   fireParticleSystem: {fileID: 0}
   lineRenderer: {fileID: 607075905559204429}
@@ -273,6 +274,7 @@ MonoBehaviour:
   useLightning: 0
   useFire: 0
   useMage: 1
+  fireDelay: 1
   fireRotation: {fileID: 7061346948427697583}
   lightingFX: {fileID: 4692807813502227484}
   towerMsh:
@@ -282,7 +284,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 64fe9d3bd8d7c6742892348240847d28, type: 2}
   - {fileID: -876546973899608171, guid: 97ddde0a28a981a4b81e79e1cf74fc9d, type: 3}
   - {fileID: 4874126678125670354, guid: 97ddde0a28a981a4b81e79e1cf74fc9d, type: 3}
-  - {fileID: -6922793697723135513, guid: 97ddde0a28a981a4b81e79e1cf74fc9d, type: 3}
+  - {fileID: 2100000, guid: 64fe9d3bd8d7c6742892348240847d28, type: 2}
   - {fileID: 2100000, guid: 64fe9d3bd8d7c6742892348240847d28, type: 2}
   lightingUpgrade:
   - {fileID: 2100000, guid: 9713fb89004ea4c4db9322745b221833, type: 2}
