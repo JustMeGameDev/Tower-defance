@@ -75,7 +75,7 @@ public class GameMaster : MonoBehaviour
         {
             moneyText.text = Mathf.Round(money) + "";
         }
-        //healthbar.value = health / Time.deltaTime;
+        healthbar.value = PlayerHealth; // Time.deltaTime;
         health.text = PlayerHealth + " / " + PlayerMaxHealth;
         if (PlayerHealth <= 0)
         {
