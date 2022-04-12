@@ -12,7 +12,6 @@ public class SettingsMenu : MonoBehaviour {
     public void ExitMenu ()
     {
         Debug.Log("pressed");
-
     }
 
 }
