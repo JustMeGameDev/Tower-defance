@@ -45,9 +45,10 @@ public class EnemyController : MonoBehaviour
     {
         if (death)
         {
-            navAgent.isStopped = true;
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            navAgent.isStopped = true;
 
         }
         else if (transform.position != target.position )
@@ -100,4 +101,9 @@ public class EnemyController : MonoBehaviour
         Destroy(gameObject);
         return;
     }
+
+    //private void Empty()
+    //{
+    //    gameObject
+    //}
 }

@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 4671604298209690849}
   - component: {fileID: 4753431942002055909}
   - component: {fileID: -7318982785765418895}
+  - component: {fileID: 3763053773936978650}
   m_Layer: 0
   m_Name: Boximon Cyclopes
   m_TagString: Enemy
@@ -199,7 +200,7 @@ MonoBehaviour:
   maxHealth: 250
   baseValue: 24
   Damage: 15
-  abilety: 0
+  death: 0
   animetion: {fileID: -7318982785765418895}
 --- !u!195 &7040558322189476530
 NavMeshAgent:
@@ -273,6 +274,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &3763053773936978650
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414049513661073067}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.81
+  m_Height: 1.58
+  m_Direction: 1
+  m_Center: {x: -0.0022982955, y: 0.6490944, z: 0}
 --- !u!1 &1414049513661073069
 GameObject:
   m_ObjectHideFlags: 0

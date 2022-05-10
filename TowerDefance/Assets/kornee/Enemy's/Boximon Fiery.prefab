@@ -264,7 +264,8 @@ GameObject:
   - component: {fileID: 4801125886166915067}
   - component: {fileID: 4843490623562097995}
   - component: {fileID: 2634722325273974353}
-  - component: {fileID: 7768627046140015156}
+  - component: {fileID: -3351007770512956107}
+  - component: {fileID: 4592662057632396879}
   m_Layer: 0
   m_Name: Boximon Fiery
   m_TagString: Enemy
@@ -341,7 +342,7 @@ MonoBehaviour:
   maxHealth: 100
   baseValue: 12
   Damage: 5
-  abilety: 0
+  death: 0
   animetion: {fileID: 4843490623562097995}
 --- !u!95 &4843490623562097995
 Animator:
@@ -377,7 +378,7 @@ CapsuleCollider:
   m_Height: 1.7706414
   m_Direction: 1
   m_Center: {x: -0.0063835084, y: 0.8977608, z: 0.028725684}
---- !u!54 &7768627046140015156
+--- !u!54 &-3351007770512956107
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -391,8 +392,22 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!136 &4592662057632396879
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6198154284575115056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.49
+  m_Height: 1.96
+  m_Direction: 1
+  m_Center: {x: -0.0063835084, y: 0.8977608, z: 0.028725684}
 --- !u!1 &6198154284575115058
 GameObject:
   m_ObjectHideFlags: 0
