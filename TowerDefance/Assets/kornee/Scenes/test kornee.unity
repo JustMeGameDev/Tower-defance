@@ -241,6 +241,56 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &239379867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 239379869}
+  - component: {fileID: 239379868}
+  m_Layer: 0
+  m_Name: Vault
+  m_TagString: Vault
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &239379868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239379867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c373e3782464c0428645f9c2c8e27f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contractSystem: {fileID: 0}
+  mapBuilder: {fileID: 0}
+  shopMaster: {fileID: 0}
+  gameMaster: {fileID: 0}
+  enemyController: {fileID: 0}
+  contractseed: 0
+--- !u!4 &239379869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239379867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -39.70376, y: -5.4047985, z: 37.08031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277548457
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,9 +375,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1468567740}
-        m_TargetAssemblyTypeName: ButtonAction, Assembly-CSharp
-        m_MethodName: SceneUp
+      - m_Target: {fileID: 1706598166}
+        m_TargetAssemblyTypeName: ContractSystem, Assembly-CSharp
+        m_MethodName: Contract1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1235,6 +1285,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675395216}
   m_CullTransparentMesh: 1
+--- !u!1 &1706598164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706598165}
+  - component: {fileID: 1706598166}
+  m_Layer: 0
+  m_Name: ContractSytem
+  m_TagString: ContractSystem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1706598165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706598164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -39.70376, y: -5.4047985, z: 37.08031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1706598166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706598164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e478b0fd33f9c3549b07b5a639a31429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamemaster: {fileID: 0}
+  mapbuilder: {fileID: 0}
+  vault: {fileID: 0}
+  seed1: 0
+  seed2: 0
+  seed3: 0
+  seed4: 0
+  ContractTitle1: {fileID: 0}
+  ContractTitle2: {fileID: 0}
+  ContractTitle3: {fileID: 0}
+  ContractTitle4: {fileID: 0}
+  ContractText1: {fileID: 0}
+  ContractText2: {fileID: 0}
+  ContractText3: {fileID: 0}
+  ContractText4: {fileID: 0}
+  contractseed: 0
 --- !u!1 &1800422154
 GameObject:
   m_ObjectHideFlags: 0

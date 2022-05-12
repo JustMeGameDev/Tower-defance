@@ -27,9 +27,11 @@ public class ShopMaster : MonoBehaviour
     public PopUpZonderCheck Close;
     public GameMaster gameMaster;
     public TextMeshProUGUI Message;
+    public Vault vault;
 
     private void Awake()
     {
+        vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
         Close = GameObject.FindWithTag("ShopMenu").GetComponent<PopUpZonderCheck>();
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
         CannonPrice.text = "$ " + priceCannon;
