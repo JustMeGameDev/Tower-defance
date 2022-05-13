@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 5598000521479209393}
   - component: {fileID: 4270923216867808394}
   - component: {fileID: 1329867600644329102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ballista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
