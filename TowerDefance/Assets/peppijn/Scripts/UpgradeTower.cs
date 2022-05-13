@@ -7,6 +7,8 @@ public class UpgradeTower : MonoBehaviour
 {
     public TowerTest towerTest;
     public GameMaster gameMaster;
+    public float specialUpgradeOne;
+    public float specialUpgradeTwo;
     public float costMultiplier;
     public float cost;
     public int level;

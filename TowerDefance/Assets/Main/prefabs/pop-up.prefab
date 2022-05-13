@@ -1002,8 +1002,8 @@ MonoBehaviour:
   cost: 0
   level: 0
   maxLevel: 0
-  levelText: {fileID: 0}
-  CostText: {fileID: 0}
+  levelText: {fileID: 4982836392110483376}
+  CostText: {fileID: 81467226729392590}
 --- !u!114 &305260105039807229
 MonoBehaviour:
   m_ObjectHideFlags: 0

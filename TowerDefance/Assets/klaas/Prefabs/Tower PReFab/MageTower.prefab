@@ -262,6 +262,7 @@ MonoBehaviour:
   fireDamage: 0
   burnDamage: 0
   gameMaster: {fileID: 0}
+  upgradeTower: {fileID: 2832677962586994317}
   rotator: {fileID: 6834914860576591932}
   firePoint: {fileID: 4712158325359069770}
   cannonBall: {fileID: 0}
@@ -5605,6 +5606,21 @@ PrefabInstance:
       propertyPath: m_text
       value: Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 305260105039807168, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2832677962586994317}
+    - target: {fileID: 305260105039807168, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Upgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105039807168, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeTower, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 305260105423505172, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5760,6 +5776,46 @@ PrefabInstance:
       propertyPath: costMultiplier
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: cost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: CostText
+      value: 
+      objectReference: {fileID: 1825728175608974599}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: maxLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: levelText
+      value: 
+      objectReference: {fileID: 6724352896029197177}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: towerTest
+      value: 
+      objectReference: {fileID: -1656680797454660470}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: costMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: specialUpgradeOne
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: specialUpgradeTwo
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
 --- !u!114 &1825728175608974599 stripped
@@ -5786,3 +5842,27 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 1762917467146085577}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2832677962586994317 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762917467146085577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148c7257656e28440acb7abe93d8e83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6724352896029197177 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4982836392110483376, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762917467146085577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
