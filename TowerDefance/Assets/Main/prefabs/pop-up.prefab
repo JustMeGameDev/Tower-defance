@@ -998,12 +998,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerTest: {fileID: 0}
   gameMaster: {fileID: 0}
+  specialUpgradeOne: 0
+  specialUpgradeTwo: 0
   costMultiplier: 0
   cost: 0
   level: 0
   maxLevel: 0
   levelText: {fileID: 4982836392110483376}
   CostText: {fileID: 81467226729392590}
+  upgradeOne: {fileID: 305260105482804511}
+  upgradeTwo: {fileID: 305260104592357887}
 --- !u!114 &305260105039807229
 MonoBehaviour:
   m_ObjectHideFlags: 0

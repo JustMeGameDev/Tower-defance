@@ -177,9 +177,15 @@ public class TowerTest : MonoBehaviour
         {
             useLightning = true;
             useNormal = false;
+
             lightingFX.SetActive(true);
+
             towerMsh[1].material = lightingUpgrade[0];
             towerMsh[0].materials = lightingUpgrade;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
             gameMaster.money -= upgradeTower.specialUpgradeOne;
             return;
         }
@@ -190,9 +196,15 @@ public class TowerTest : MonoBehaviour
         {
             useFire = true;
             useNormal = false;
+
             fireRotation.SetActive(true);
+
             towerMsh[1].material = fireUpgrade[0];
             towerMsh[0].materials = fireUpgrade;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
             gameMaster.money -= upgradeTower.specialUpgradeTwo;
             return;
         }
