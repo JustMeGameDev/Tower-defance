@@ -64,7 +64,7 @@ public class MapBuilder : MonoBehaviour
     {
         if (useRandomSeed)
         {
-            seed = Random.Range(0, 99999);
+            seed = Random.Range(0, 999999999);
         }
         if (useStringSeed)
         {
@@ -82,12 +82,19 @@ public class MapBuilder : MonoBehaviour
 
         for (int i = 0; i < pathLength; i++)
         {
-                point = CheckBuild();
+                point = CheckBuild(false);
                 PlaceTile(point, pathTile);
-                testTimer = testTimerValue;
         }
-        point = CheckBuild();
+        
+        
+        
+        
+        point = CheckBuild(true);
         PlaceTile(point, EnemyTarget);
+        
+        
+        
+        
         for (int i = 0; i < mapSize; i++)
         {
             FillWorld();
@@ -99,38 +106,46 @@ public class MapBuilder : MonoBehaviour
         navOgre.BuildNavMesh();
     }
 
-    private Transform CheckBuild()
+    private Transform CheckBuild(bool endPoint)
     {
-        transformPoints = new List<Transform>();
-        transformPointsFinal = new List<Transform>();
-        transformTemp = activeTile.GetComponentsInChildren<Transform>();
-        for (int i = 0; i < transformTemp.Length; i++)
+        if (!endPoint)
         {
-            if (transformTemp[i].tag == "point")
+            transformPoints = new List<Transform>();
+            transformPointsFinal = new List<Transform>();
+            transformTemp = activeTile.GetComponentsInChildren<Transform>();
+            for (int i = 0; i < transformTemp.Length; i++)
             {
-                transformPoints.Add(transformTemp[i]);
+                if (transformTemp[i].tag == "point")
+                {
+                    transformPoints.Add(transformTemp[i]);
+                }
+            }
+
+            foreach (Transform i in transformPoints)
+            {
+                Collider[] hitColliders = Physics.OverlapSphere(i.position, 7f, layerMask);
+                if (hitColliders.Length <= 1)
+                {
+                    transformPointsFinal.Add(i);
+                }
             }
         }
-        
-        foreach (Transform i in transformPoints)
+        if (endPoint)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(i.position, 7f, layerMask);
-            if (hitColliders.Length <= 1)
-            {
-                transformPointsFinal.Add(i);
-            }
+
         }
-        int rd = Random.Range(0,transformPointsFinal.Count);
-        placePoint = transformPointsFinal[rd];
-        
-        
-        return placePoint;
+
+            int rd = Random.Range(0, transformPointsFinal.Count);
+            placePoint = transformPointsFinal[rd];
+
+
+            return placePoint;
+
     }
 
     private void PlaceTile(Transform Point, GameObject tile)
     {
         activeTile = Instantiate(tile, placePoint.position, placePoint.rotation);
-
     }
 
     private void FillWorld()

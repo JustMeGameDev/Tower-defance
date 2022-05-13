@@ -280,8 +280,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panSpeed: 20
   panBorderThickness: 10
-  panLimit: {x: 100, y: 100}
-  panLimitNegative: {x: 100, y: 100}
+  panLimit: {x: 1000, y: 1000}
+  panLimitNegative: {x: 1000, y: 1000}
   scrollSpeed: 20
   minY: 20
   maxY: 120
@@ -1331,7 +1331,7 @@ PrefabInstance:
     - target: {fileID: 2815073933936092340, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -12573.541
+      value: -4859.649
       objectReference: {fileID: 0}
     - target: {fileID: 4870080142580125482, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
