@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UpgradeTower : MonoBehaviour
 {
+    [Header("Scripts")]
     public TowerTest towerTest;
     public GameMaster gameMaster;
+    [Header("Floats")]
+    public float specialUpgradeOne;
+    public float specialUpgradeTwo;
     public float costMultiplier;
     public float cost;
+    [Header("Ints")]
     public int level;
     public int maxLevel;
+    [Header("UI")]
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI CostText;
+    public Button upgradeOne;
+    public Button upgradeTwo;
 
 
     void Awake()

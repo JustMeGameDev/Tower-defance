@@ -51,7 +51,7 @@ public class TowerPlace : MonoBehaviour
             mr[1].materials = nonPlaceMat;
         }
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f, 1 << 8);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f, layerMask);
         Collider[] EnvCollider = Physics.OverlapSphere(transform.position, 4f, 1 << 9);
        if (hitColliders.Length < 1)
            {

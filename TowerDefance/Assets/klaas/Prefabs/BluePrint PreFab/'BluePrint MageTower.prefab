@@ -147,7 +147,7 @@ MonoBehaviour:
   Close: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
 --- !u!1 &7073246392658360732
 GameObject:
   m_ObjectHideFlags: 0

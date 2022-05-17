@@ -18,7 +18,7 @@ public class TowerTest : MonoBehaviour
 
     [Header("GameMaster")]
     public GameMaster gameMaster;
-
+    public UpgradeTower upgradeTower;
     [Header("Aim Setup")]
     [SerializeField]
     Transform rotator = null;
@@ -44,9 +44,15 @@ public class TowerTest : MonoBehaviour
     public MeshRenderer[] towerMsh;
     public Material[] fireUpgrade;
     public Material[] lightingUpgrade;
-    
+
+    private void Awake()
+    {
+        gameMaster = GameObject.Find("GameMaster").GetComponent<GameMaster>();
+
+    }
     void Start()
     {
+
         //towerMat = towerMsh[0].materials;
         InvokeRepeating("SelectTarget", 0, 1f);
     }
@@ -167,19 +173,41 @@ public class TowerTest : MonoBehaviour
     }
    public void LightingUpgrade()
     {
-        useLightning = true;
-        useNormal = false;
-        lightingFX.SetActive(true);
-        towerMsh[1].material = lightingUpgrade[0];
-        towerMsh[0].materials = lightingUpgrade;
+        if (gameMaster.money > upgradeTower.specialUpgradeOne)
+        {
+            useLightning = true;
+            useNormal = false;
+
+            lightingFX.SetActive(true);
+
+            towerMsh[1].material = lightingUpgrade[0];
+            towerMsh[0].materials = lightingUpgrade;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
+            gameMaster.money -= upgradeTower.specialUpgradeOne;
+            return;
+        }
     }
    public void FireUpgrade()
     {
-        useFire = true;
-        useNormal = false;
-        fireRotation.SetActive(true);
-        towerMsh[1].material = fireUpgrade[0];
-        towerMsh[0].materials = fireUpgrade;
+        if (gameMaster.money > upgradeTower.specialUpgradeTwo)
+        {
+            useFire = true;
+            useNormal = false;
+
+            fireRotation.SetActive(true);
+
+            towerMsh[1].material = fireUpgrade[0];
+            towerMsh[0].materials = fireUpgrade;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
+            gameMaster.money -= upgradeTower.specialUpgradeTwo;
+            return;
+        }
     }
 
     void CannonShoot()
