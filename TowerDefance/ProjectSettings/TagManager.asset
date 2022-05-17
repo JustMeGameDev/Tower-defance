@@ -18,6 +18,7 @@ TagManager:
   - ContractSystem
   - Vault
   - Mortar
+  - ShopMaster
   layers:
   - Default
   - TransparentFX

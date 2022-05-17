@@ -717,12 +717,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c373e3782464c0428645f9c2c8e27f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractSystem: {fileID: 0}
-  mapBuilder: {fileID: 0}
-  shopMaster: {fileID: 0}
-  gameMaster: {fileID: 0}
-  enemyController: {fileID: 0}
-  contractseed: 0
 --- !u!1 &1465955265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,7 +1402,7 @@ PrefabInstance:
     - target: {fileID: 2815073933936092340, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3778.2114
+      value: -8170.598
       objectReference: {fileID: 0}
     - target: {fileID: 4870080142580125482, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
@@ -1468,6 +1462,11 @@ PrefabInstance:
     - target: {fileID: 4870080142580125483, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
       propertyPath: m_Name
+      value: ShopMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870080142580125483, guid: 29123bd7613c82a49a984b4f21b9c21c,
+        type: 3}
+      propertyPath: m_TagString
       value: ShopMaster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
