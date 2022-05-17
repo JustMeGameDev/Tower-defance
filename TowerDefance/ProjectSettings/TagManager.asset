@@ -12,6 +12,11 @@ TagManager:
   - TowerPlace
   - Healthbar
   - Environment
+  - point
+  - spawnPoint
+  - MapBuilder
+  - ContractSystem
+  - Vault
   layers:
   - Default
   - TransparentFX

@@ -14,12 +14,19 @@ public class EnemyController : MonoBehaviour
     public float maxHealth;
     public int baseValue;
     public int Damage;
+    public bool death = false;
+
+    [Header("Animation")]
+    public Animator animetion;
+    
+
     
 
     void Awake()
     {
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
         health = maxHealth;
+        
 
     }
 
@@ -36,27 +43,51 @@ public class EnemyController : MonoBehaviour
     }
     private void MoveToTarget()
     {
-        if (transform.position != target.position)
+        if (death)
+        {
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            navAgent.isStopped = true;
+
+        }
+        else if (transform.position != target.position )
         {
             navAgent.SetDestination(target.position);
+            animetion.SetBool("walking", true);
         }
     }
 
+    IEnumerator TargetDead()
+    {
+        yield return new WaitForSeconds(0.7f);
+        Die(true);
+    }
+    IEnumerator Dead()
+    {
+        yield return new WaitForSeconds(2f);
+        Die(false);
+    }
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "TargetEnd")
         {
             gameMaster.PlayerHealth -= Damage;
-            Die(true);
+            animetion.SetBool("attack", true);
+            StartCoroutine(TargetDead());
+
         }
     }
 
     private void Health()
     {
-        if(health <= 0)
+        if(health <= 0 )
         {
-            Die(false);
+            death = true;
+            animetion.SetBool("die", true);
+            StartCoroutine(Dead());
         }
+      
     }
 
     private void Die(bool ReachedEnd)
@@ -65,8 +96,14 @@ public class EnemyController : MonoBehaviour
         if (!ReachedEnd)
         {
             gameMaster.money = gameMaster.money + baseValue;
+            
         }
         Destroy(gameObject);
         return;
     }
+
+    //private void Empty()
+    //{
+    //    gameObject
+    //}
 }

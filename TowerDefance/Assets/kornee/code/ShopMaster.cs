@@ -5,24 +5,33 @@ using TMPro;
 
 public class ShopMaster : MonoBehaviour
 {
+    [Header("blueprints")]
     public GameObject Mage_blueprint;
     public GameObject Morter_blueprint;
     public GameObject Cannon_blueprint;
     public GameObject Balista_blueprint;
+
+    [Header("price definition")]
     public float priceMage = 45f;
     public float priceMorter = 65f;
     public float priceCannon = 25f;
     public float priceBalista = 50f;
+
+    [Header("price text")]
     public TextMeshProUGUI CannonPrice;
     public TextMeshProUGUI MorterPrice;
     public TextMeshProUGUI MagePrice;
     public TextMeshProUGUI BalisPrice;
+
+    [Header("random")]
     public PopUpZonderCheck Close;
     public GameMaster gameMaster;
     public TextMeshProUGUI Message;
+    public Vault vault;
 
     private void Awake()
     {
+        vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
         Close = GameObject.FindWithTag("ShopMenu").GetComponent<PopUpZonderCheck>();
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
         CannonPrice.text = "$ " + priceCannon;

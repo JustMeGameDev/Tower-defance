@@ -23,12 +23,13 @@ public class FireBall : MonoBehaviour
         transform.LookAt(target);
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
             target.gameObject.GetComponent<EnemyController>().health -= damage;
             Destroy(gameObject);
         }
     }
 }
+    
