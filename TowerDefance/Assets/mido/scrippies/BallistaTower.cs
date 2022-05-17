@@ -72,6 +72,7 @@ public class BallistaTower : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(rotator.rotation, lookRotation, turnSpeed * Time.deltaTime).eulerAngles;
         rotator.rotation = Quaternion.Euler(0, rotation.y, 0);
+
     }
 
     void Shoot()

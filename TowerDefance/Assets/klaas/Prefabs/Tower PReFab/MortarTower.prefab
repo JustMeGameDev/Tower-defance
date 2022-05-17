@@ -190,10 +190,10 @@ GameObject:
   - component: {fileID: 1363132213650141751}
   - component: {fileID: 3168683882119578219}
   - component: {fileID: 800757736356598837}
-  - component: {fileID: 715551609060711668}
+  - component: {fileID: 7172874884829763010}
   m_Layer: 0
   m_Name: MortarTower
-  m_TagString: Untagged
+  m_TagString: Mortar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 8489779869053861433}
   IsOpen: 0
---- !u!114 &715551609060711668
+--- !u!114 &7172874884829763010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -282,8 +282,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cdea401e1af4784ab4c58f75eb550b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotsPerSecond: 1
-  mortar: {fileID: 0}
+  LaunchAngle: 22.2
+  waitTime: 0
+  Bullet: {fileID: 1529267469363363071, guid: dad7ec26c22a879459a9076f5267abf2, type: 3}
+  Canon: {fileID: 3718894554332867688}
+  Mark: {fileID: 0}
 --- !u!1001 &8209289978856503598
 PrefabInstance:
   m_ObjectHideFlags: 0

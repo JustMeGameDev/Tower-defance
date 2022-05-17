@@ -12,6 +12,9 @@ TagManager:
   - TowerPlace
   - Healthbar
   - Environment
+  - point
+  - spawnPoint
+  - Mortar
   layers:
   - Default
   - TransparentFX
