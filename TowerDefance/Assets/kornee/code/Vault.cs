@@ -36,7 +36,7 @@ public class Vault : MonoBehaviour
     public void Update()
     {
         currentseed = PlayerPrefs.GetInt("SelectedSeed");
-        if (contractSystem.contractseed)
+        if (contractSystem.contractSeed)
         {
             contractseed = true;
         }

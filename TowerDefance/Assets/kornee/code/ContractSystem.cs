@@ -20,18 +20,18 @@ public class ContractSystem : MonoBehaviour
     
 
     [Header("contract text generator")]
-    public TextMeshProUGUI ContractTitle1;
-    public TextMeshProUGUI ContractTitle2;
-    public TextMeshProUGUI ContractTitle3;
-    public TextMeshProUGUI ContractTitle4;
+    public TextMeshProUGUI contractTitle1;
+    public TextMeshProUGUI contractTitle2;
+    public TextMeshProUGUI contractTitle3;
+    public TextMeshProUGUI contractTitle4;
 
-    public TextMeshProUGUI ContractText1;
-    public TextMeshProUGUI ContractText2;
-    public TextMeshProUGUI ContractText3;
-    public TextMeshProUGUI ContractText4;
+    public TextMeshProUGUI contractText1;
+    public TextMeshProUGUI contractText2;
+    public TextMeshProUGUI contractText3;
+    public TextMeshProUGUI contractText4;
 
     [Header("needs")]
-    public bool contractseed;
+    public bool contractSeed;
 
     
     void awake()
@@ -55,32 +55,25 @@ public class ContractSystem : MonoBehaviour
 
     public void Contract1()
     {
-        contractseed = true;
+        contractSeed = true;
         PlayerPrefs.DeleteKey("SelectedSeed");
         PlayerPrefs.SetInt("SelectedSeed", seed1);
         SceneManager.LoadScene(+1);
     }
     public void Contract2()
     {
-        contractseed = true;
+        contractSeed = true;
         PlayerPrefs.DeleteKey("SelectedSeed");
         PlayerPrefs.SetInt("SelectedSeed", seed2);
         SceneManager.LoadScene(+1);
     }
     public void Contract3()
     {
-        contractseed = true;
+        contractSeed = true;
         PlayerPrefs.DeleteKey("SelectedSeed");
         PlayerPrefs.SetInt("SelectedSeed", seed3);
         SceneManager.LoadScene(+1);
     }
-    public void Contract4()
-    {
-        contractseed = true;
-        PlayerPrefs.DeleteKey("SelectedSeed");
-        PlayerPrefs.SetInt("SelectedSeed", seed4);
-        SceneManager.LoadScene(+1);
-    }
-
+  
 
 }
