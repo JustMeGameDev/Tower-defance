@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     public int baseValue;
     public int Damage;
     public bool death = false;
+    public bool navStopped = false;
 
     [Header("Animation")]
     public Animator animetion;
@@ -45,10 +46,14 @@ public class EnemyController : MonoBehaviour
     {
         if (death)
         {
+            if (!navStopped) {
+                navAgent.isStopped = true;
+                navStopped = true;
+                    }
+            
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
-            navAgent.isStopped = true;
 
         }
         else if (transform.position != target.position )

@@ -43,20 +43,20 @@ public class MapBuilder : MonoBehaviour
 
     void Awake()
     {
-        vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
-        if (!vault.contractseed)
-        {
-            GenarateSeed();
-            GenarateWorld();
+        //vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
+        //if (!vault.contractseed)
+        //{
+        //    GenarateSeed();
+        //    GenarateWorld();
 
-        }
-        else
-        {
+        //}
+        //else
+        //{
             useRandomSeed = false;
             seed = PlayerPrefs.GetInt("SelectedSeed");
             Random.InitState(seed);
             GenarateWorld();
-        }
+        //}
     }
 
     private void Update()

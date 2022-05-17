@@ -53,7 +53,7 @@ public class TowerTest : MonoBehaviour
     void Start()
     {
 
-        //towerMat = towerMsh[0].materials;
+        
         InvokeRepeating("SelectTarget", 0, 1f);
     }
   
@@ -90,7 +90,7 @@ public class TowerTest : MonoBehaviour
 
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
-       // lightningBolt.EndObject = nearestEnemy;
+       
       
         Collider[] colliders = Physics.OverlapSphere(transform.position, range);
         foreach (Collider c in colliders)
@@ -125,7 +125,7 @@ public class TowerTest : MonoBehaviour
         rotator.rotation = Quaternion.Euler(0, rotation.y, 0);
     }
 
-    void Laser()   // Fix Bools
+    void Laser()   
     {
         if (!lineRenderer.enabled)
         {
@@ -133,11 +133,11 @@ public class TowerTest : MonoBehaviour
            
         }
 
-       // target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
+       
 
         if(useLightning)
         {
-            LightingUpgrade();
+            
             lightningBolt.EndPosition = target.position;
             lightningBolt.Generations = 8;
             lightningBolt.enabled = true;
@@ -149,14 +149,14 @@ public class TowerTest : MonoBehaviour
 
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, target.position);
-            //lightningBolt.Generations = 0;
+           
             lightningBolt.enabled = false;
             target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
         }
 
         if (useFire)
         {
-            FireUpgrade();
+            
             
             fireDelay -= Time.deltaTime;
 
