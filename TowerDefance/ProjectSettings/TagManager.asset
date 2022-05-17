@@ -17,6 +17,7 @@ TagManager:
   - MapBuilder
   - ContractSystem
   - Vault
+  - Mortar
   layers:
   - Default
   - TransparentFX
