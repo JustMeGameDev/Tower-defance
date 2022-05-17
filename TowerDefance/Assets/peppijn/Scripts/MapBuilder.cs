@@ -69,7 +69,10 @@ public class MapBuilder : MonoBehaviour
         {
             testTimer = 0;
         }
+        navHuman.BuildNavMesh();
+        navOgre.BuildNavMesh();
     }
+
 
 
     private void GenarateSeed()

@@ -201,6 +201,8 @@ MonoBehaviour:
   baseValue: 24
   Damage: 15
   death: 0
+  navStopped: 0
+  spawnValue: 2
   animetion: {fileID: -7318982785765418895}
 --- !u!195 &7040558322189476530
 NavMeshAgent:

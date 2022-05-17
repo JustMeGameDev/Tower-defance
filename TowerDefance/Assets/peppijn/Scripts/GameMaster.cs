@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameMaster : MonoBehaviour
 {
     [Header("Enemy Prefabs")]
+    public List<GameObject> enemyTypes;
     public GameObject enemy_1;
     public GameObject enemy_2;
     public Image Coin;
@@ -131,19 +132,10 @@ public class GameMaster : MonoBehaviour
         {
             if (spawnTime == 0)
             {
-
-                int i = Random.Range(0, 100);
-                if (i > 25)
-                {
-                    enemyToSpawn = enemy_1;
-                    waveSize = waveSize - 1;
-                }
-                else if (i < 25)
-                {
-                    enemyToSpawn = enemy_2;
-                    waveSize = waveSize - 2;
-                }
-
+                int i = Random.Range(0, enemyTypes.Count);
+                enemyToSpawn = enemyTypes[i];
+                EnemyController enemy = enemyToSpawn.GetComponent<EnemyController>();
+                waveSize -= enemy.spawnValue; 
                 GameObject enemyTemp = Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
                 enemyWave.Add(enemyTemp);
                 spawnTime = spawnTimeValue;

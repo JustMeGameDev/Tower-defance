@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     public int Damage;
     public bool death = false;
     public bool navStopped = false;
+    public int spawnValue;
 
     [Header("Animation")]
     public Animator animetion;

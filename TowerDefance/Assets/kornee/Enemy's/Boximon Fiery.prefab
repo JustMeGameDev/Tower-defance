@@ -343,6 +343,8 @@ MonoBehaviour:
   baseValue: 12
   Damage: 5
   death: 0
+  navStopped: 0
+  spawnValue: 1
   animetion: {fileID: 4843490623562097995}
 --- !u!95 &4843490623562097995
 Animator:
