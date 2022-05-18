@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 //using UnityEngine.UIElements;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
@@ -43,10 +44,11 @@ public class GameMaster : MonoBehaviour
     public Slider healthbar;
     public TextMeshProUGUI health;
 
-
+    public Vault vault;
 
     void Start()
     {
+        vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
         enemyWave = new List<GameObject>();
         Towers = new List<PopUp>();
         money = money + StartMoney;
@@ -88,6 +90,12 @@ public class GameMaster : MonoBehaviour
     void FixedUpdate()
     {
         PopUpHandler();
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+            
     }
 
 
@@ -101,7 +109,8 @@ public class GameMaster : MonoBehaviour
         {
             waveSize = currentWave * difficulty * 3;
             currentWave++;
-            WaveCounter.text = "Wave: " + currentWave;
+            int WaveCount = currentWave - 1;
+            WaveCounter.text = "Wave: " + WaveCount;
             roundReward = roundReward * 1.05f;
             money = money + roundReward;
             ecoCounter++;

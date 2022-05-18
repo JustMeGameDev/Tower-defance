@@ -33,6 +33,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Emission: 1
     - _EmissionLM: 1
     - _Shininess: 0.078125
     m_Colors:

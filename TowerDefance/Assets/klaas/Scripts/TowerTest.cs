@@ -18,7 +18,7 @@ public class TowerTest : MonoBehaviour
 
     [Header("GameMaster")]
     public GameMaster gameMaster;
-
+    public UpgradeTower upgradeTower;
     [Header("Aim Setup")]
     [SerializeField]
     Transform rotator = null;
@@ -44,10 +44,16 @@ public class TowerTest : MonoBehaviour
     public MeshRenderer[] towerMsh;
     public Material[] fireUpgrade;
     public Material[] lightingUpgrade;
-    
+
+    private void Awake()
+    {
+        gameMaster = GameObject.Find("GameMaster").GetComponent<GameMaster>();
+
+    }
     void Start()
     {
-        //towerMat = towerMsh[0].materials;
+
+        
         InvokeRepeating("SelectTarget", 0, 1f);
     }
   
@@ -84,7 +90,7 @@ public class TowerTest : MonoBehaviour
 
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
-       // lightningBolt.EndObject = nearestEnemy;
+       
       
         Collider[] colliders = Physics.OverlapSphere(transform.position, range);
         foreach (Collider c in colliders)
@@ -119,7 +125,7 @@ public class TowerTest : MonoBehaviour
         rotator.rotation = Quaternion.Euler(0, rotation.y, 0);
     }
 
-    void Laser()   // Fix Bools
+    void Laser()   
     {
         if (!lineRenderer.enabled)
         {
@@ -127,11 +133,11 @@ public class TowerTest : MonoBehaviour
            
         }
 
-       // target.gameObject.GetComponent<EnemyController>().health -= damage *Time.deltaTime;
+       
 
         if(useLightning)
         {
-            LightingUpgrade();
+            
             lightningBolt.EndPosition = target.position;
             lightningBolt.Generations = 8;
             lightningBolt.enabled = true;
@@ -143,14 +149,14 @@ public class TowerTest : MonoBehaviour
 
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, target.position);
-            //lightningBolt.Generations = 0;
+           
             lightningBolt.enabled = false;
             target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
         }
 
         if (useFire)
         {
-            FireUpgrade();
+            
             
             fireDelay -= Time.deltaTime;
 
@@ -167,19 +173,41 @@ public class TowerTest : MonoBehaviour
     }
    public void LightingUpgrade()
     {
-        useLightning = true;
-        useNormal = false;
-        lightingFX.SetActive(true);
-        towerMsh[1].material = lightingUpgrade[0];
-        towerMsh[0].materials = lightingUpgrade;
+        if (gameMaster.money > upgradeTower.specialUpgradeOne)
+        {
+            useLightning = true;
+            useNormal = false;
+
+            lightingFX.SetActive(true);
+
+            towerMsh[1].material = lightingUpgrade[0];
+            towerMsh[0].materials = lightingUpgrade;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
+            gameMaster.money -= upgradeTower.specialUpgradeOne;
+            return;
+        }
     }
    public void FireUpgrade()
     {
-        useFire = true;
-        useNormal = false;
-        fireRotation.SetActive(true);
-        towerMsh[1].material = fireUpgrade[0];
-        towerMsh[0].materials = fireUpgrade;
+        if (gameMaster.money > upgradeTower.specialUpgradeTwo)
+        {
+            useFire = true;
+            useNormal = false;
+
+            fireRotation.SetActive(true);
+
+            towerMsh[1].material = fireUpgrade[0];
+            towerMsh[0].materials = fireUpgrade;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
+            gameMaster.money -= upgradeTower.specialUpgradeTwo;
+            return;
+        }
     }
 
     void CannonShoot()
