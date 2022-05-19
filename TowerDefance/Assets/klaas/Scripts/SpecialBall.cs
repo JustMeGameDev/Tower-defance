@@ -8,7 +8,7 @@ public class SpecialBall : MonoBehaviour
     public float explosiveDamage = 200f;
     public Transform target;
     public GameObject explosion;
-    public bool upgradeOne;
+    
 
   
    

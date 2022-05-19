@@ -11,10 +11,6 @@ public class BurnDamage : MonoBehaviour
     {
         StartCoroutine(FireCountDown());
     }
-    void Update()
-    {
-        
-    }
 
     IEnumerator FireCountDown()
     {
@@ -30,5 +26,5 @@ public class BurnDamage : MonoBehaviour
            other.gameObject.GetComponent<EnemyController>().health -= burnDamage * Time.deltaTime;
         }
     }
-    
+   
 }

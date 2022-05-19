@@ -187,13 +187,19 @@ public class TowerTest : MonoBehaviour
         towerMsh[1].materials = upgradeOne;
         towerMsh[0].materials = upgradeOne;
 
+        upgradeTower.upgradeOne.interactable = false;
+        upgradeTower.upgradeTwo.interactable = false;
+
         cannonNormal = false;
         cannonUpOne = true;
     }
     public void CannonUpgradeTwo()
     {
-        towerMsh[1].material = upgradeTwo[0];
+        towerMsh[1].materials = upgradeTwo;
         towerMsh[0].materials = upgradeTwo;
+
+        upgradeTower.upgradeOne.interactable = false;
+        upgradeTower.upgradeTwo.interactable = false;
 
         cannonNormal = false;
         cannonUpTwo = true;

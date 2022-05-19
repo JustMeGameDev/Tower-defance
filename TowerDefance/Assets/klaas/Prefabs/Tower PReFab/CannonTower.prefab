@@ -222,9 +222,9 @@ MonoBehaviour:
     type: 3}
   cannonExplosion: {fileID: 6519082187826855582, guid: 333cb407bd051464898c89b94fff814d,
     type: 3}
-  cannonNormal: 0
+  cannonNormal: 1
   cannonUpOne: 0
-  cannonUpTwo: 1
+  cannonUpTwo: 0
   lightningBolt: {fileID: 0}
   fireParticleSystem: {fileID: 0}
   lineRenderer: {fileID: 0}
@@ -241,7 +241,7 @@ MonoBehaviour:
   - {fileID: 2860861647775349921}
   upgradeOne:
   - {fileID: -8274133419916619345, guid: d572d976c6c513442804a36422155520, type: 3}
-  - {fileID: 1886820026795636259, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: 2100000, guid: aff1e979421f4e94ea522f39b7a4442d, type: 2}
   - {fileID: -6087771358165109452, guid: d572d976c6c513442804a36422155520, type: 3}
   - {fileID: 6699446615349125189, guid: d572d976c6c513442804a36422155520, type: 3}
   - {fileID: -3522955778539423533, guid: d572d976c6c513442804a36422155520, type: 3}
@@ -250,13 +250,13 @@ MonoBehaviour:
   - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
   - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
   upgradeTwo:
-  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
-  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
   - {fileID: -8274133419916619345, guid: d572d976c6c513442804a36422155520, type: 3}
   - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
+  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
   - {fileID: -6087771358165109452, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
   - {fileID: -3522955778539423533, guid: d572d976c6c513442804a36422155520, type: 3}
-  - {fileID: 6699446615349125189, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
   - {fileID: 880774007180850119, guid: d572d976c6c513442804a36422155520, type: 3}
   - {fileID: 1886820026795636259, guid: d572d976c6c513442804a36422155520, type: 3}
 --- !u!65 &5224493230730295084
