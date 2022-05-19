@@ -8,13 +8,11 @@ using UnityEngine.SceneManagement;
 public class GameMaster : MonoBehaviour
 {
     [Header("Enemy Prefabs")]
-    public GameObject enemy_1;
-    public GameObject enemy_2;
+    public List<GameObject> enemyTypes;
     public Image Coin;
 
     [Header("Wave System")]
-    public GameObject enemyToSpawn;
-    public Transform spawnPoint;
+    public List<SpawnPoint> spawnPoints;
     public int difficulty;
     public int currentWave;
     public List<GameObject> enemyWave;
@@ -100,9 +98,14 @@ public class GameMaster : MonoBehaviour
 
     private void SpawnWave()
     {
-        if (spawnPoint == null)
+        
+        if (spawnPoints.Count < 1)
         {
-            spawnPoint = GameObject.FindWithTag("spawnPoint").transform;
+            GameObject[] spawnPointsTemp = GameObject.FindGameObjectsWithTag("spawnPoint");
+            foreach(GameObject i in spawnPointsTemp)
+            {
+                spawnPoints.Add(i.GetComponent<SpawnPoint>());
+            }
         }
         if (enemyWave.Count == 0 && waveSize == 0)
         {
@@ -124,30 +127,30 @@ public class GameMaster : MonoBehaviour
 
 
 
-
-
-        if (waveSize > 0) 
+        if (waveSize > 0)
         {
             if (spawnTime == 0)
             {
-
-                int i = Random.Range(0, 100);
-                if (i > 25)
+                foreach (SpawnPoint i in spawnPoints)
                 {
-                    enemyToSpawn = enemy_1;
-                    waveSize = waveSize - 1;
+                    if (waveSize > 0)
+                    {
+                        int g = Random.Range(0, enemyTypes.Count);
+                        i.enemyToSpawn = enemyTypes[g];
+                        i.SpawnEnemy();
+                        EnemyController m = i.GetEnemy();
+                        waveSize -= m.spawnValue;
+                        spawnTime = spawnTimeValue;
+                        enemyWave.Add(i.enemySpawned);
+                    }
                 }
-                else if (i < 25)
-                {
-                    enemyToSpawn = enemy_2;
-                    waveSize = waveSize - 2;
-                }
-
-                GameObject enemyTemp = Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
-                enemyWave.Add(enemyTemp);
-                spawnTime = spawnTimeValue;
             }
+
         }
+                
+                
+            
+        
         if (waveSize < 0)
         {
             waveSize = 0;
@@ -198,4 +201,5 @@ public class GameMaster : MonoBehaviour
             }
         }
     }
+
 }

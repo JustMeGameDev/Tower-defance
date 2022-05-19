@@ -202,6 +202,7 @@ MonoBehaviour:
   Damage: 15
   death: 0
   navStopped: 0
+  spawnValue: 2
   animetion: {fileID: -7318982785765418895}
 --- !u!195 &7040558322189476530
 NavMeshAgent:
@@ -212,7 +213,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1414049513661073067}
   m_Enabled: 1
   m_AgentTypeID: -1923039037
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50

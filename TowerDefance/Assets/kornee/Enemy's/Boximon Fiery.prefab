@@ -310,8 +310,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 6198154284575115056}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.50001
-  m_Speed: 4
+  m_Radius: 0.7
+  m_Speed: 4.5
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -344,6 +344,7 @@ MonoBehaviour:
   Damage: 5
   death: 0
   navStopped: 0
+  spawnValue: 1
   animetion: {fileID: 4843490623562097995}
 --- !u!95 &4843490623562097995
 Animator:
