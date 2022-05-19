@@ -16,8 +16,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1536
     y: 0
-    width: 1536
-    height: 864
+    width: 1920
+    height: 1080
   m_ShowMode: 0
   m_Title: Game
   m_RootView: {fileID: 4}
@@ -65,8 +65,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1536
-    height: 864
+    width: 1920
+    height: 1080
   m_MinSize: {x: 100, y: 121}
   m_MaxSize: {x: 4000, y: 4021}
   m_ActualView: {fileID: 18}
@@ -92,8 +92,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1536
-    height: 864
+    width: 1920
+    height: 1080
   m_MinSize: {x: 100, y: 121}
   m_MaxSize: {x: 4000, y: 4021}
   vertical: 0
@@ -263,8 +263,8 @@ MonoBehaviour:
     y: 0
     width: 282.4
     height: 475.2
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -833,9 +833,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -7.861861, y: 0.15712136, z: -25.601109}
+    m_Target: {x: -13.825697, y: -1.2052821, z: -13.516017}
     speed: 2
-    m_Value: {x: -7.861861, y: 0.15712136, z: -25.601109}
+    m_Value: {x: -13.825697, y: -1.2052821, z: -13.516017}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -882,13 +882,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.011137291, y: -0.9642329, z: 0.056164034, w: 0.25885975}
+    m_Target: {x: 0.07183171, y: -0.80649877, z: 0.10698175, w: 0.5770511}
     speed: 2
-    m_Value: {x: 0.011137113, y: -0.96421754, z: 0.056163136, w: 0.2588556}
+    m_Value: {x: 0.07080618, y: -0.80750984, z: 0.10587644, w: 0.57593805}
   m_Size:
     m_Target: 10.499272
     speed: 2
-    m_Value: 10.047151
+    m_Value: 10.499272
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -945,7 +945,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3c8e0000
+      m_SelectedIDs: 92830000
       m_LastClickedID: 0
       m_ExpandedIDs: 02fbffff
       m_RenameOverlay:
@@ -994,8 +994,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1536
     y: 0
-    width: 1536
-    height: 843
+    width: 1920
+    height: 1059
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1021,10 +1021,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -768
-    m_HBaseRangeMax: 768
-    m_VBaseRangeMin: -432
-    m_VBaseRangeMax: 432
+    m_HBaseRangeMin: -960
+    m_HBaseRangeMax: 960
+    m_VBaseRangeMin: -540
+    m_VBaseRangeMax: 540
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1042,23 +1042,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1536
-      height: 822
-    m_Scale: {x: 0.95138896, y: 0.9513889}
-    m_Translation: {x: 768, y: 411}
+      width: 1920
+      height: 1038
+    m_Scale: {x: 0.9611111, y: 0.9611111}
+    m_Translation: {x: 960, y: 519}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -807.24084
-      y: -432
-      width: 1614.4817
-      height: 864
+      x: -998.84393
+      y: -540
+      width: 1997.6879
+      height: 1080
     m_MinimalGUI: 1
-  m_defaultScale: 0.9513889
-  m_LastWindowPixelSize: {x: 1920, y: 1053.75}
+  m_defaultScale: 0.9611111
+  m_LastWindowPixelSize: {x: 1920, y: 1059}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -1106,22 +1106,22 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/kornee/Enemy's
+    - Assets/kornee/Customizable Skybox
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 85
   m_LastFolders:
-  - Assets/kornee/Enemy's
+  - Assets/kornee/Customizable Skybox
   m_LastFoldersGridSize: 85
   m_LastProjectPath: C:\Users\korne\Documents\GitHub\Tower-defance\TowerDefance
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 273.40002}
-    m_SelectedIDs: 5e800000
-    m_LastClickedID: 32862
-    m_ExpandedIDs: 00000000d27300002c800000448000004e8000005e80000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 92830000
+    m_LastClickedID: 33682
+    m_ExpandedIDs: 000000008c7400007277000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1149,7 +1149,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d2730000
+    m_ExpandedIDs: 000000008c740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1201,7 +1201,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 21.400024}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 85
   m_SkipHiddenPackages: 1
   m_DirectoriesAreaWidth: 207
