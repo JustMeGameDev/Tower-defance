@@ -34,6 +34,10 @@ public class MapBuilder : MonoBehaviour
     [Header("NavMesh Surfaces")]
     public NavMeshSurface navHuman;
     public NavMeshSurface navOgre;
+    public NavMeshSurface navBat;
+    public NavMeshSurface navChicken;
+    public NavMeshSurface navDragon;
+    public NavMeshSurface navSlime;
 
     public float testTimerValue;
     public float testTimer;
@@ -106,9 +110,17 @@ public class MapBuilder : MonoBehaviour
         }
         navHuman.AddData();
         navOgre.AddData();
+        navBat.AddData();
+        navChicken.AddData();
+        navDragon.AddData();
+        navSlime.AddData();
 
         navHuman.BuildNavMesh();
         navOgre.BuildNavMesh();
+        navBat.BuildNavMesh();
+        navChicken.BuildNavMesh();
+        navDragon.BuildNavMesh();
+        navSlime.BuildNavMesh();
     }
 
     private Transform CheckBuild()

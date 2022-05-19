@@ -128,6 +128,9 @@ MonoBehaviour:
   maxHealth: 100
   baseValue: 5
   Damage: 5
+  death: 0
+  navStopped: 0
+  animetion: {fileID: 0}
 --- !u!54 &947354748
 Rigidbody:
   m_ObjectHideFlags: 0
