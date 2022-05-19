@@ -211,10 +211,20 @@ MonoBehaviour:
   fireDamage: 0
   burnDamage: 0
   gameMaster: {fileID: 0}
+  upgradeTower: {fileID: 8379727484735660369}
   rotator: {fileID: 2336372346730696254}
   firePoint: {fileID: 2336372347415852015}
   cannonBall: {fileID: 313608266486151592, guid: 2e6b7dc0278cc7544a8bf52a21792987,
     type: 3}
+  specialCanBall: {fileID: 313608266486151592, guid: 02ff328ebac554a42855af0aa0c1041e,
+    type: 3}
+  fireCannonBall: {fileID: 313608266486151592, guid: b164bc55556779945a8b0158978ecfba,
+    type: 3}
+  cannonExplosion: {fileID: 6519082187826855582, guid: 333cb407bd051464898c89b94fff814d,
+    type: 3}
+  cannonNormal: 0
+  cannonUpOne: 0
+  cannonUpTwo: 1
   lightningBolt: {fileID: 0}
   fireParticleSystem: {fileID: 0}
   lineRenderer: {fileID: 0}
@@ -226,9 +236,29 @@ MonoBehaviour:
   fireDelay: 1
   fireRotation: {fileID: 0}
   lightingFX: {fileID: 0}
-  towerMsh: []
-  fireUpgrade: []
-  lightingUpgrade: []
+  towerMsh:
+  - {fileID: 4424801403930511017}
+  - {fileID: 2860861647775349921}
+  upgradeOne:
+  - {fileID: -8274133419916619345, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: 1886820026795636259, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: -6087771358165109452, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: 6699446615349125189, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: -3522955778539423533, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
+  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
+  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
+  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
+  upgradeTwo:
+  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
+  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
+  - {fileID: -8274133419916619345, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
+  - {fileID: -6087771358165109452, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: -3522955778539423533, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: 6699446615349125189, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: 880774007180850119, guid: d572d976c6c513442804a36422155520, type: 3}
+  - {fileID: 1886820026795636259, guid: d572d976c6c513442804a36422155520, type: 3}
 --- !u!65 &5224493230730295084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -377,6 +407,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4884980925914213781}
     m_Modifications:
+    - target: {fileID: 305260104592357887, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5224493230730295091}
+    - target: {fileID: 305260104592357887, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CannonUpgradeTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260104592357887, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerTest, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 305260105039807168, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -507,6 +552,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: pop-up
       objectReference: {fileID: 0}
+    - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5224493230730295091}
+    - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CannonUpgradeOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerTest, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1394083266207025831, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: CostText
@@ -571,6 +631,16 @@ PrefabInstance:
         type: 3}
       propertyPath: costMultiplier
       value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: specialUpgradeOne
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: specialUpgradeTwo
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}

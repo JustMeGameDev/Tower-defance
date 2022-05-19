@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 4753431942002055909}
   - component: {fileID: -7318982785765418895}
   - component: {fileID: 3763053773936978650}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Boximon Cyclopes
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -201,6 +201,7 @@ MonoBehaviour:
   baseValue: 24
   Damage: 15
   death: 0
+  navStopped: 0
   animetion: {fileID: -7318982785765418895}
 --- !u!195 &7040558322189476530
 NavMeshAgent:

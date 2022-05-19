@@ -19,13 +19,24 @@ public class TowerTest : MonoBehaviour
     [Header("GameMaster")]
     public GameMaster gameMaster;
     public UpgradeTower upgradeTower;
+
     [Header("Aim Setup")]
     [SerializeField]
     Transform rotator = null;
     public Transform firePoint = null;
     float turnSpeed = 10;
     string enemyTag = "Enemy";
+    
+
+    [Header("Cannon")]
     public GameObject cannonBall = null;
+    public GameObject specialCanBall = null;
+    public GameObject fireCannonBall = null;
+    public GameObject cannonExplosion = null;
+    public bool cannonNormal = false;
+    public bool cannonUpOne = false;
+    public bool cannonUpTwo = false;
+
 
     [Header("Mage")]
     public LightningBoltScript lightningBolt = null;
@@ -42,8 +53,8 @@ public class TowerTest : MonoBehaviour
     public GameObject fireRotation;
     public GameObject lightingFX;
     public MeshRenderer[] towerMsh;
-    public Material[] fireUpgrade;
-    public Material[] lightingUpgrade;
+    public Material[] upgradeOne;
+    public Material[] upgradeTwo;
 
     private void Awake()
     {
@@ -51,35 +62,34 @@ public class TowerTest : MonoBehaviour
 
     }
     void Start()
-    {
-
-        
+    {    
         InvokeRepeating("SelectTarget", 0, 1f);
     }
   
     void Update()
     {
 
-        if (target == null) 
+        if (target == null)
         {
-           
-              if (useMage)
-              {
-                  if (lineRenderer.enabled)
-                  {
-                      lineRenderer.enabled = false;
-                  }
-              }
 
-              return;
-           
+            if (useMage)
+            {
+                if (lineRenderer.enabled)
+                {
+                    lineRenderer.enabled = false;
+                }
+            }
+
+            return;
+
         }
         LookAtTarget();
 
         if (useMage)
         {
             Laser();
-        }else
+        }
+        else
         {
             CannonShoot();
         }
@@ -95,7 +105,7 @@ public class TowerTest : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, range);
         foreach (Collider c in colliders)
         {
-            if (c.gameObject.CompareTag(enemyTag))
+            if (c.gameObject.CompareTag(enemyTag) && !c.gameObject.GetComponent<EnemyController>().death)
             {
                 float distanceToEnemy = Vector3.Distance(transform.position, c.gameObject.transform.position);
                 if (distanceToEnemy < shortestDistance)
@@ -171,7 +181,25 @@ public class TowerTest : MonoBehaviour
         }
         
     }
-   public void LightingUpgrade()
+
+    public void CannonUpgradeOne()
+    {
+        towerMsh[1].materials = upgradeOne;
+        towerMsh[0].materials = upgradeOne;
+
+        cannonNormal = false;
+        cannonUpOne = true;
+    }
+    public void CannonUpgradeTwo()
+    {
+        towerMsh[1].material = upgradeTwo[0];
+        towerMsh[0].materials = upgradeTwo;
+
+        cannonNormal = false;
+        cannonUpTwo = true;
+    }
+
+    public void LightingUpgrade()
     {
         if (gameMaster.money > upgradeTower.specialUpgradeOne)
         {
@@ -180,8 +208,8 @@ public class TowerTest : MonoBehaviour
 
             lightingFX.SetActive(true);
 
-            towerMsh[1].material = lightingUpgrade[0];
-            towerMsh[0].materials = lightingUpgrade;
+            towerMsh[1].material = upgradeOne[0];
+            towerMsh[0].materials = upgradeOne;
 
             upgradeTower.upgradeOne.interactable = false;
             upgradeTower.upgradeTwo.interactable = false;
@@ -190,7 +218,7 @@ public class TowerTest : MonoBehaviour
             return;
         }
     }
-   public void FireUpgrade()
+    public void FireUpgrade()
     {
         if (gameMaster.money > upgradeTower.specialUpgradeTwo)
         {
@@ -199,8 +227,8 @@ public class TowerTest : MonoBehaviour
 
             fireRotation.SetActive(true);
 
-            towerMsh[1].material = fireUpgrade[0];
-            towerMsh[0].materials = fireUpgrade;
+            towerMsh[1].material = upgradeTwo[0];
+            towerMsh[0].materials = upgradeTwo;
 
             upgradeTower.upgradeOne.interactable = false;
             upgradeTower.upgradeTwo.interactable = false;
@@ -216,8 +244,23 @@ public class TowerTest : MonoBehaviour
 
         if (fireDelay <= 0)
         {
-            GameObject projCannonBall = Instantiate(cannonBall, firePoint.position, Quaternion.identity);
-            projCannonBall.GetComponent<Bullet>().target = target;
+            if (cannonNormal == true)
+            {
+                Instantiate(cannonExplosion, firePoint.position, Quaternion.identity);
+                GameObject projCannonBall = Instantiate(cannonBall, firePoint.position, Quaternion.identity);
+                projCannonBall.GetComponent<Bullet>().target = target;
+            } else if (cannonUpOne == true)
+            {
+                Instantiate(cannonExplosion, firePoint.position, Quaternion.identity);
+                GameObject projCannonBall = Instantiate(specialCanBall, firePoint.position, Quaternion.identity);
+                projCannonBall.GetComponent<SpecialBall>().target = target;
+            } else if (cannonUpTwo == true)
+            {
+                Instantiate(cannonExplosion, firePoint.position, Quaternion.identity);
+                GameObject projCannonBall = Instantiate(fireCannonBall, firePoint.position, Quaternion.identity);
+                projCannonBall.GetComponent<FireCannonBall>().target = target;
+            }
+           
             fireDelay = 1f;
         }
     }

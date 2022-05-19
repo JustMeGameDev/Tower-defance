@@ -603,10 +603,11 @@ MonoBehaviour:
   CannonPrice: {fileID: 107441994}
   MorterPrice: {fileID: 1345285594}
   MagePrice: {fileID: 175012046}
-  BalisPrice: {fileID: 0}
+  BalisPrice: {fileID: 7156313280233160911}
   Close: {fileID: 0}
   gameMaster: {fileID: 0}
   Message: {fileID: 0}
+  vault: {fileID: 0}
 --- !u!1001 &4870080143370069800
 PrefabInstance:
   m_ObjectHideFlags: 0
