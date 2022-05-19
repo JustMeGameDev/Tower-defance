@@ -5,16 +5,16 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     public GameObject enemyToSpawn;
-
+    public GameObject enemySpawned;
 
     public void SpawnEnemy()
     {
-        Instantiate(enemyToSpawn);
+        enemySpawned = Instantiate(enemyToSpawn);
     }
 
     public EnemyController GetEnemy()
     {
-        EnemyController i = enemyToSpawn.GetComponent<EnemyController>();
+        EnemyController i = enemySpawned.GetComponent<EnemyController>();
         return i;
     }
 }

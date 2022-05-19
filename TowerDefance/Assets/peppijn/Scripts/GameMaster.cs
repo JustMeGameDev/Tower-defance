@@ -13,7 +13,6 @@ public class GameMaster : MonoBehaviour
     public Image Coin;
 
     [Header("Wave System")]
-    public GameObject enemyToSpawn;
     public List<SpawnPoint> spawnPoints;
     public int difficulty;
     public int currentWave;
@@ -129,24 +128,30 @@ public class GameMaster : MonoBehaviour
 
 
 
-
-
-        if (waveSize > 0) 
+        if (waveSize > 0)
         {
             if (spawnTime == 0)
             {
-                foreach(SpawnPoint i in spawnPoints)
+                foreach (SpawnPoint i in spawnPoints)
                 {
-                    int g = Random.Range(0, enemyTypes.Count);
-                    i.enemyToSpawn = enemyTypes[g];
-                    EnemyController m = i.GetEnemy();
+                    if (waveSize > 0)
+                    {
+                        int g = Random.Range(0, enemyTypes.Count);
+                        i.enemyToSpawn = enemyTypes[g];
+                        i.SpawnEnemy();
+                        EnemyController m = i.GetEnemy();
+                        waveSize -= m.spawnValue;
+                        spawnTime = spawnTimeValue;
+                        enemyWave.Add(i.enemySpawned);
+                    }
                 }
-                
-                
-                //enemyWave.Add(enemyTemp);
-                spawnTime = spawnTimeValue;
             }
+
         }
+                
+                
+            
+        
         if (waveSize < 0)
         {
             waveSize = 0;
