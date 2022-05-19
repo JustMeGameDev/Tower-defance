@@ -157,8 +157,8 @@ RectTransform:
   m_GameObject: {fileID: 1414049513661073067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1414049513660914383}
   - {fileID: 1414049513660914319}
@@ -201,6 +201,7 @@ MonoBehaviour:
   baseValue: 24
   Damage: 15
   death: 0
+  navStopped: 0
   animetion: {fileID: -7318982785765418895}
 --- !u!195 &7040558322189476530
 NavMeshAgent:

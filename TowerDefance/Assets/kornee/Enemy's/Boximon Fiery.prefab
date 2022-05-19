@@ -282,8 +282,8 @@ Transform:
   m_GameObject: {fileID: 6198154284575115056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2357889, y: 0, z: 0.53371596}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6198154284575349522}
   - {fileID: 6198154284575349524}
@@ -311,7 +311,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.50001
-  m_Speed: 4.5
+  m_Speed: 4
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -343,6 +343,7 @@ MonoBehaviour:
   baseValue: 12
   Damage: 5
   death: 0
+  navStopped: 0
   animetion: {fileID: 4843490623562097995}
 --- !u!95 &4843490623562097995
 Animator:
