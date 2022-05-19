@@ -10,13 +10,11 @@ public class GameMaster : MonoBehaviour
 {
     [Header("Enemy Prefabs")]
     public List<GameObject> enemyTypes;
-    public GameObject enemy_1;
-    public GameObject enemy_2;
     public Image Coin;
 
     [Header("Wave System")]
     public GameObject enemyToSpawn;
-    public Transform spawnPoint;
+    public List<SpawnPoint> spawnPoints;
     public int difficulty;
     public int currentWave;
     public List<GameObject> enemyWave;
@@ -102,9 +100,14 @@ public class GameMaster : MonoBehaviour
 
     private void SpawnWave()
     {
-        if (spawnPoint == null)
+        
+        if (spawnPoints.Count < 1)
         {
-            spawnPoint = GameObject.FindWithTag("spawnPoint").transform;
+            GameObject[] spawnPointsTemp = GameObject.FindGameObjectsWithTag("spawnPoint");
+            foreach(GameObject i in spawnPointsTemp)
+            {
+                spawnPoints.Add(i.GetComponent<SpawnPoint>());
+            }
         }
         if (enemyWave.Count == 0 && waveSize == 0)
         {
@@ -132,12 +135,15 @@ public class GameMaster : MonoBehaviour
         {
             if (spawnTime == 0)
             {
-                int i = Random.Range(0, enemyTypes.Count);
-                enemyToSpawn = enemyTypes[i];
-                EnemyController enemy = enemyToSpawn.GetComponent<EnemyController>();
-                waveSize -= enemy.spawnValue; 
-                GameObject enemyTemp = Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
-                enemyWave.Add(enemyTemp);
+                foreach(SpawnPoint i in spawnPoints)
+                {
+                    int g = Random.Range(0, enemyTypes.Count);
+                    i.enemyToSpawn = enemyTypes[g];
+                    EnemyController m = i.GetEnemy();
+                }
+                
+                
+                //enemyWave.Add(enemyTemp);
                 spawnTime = spawnTimeValue;
             }
         }
@@ -191,4 +197,5 @@ public class GameMaster : MonoBehaviour
             }
         }
     }
+
 }
