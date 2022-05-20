@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 5598000521479209393}
   - component: {fileID: 4270923216867808394}
   - component: {fileID: 1329867600644329102}
+  - component: {fileID: 6362866261802991322}
   m_Layer: 8
   m_Name: Ballista
   m_TagString: Untagged
@@ -335,6 +336,65 @@ MonoBehaviour:
   firePoint: {fileID: 4169282061198707902}
   turnSpeed: 5
   bullet: {fileID: 7875202901303753751, guid: 7bc0fe3b85810fd4783bb460a77748f4, type: 3}
+--- !u!114 &6362866261802991322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8772049737135595227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370ef4a15b50dcb40870667c52b4cd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 15
+  damage: 10
+  attackSpeed: 10
+  fireDamage: 0
+  burnDamage: 0
+  gameMaster: {fileID: 0}
+  upgradeTower: {fileID: 6630143212582080149}
+  rotator: {fileID: 1608431109800970652}
+  firePoint: {fileID: 4169282061198707902}
+  cannonBall: {fileID: 0}
+  specialCanBall: {fileID: 0}
+  fireCannonBall: {fileID: 0}
+  cannonExplosion: {fileID: 0}
+  useCannon: 0
+  cannonNormal: 0
+  cannonUpOne: 0
+  cannonUpTwo: 0
+  lightningBolt: {fileID: 0}
+  fireParticleSystem: {fileID: 0}
+  lineRenderer: {fileID: 0}
+  fireBall: {fileID: 0}
+  useNormal: 0
+  useLightning: 0
+  useFire: 0
+  useMage: 0
+  fireDelay: 1
+  arrow: {fileID: 7875202901303753751, guid: 7bc0fe3b85810fd4783bb460a77748f4, type: 3}
+  arrowUpgradeOne: {fileID: 0}
+  arrowUpgradeTwo: {fileID: 0}
+  ballistaDelay: 2
+  useBallista: 1
+  ballistaNormal: 1
+  ballistaUpgradeOne: 0
+  ballistaUpgradeTwo: 0
+  fireRotation: {fileID: 0}
+  lightingFX: {fileID: 0}
+  towerMsh:
+  - {fileID: 2569333659534687445}
+  - {fileID: 6589872531252315164}
+  upgradeOne:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  upgradeTwo:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &5942567949033459756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -415,7 +475,7 @@ PrefabInstance:
     - target: {fileID: 8773449687707198487, guid: 7bc0fe3b85810fd4783bb460a77748f4,
         type: 3}
       propertyPath: speed
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8773449687707198487, guid: 7bc0fe3b85810fd4783bb460a77748f4,
         type: 3}
@@ -562,7 +622,13 @@ PrefabInstance:
       propertyPath: levelText
       value: 
       objectReference: {fileID: 2746354448880089953}
-    m_RemovedComponents: []
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: towerTest
+      value: 
+      objectReference: {fileID: 6362866261802991322}
+    m_RemovedComponents:
+    - {fileID: 3352965189805100705, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
 --- !u!114 &2746354448880089953 stripped
 MonoBehaviour:
@@ -574,6 +640,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6630143212582080149 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 7150473341054082257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148c7257656e28440acb7abe93d8e83f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7069239215689004319 stripped

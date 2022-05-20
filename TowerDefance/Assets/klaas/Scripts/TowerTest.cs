@@ -33,6 +33,7 @@ public class TowerTest : MonoBehaviour
     public GameObject specialCanBall = null;
     public GameObject fireCannonBall = null;
     public GameObject cannonExplosion = null;
+    public bool useCannon= false;
     public bool cannonNormal = false;
     public bool cannonUpOne = false;
     public bool cannonUpTwo = false;
@@ -48,6 +49,16 @@ public class TowerTest : MonoBehaviour
     public bool useFire = false;
     public bool useMage;
     public float fireDelay = 1f;
+
+    [Header("BallistaTower")]
+    public GameObject arrow;
+    public GameObject arrowUpgradeOne;
+    public GameObject arrowUpgradeTwo;
+    public float ballistaDelay = 2;
+    public bool useBallista;
+    public bool ballistaNormal;
+    public bool ballistaUpgradeOne;
+    public bool ballistaUpgradeTwo;
 
     [Header("Updrage")]
     public GameObject fireRotation;
@@ -89,9 +100,13 @@ public class TowerTest : MonoBehaviour
         {
             Laser();
         }
-        else
+        else if(useCannon)
         {
             CannonShoot();
+        }
+        else if(useBallista)
+        {
+            BallistaShoot();
         }
     }
 
@@ -268,6 +283,31 @@ public class TowerTest : MonoBehaviour
             }
            
             fireDelay = 1f;
+        }
+    }
+
+    void BallistaShoot()
+    {
+        fireDelay -= Time.deltaTime;
+
+        if (fireDelay <= 0)
+        {
+            if (ballistaNormal == true)
+            {
+                GameObject BulletGO = Instantiate(arrow, firePoint);
+                BulletGO.GetComponent<Bullet>().target = target;
+            }
+            else if (ballistaUpgradeOne == true)
+            {
+                GameObject BulletGO = Instantiate(arrowUpgradeOne, firePoint);
+                BulletGO.GetComponent<Bullet>().target = target;
+            }
+            else if (ballistaUpgradeTwo == true)
+            {
+                GameObject BulletGO = Instantiate(arrowUpgradeTwo, firePoint);
+                BulletGO.GetComponent<Bullet>().target = target;
+            }
+            fireDelay = ballistaDelay;
         }
     }
 }

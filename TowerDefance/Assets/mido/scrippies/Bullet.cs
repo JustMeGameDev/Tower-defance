@@ -23,9 +23,10 @@ public class Bullet : MonoBehaviour
         {
            // HitTarget();
         }
-
+        //dir.normalized
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-        transform.LookAt(target);
+    
+       //transform.LookAt(target, Vector3.up);
     }
 
 

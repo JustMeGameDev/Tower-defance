@@ -222,6 +222,7 @@ MonoBehaviour:
     type: 3}
   cannonExplosion: {fileID: 6519082187826855582, guid: 333cb407bd051464898c89b94fff814d,
     type: 3}
+  useCannon: 1
   cannonNormal: 1
   cannonUpOne: 0
   cannonUpTwo: 0
@@ -234,6 +235,14 @@ MonoBehaviour:
   useFire: 0
   useMage: 0
   fireDelay: 1
+  arrow: {fileID: 0}
+  arrowUpgradeOne: {fileID: 0}
+  arrowUpgradeTwo: {fileID: 0}
+  ballistaDelay: 2
+  useBallista: 0
+  ballistaNormal: 0
+  ballistaUpgradeOne: 0
+  ballistaUpgradeTwo: 0
   fireRotation: {fileID: 0}
   lightingFX: {fileID: 0}
   towerMsh:
