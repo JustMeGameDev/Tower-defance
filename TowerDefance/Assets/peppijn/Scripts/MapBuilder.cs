@@ -39,6 +39,7 @@ public class MapBuilder : MonoBehaviour
     public NavMeshSurface navDragon;
     public NavMeshSurface navSlime;
 
+
     public float testTimerValue;
     public float testTimer;
     public Vault vault;
@@ -73,8 +74,13 @@ public class MapBuilder : MonoBehaviour
         {
             testTimer = 0;
         }
-        navHuman.BuildNavMesh();
-        navOgre.BuildNavMesh();
+        navHuman.UpdateNavMesh(navHuman.navMeshData);
+        navOgre.UpdateNavMesh(navOgre.navMeshData);
+        navBat.UpdateNavMesh(navBat.navMeshData);
+        navChicken.UpdateNavMesh(navChicken.navMeshData);
+        navDragon.UpdateNavMesh(navDragon.navMeshData);
+        navSlime.UpdateNavMesh(navSlime.navMeshData);
+        
     }
 
 
@@ -141,7 +147,7 @@ public class MapBuilder : MonoBehaviour
         
         foreach (Transform i in transformPoints)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(i.position, 7f, layerMask);
+            Collider[] hitColliders = Physics.OverlapSphere(i.position, 9f, layerMask);
             if (hitColliders.Length <= 1)
             {
                 transformPointsFinal.Add(i);

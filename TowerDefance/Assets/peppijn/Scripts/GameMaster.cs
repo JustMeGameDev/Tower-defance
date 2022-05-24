@@ -4,15 +4,18 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class GameMaster : MonoBehaviour
 {
     [Header("Enemy Prefabs")]
     public List<GameObject> enemyTypes;
+    public GameObject enemyToSpawn;
     public Image Coin;
 
     [Header("Wave System")]
-    public List<SpawnPoint> spawnPoints;
+    
+    public GameObject[] spawnPoints;
     public int difficulty;
     public int currentWave;
     public List<GameObject> enemyWave;
@@ -42,6 +45,7 @@ public class GameMaster : MonoBehaviour
     public TextMeshProUGUI health;
 
     public Vault vault;
+    public float agentAvoidenceTime;
 
     void Start()
     {
@@ -55,7 +59,10 @@ public class GameMaster : MonoBehaviour
         healthbar.minValue = 0;
         healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
         isAlive = true;
-
+        if (spawnPoints.Length < 1)
+        {
+            spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
+        }
     }
 
     void Update()
@@ -83,6 +90,7 @@ public class GameMaster : MonoBehaviour
         {
             Time.timeScale = 0;
         }
+        NavMesh.avoidancePredictionTime = agentAvoidenceTime;
     }
     void FixedUpdate()
     {
@@ -99,14 +107,7 @@ public class GameMaster : MonoBehaviour
     private void SpawnWave()
     {
         
-        if (spawnPoints.Count < 1)
-        {
-            GameObject[] spawnPointsTemp = GameObject.FindGameObjectsWithTag("spawnPoint");
-            foreach(GameObject i in spawnPointsTemp)
-            {
-                spawnPoints.Add(i.GetComponent<SpawnPoint>());
-            }
-        }
+        //waveSetup
         if (enemyWave.Count == 0 && waveSize == 0)
         {
             waveSize = currentWave * difficulty * 3;
@@ -126,29 +127,23 @@ public class GameMaster : MonoBehaviour
         }
 
 
-
-        if (waveSize > 0)
-        {
-            if (spawnTime == 0)
+        //waveEnemySpawning
+        //Load The wave
+        if (spawnTime == 0) {
+            for (int i = 0; i<spawnPoints.Length;i++)
             {
-                foreach (SpawnPoint i in spawnPoints)
+                if (waveSize > 0)
                 {
-                    if (waveSize > 0)
-                    {
-                        int g = Random.Range(0, enemyTypes.Count);
-                        i.enemyToSpawn = enemyTypes[g];
-                        i.SpawnEnemy();
-                        EnemyController m = i.GetEnemy();
-                        waveSize -= m.spawnValue;
-                        spawnTime = spawnTimeValue;
-                        enemyWave.Add(i.enemySpawned);
-                    }
+                    int rdm = Random.Range(0, enemyTypes.Count);
+                    enemyToSpawn = enemyTypes[rdm];
+                    //Debug.Log("now spawning: " + enemyToSpawn + "at: " + i.name );
+                    GameObject enemySpawned = Instantiate(enemyToSpawn, spawnPoints[i].transform.position,spawnPoints[i].transform.rotation);
+                    waveSize -= enemySpawned.GetComponent<EnemyController>().spawnValue;
+                    enemyWave.Add(enemySpawned);
                 }
             }
-
+            spawnTime += spawnTimeValue;
         }
-                
-                
             
         
         if (waveSize < 0)
@@ -199,6 +194,7 @@ public class GameMaster : MonoBehaviour
                 OpenTower.IsOpen = false;
                 OpenTower = i;
             }
+            
         }
     }
 

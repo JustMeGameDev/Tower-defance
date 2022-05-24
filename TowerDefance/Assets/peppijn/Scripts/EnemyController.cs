@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     public bool death = false;
     public bool navStopped = false;
     public int spawnValue;
+    
 
     [Header("Animation")]
     public Animator animetion;
@@ -37,6 +38,7 @@ public class EnemyController : MonoBehaviour
         GetTarget();
         MoveToTarget();
         Health();
+        
     }
 
     private void GetTarget()

@@ -512,7 +512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7327899736233109979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.33, y: 1.6, z: 7.52}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -562,6 +562,7 @@ MonoBehaviour:
   Damage: 15
   death: 0
   navStopped: 0
+  spawnValue: 2
   animetion: {fileID: 7597717904427998418}
 --- !u!195 &-3263903378690618201
 NavMeshAgent:
