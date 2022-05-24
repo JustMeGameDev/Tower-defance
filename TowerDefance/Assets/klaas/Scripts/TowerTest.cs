@@ -100,11 +100,11 @@ public class TowerTest : MonoBehaviour
         {
             Laser();
         }
-        else if(useCannon)
+        if(useCannon)
         {
             CannonShoot();
         }
-        else if(useBallista)
+        if(useBallista)
         {
             BallistaShoot();
         }
@@ -197,68 +197,6 @@ public class TowerTest : MonoBehaviour
         
     }
 
-    public void CannonUpgradeOne()
-    {
-        towerMsh[1].materials = upgradeOne;
-        towerMsh[0].materials = upgradeOne;
-
-        upgradeTower.upgradeOne.interactable = false;
-        upgradeTower.upgradeTwo.interactable = false;
-
-        cannonNormal = false;
-        cannonUpOne = true;
-    }
-    public void CannonUpgradeTwo()
-    {
-        towerMsh[1].materials = upgradeTwo;
-        towerMsh[0].materials = upgradeTwo;
-
-        upgradeTower.upgradeOne.interactable = false;
-        upgradeTower.upgradeTwo.interactable = false;
-
-        cannonNormal = false;
-        cannonUpTwo = true;
-    }
-
-    public void LightingUpgrade()
-    {
-        if (gameMaster.money > upgradeTower.specialUpgradeOne)
-        {
-            useLightning = true;
-            useNormal = false;
-
-            lightingFX.SetActive(true);
-
-            towerMsh[1].material = upgradeOne[0];
-            towerMsh[0].materials = upgradeOne;
-
-            upgradeTower.upgradeOne.interactable = false;
-            upgradeTower.upgradeTwo.interactable = false;
-
-            gameMaster.money -= upgradeTower.specialUpgradeOne;
-            return;
-        }
-    }
-    public void FireUpgrade()
-    {
-        if (gameMaster.money > upgradeTower.specialUpgradeTwo)
-        {
-            useFire = true;
-            useNormal = false;
-
-            fireRotation.SetActive(true);
-
-            towerMsh[1].material = upgradeTwo[0];
-            towerMsh[0].materials = upgradeTwo;
-
-            upgradeTower.upgradeOne.interactable = false;
-            upgradeTower.upgradeTwo.interactable = false;
-
-            gameMaster.money -= upgradeTower.specialUpgradeTwo;
-            return;
-        }
-    }
-
     void CannonShoot()
     {
         fireDelay -= Time.deltaTime;
@@ -308,6 +246,109 @@ public class TowerTest : MonoBehaviour
                 BulletGO.GetComponent<Bullet>().target = target;
             }
             fireDelay = ballistaDelay;
+        }
+    }
+
+    public void CannonUpgradeOne()
+    {
+        if (gameMaster.money > upgradeTower.specialUpgradeOne)
+        {
+            towerMsh[1].materials = upgradeOne;
+            towerMsh[0].materials = upgradeOne;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
+            cannonNormal = false;
+            cannonUpOne = true;
+        }
+    }
+    public void CannonUpgradeTwo()
+    {
+        if (gameMaster.money > upgradeTower.specialUpgradeTwo)
+        {
+            towerMsh[1].materials = upgradeTwo;
+            towerMsh[0].materials = upgradeTwo;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
+            cannonNormal = false;
+            cannonUpTwo = true;
+        }
+    }
+
+    public void LightingUpgrade()
+    {
+        if (gameMaster.money > upgradeTower.specialUpgradeOne)
+        {
+            useLightning = true;
+            useNormal = false;
+
+            lightingFX.SetActive(true);
+
+            towerMsh[1].material = upgradeOne[0];
+            towerMsh[0].materials = upgradeOne;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
+            gameMaster.money -= upgradeTower.specialUpgradeOne;
+            return;
+        }
+    }
+    public void FireUpgrade()
+    {
+        if (gameMaster.money > upgradeTower.specialUpgradeTwo)
+        {
+            useFire = true;
+            useNormal = false;
+
+            fireRotation.SetActive(true);
+
+            towerMsh[1].material = upgradeTwo[0];
+            towerMsh[0].materials = upgradeTwo;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
+            gameMaster.money -= upgradeTower.specialUpgradeTwo;
+            return;
+        }
+    }
+
+    public void BallistaUpgradeOne()
+    {
+        if (gameMaster.money > upgradeTower.specialUpgradeOne)
+        {
+            towerMsh[1].materials = upgradeOne;
+            towerMsh[0].materials = upgradeOne;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
+            arrowUpgradeOne.GetComponent<Bullet>().damage = 200;
+            ballistaDelay = 5;
+
+            ballistaNormal = false;
+            ballistaUpgradeOne = true;
+        }
+    }
+    public void BallistaUpgradeTwo()
+    {
+        if (gameMaster.money > upgradeTower.specialUpgradeOne)
+        {
+            towerMsh[1].materials = upgradeTwo;
+            towerMsh[0].materials = upgradeTwo;
+
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+
+            arrowUpgradeTwo.GetComponent<Bullet>().damage = 50;
+            ballistaDelay = 0.5f;
+
+            ballistaNormal = false;
+            ballistaUpgradeTwo = true;
         }
     }
 }
