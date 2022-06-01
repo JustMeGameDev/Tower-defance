@@ -36,13 +36,14 @@ public class Bullet : MonoBehaviour
         {
             target.gameObject.GetComponent<EnemyController>().health -= damage;
             Destroy(gameObject);
+
         }
     }
-    void HitTarget()
-    {
-        target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
-        Destroy(gameObject);
-    }
+    //void HitTarget()
+    //{
+    //    target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
+    //    Destroy(gameObject);
+    //}
 }
 
 

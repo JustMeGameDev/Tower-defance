@@ -302,7 +302,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1741754446883463196}
+        m_TargetAssemblyTypeName: PopUp, Assembly-CSharp
+        m_MethodName: open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1741754446883463196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,7 +384,7 @@ MonoBehaviour:
   - {fileID: 6589872531252315164}
   upgradeOne:
   - {fileID: 2100000, guid: fed06537cbab79b4b9f8899f3c3ef753, type: 2}
-  - {fileID: 2100000, guid: 69f06d735a37d92428ffbf8e7bef7707, type: 2}
+  - {fileID: 2100000, guid: 9713fb89004ea4c4db9322745b221833, type: 2}
   - {fileID: 2100000, guid: fed06537cbab79b4b9f8899f3c3ef753, type: 2}
   - {fileID: 2100000, guid: fed06537cbab79b4b9f8899f3c3ef753, type: 2}
   - {fileID: 2100000, guid: fed06537cbab79b4b9f8899f3c3ef753, type: 2}

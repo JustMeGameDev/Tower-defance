@@ -46,10 +46,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_1: {fileID: 4573896178895134505, guid: f8acf99386dd09248879f11ab21a8a67, type: 3}
   enemy_2: {fileID: 3057195974647288668, guid: b0cab92d8da3ec243bfe585ae7d1a1aa, type: 3}
+  Coin: {fileID: 0}
   enemyToSpawn: {fileID: 4573896178895134505, guid: f8acf99386dd09248879f11ab21a8a67,
     type: 3}
   spawnPoint: {fileID: 0}
   difficulty: 1
+  currentWave: 0
   enemyWave: []
   waveSize: 0
-  spawnTime: 2
+  spawnTimeValue: 0
+  WaveCounter: {fileID: 0}
+  money: 1000
+  StartMoney: 900
+  moneyText: {fileID: 0}
+  Towers: []
+  OpenTower: {fileID: 0}
+  PlayerHealth: 0
+  isAlive: 0
+  PlayerMaxHealth: 100
+  healthbar: {fileID: 0}
+  health: {fileID: 0}
+  vault: {fileID: 0}
