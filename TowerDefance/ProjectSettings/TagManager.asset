@@ -19,6 +19,7 @@ TagManager:
   - Vault
   - Mortar
   - ShopMaster
+  - Tiles
   layers:
   - Default
   - TransparentFX

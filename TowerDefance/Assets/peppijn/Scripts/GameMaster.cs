@@ -14,7 +14,8 @@ public class GameMaster : MonoBehaviour
     public Image Coin;
 
     [Header("Wave System")]
-    
+
+    public MapBuilder mapBuilder;
     public GameObject[] spawnPoints;
     public int difficulty;
     public int currentWave;
@@ -59,14 +60,14 @@ public class GameMaster : MonoBehaviour
         healthbar.minValue = 0;
         healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
         isAlive = true;
-        if (spawnPoints.Length < 1)
-        {
-            spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
-        }
     }
 
     void Update()
     {
+        if (spawnPoints.Length < 1 & mapBuilder.finishedMap)
+        {
+            spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
+        }
         SpawnWave();
         Timer();
         HandleEconemy();
