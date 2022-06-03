@@ -5,11 +5,13 @@ using Unity.AI.Navigation;
 
 public class MapBuilder : MonoBehaviour
 {
+
     [Header("Tiles")]
     public GameObject pathTile;
     public GameObject grassTile;
     public GameObject EnemySpawn;
     public GameObject EnemyTarget;
+    
 
     [Header("Tile Logic")]
     public GameObject activeTile;
@@ -24,6 +26,8 @@ public class MapBuilder : MonoBehaviour
     public int pathLength;
     public int mapSize;
     public LayerMask layerMask;
+    public bool buggedMap;
+    public bool finishedMap;
 
     [Header("Seed Generator")]
     public string stringSeed = "seed string";
@@ -48,39 +52,40 @@ public class MapBuilder : MonoBehaviour
 
     void Awake()
     {
+        
         //vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
         //if (!vault.contractseed)
         //{
-            GenarateSeed();
-            GenarateWorld();
-
+           
         //}
         //else
         //{
-          //  useRandomSeed = false;
-          //  seed = PlayerPrefs.GetInt("SelectedSeed");
-          //  Random.InitState(seed);
-           // GenarateWorld();
+        //  useRandomSeed = false;
+        //  seed = PlayerPrefs.GetInt("SelectedSeed");
+        //  Random.InitState(seed);
+        // GenarateWorld();
         //}
     }
 
     private void Update()
     {
-        if (testTimer > 0)
+        if (!finishedMap)
         {
-            testTimer -= Time.deltaTime;
+            GenarateSeed();
+            GenarateWorld();
         }
-        if (testTimer < 0)
+        if (buggedMap)
         {
-            testTimer = 0;
+            ResetWorld();
+            finishedMap = false;
+            useRandomSeed = true;
         }
         navHuman.UpdateNavMesh(navHuman.navMeshData);
         navOgre.UpdateNavMesh(navOgre.navMeshData);
         navBat.UpdateNavMesh(navBat.navMeshData);
         navChicken.UpdateNavMesh(navChicken.navMeshData);
         navDragon.UpdateNavMesh(navDragon.navMeshData);
-        navSlime.UpdateNavMesh(navSlime.navMeshData);
-        
+        navSlime.UpdateNavMesh(navSlime.navMeshData);   
     }
 
 
@@ -108,6 +113,7 @@ public class MapBuilder : MonoBehaviour
         for (int i = 0; i < pathLength; i++)
         {
                 point = CheckBuild();
+                if (buggedMap) return;
                 PlaceTile(point, pathTile);
                 testTimer = testTimerValue;
         }
@@ -130,6 +136,7 @@ public class MapBuilder : MonoBehaviour
         navChicken.BuildNavMesh();
         navDragon.BuildNavMesh();
         navSlime.BuildNavMesh();
+        finishedMap = true;
     }
 
     private Transform CheckBuild()
@@ -153,11 +160,18 @@ public class MapBuilder : MonoBehaviour
                 transformPointsFinal.Add(i);
             }
         }
-        int rd = Random.Range(0,transformPointsFinal.Count);
-        placePoint = transformPointsFinal[rd];
+        if (transformPointsFinal.Count > 0)
+        {
+            int rd = Random.Range(0, transformPointsFinal.Count);
+            placePoint = transformPointsFinal[rd];
+            return placePoint;
+        }
+        else
+        {
+            buggedMap = true;
+            return null;
+        }
         
-        
-        return placePoint;
     }
 
     private void PlaceTile(Transform Point, GameObject tile)
@@ -187,5 +201,20 @@ public class MapBuilder : MonoBehaviour
             }
         }
     }
+
+    private void ResetWorld()
+    {
+         GameObject[] resetTiles;
+        resetTiles = GameObject.FindGameObjectsWithTag("Tiles");
+        foreach (GameObject i in resetTiles)
+        {
+            GameObject.Destroy(i);
+        }
+        buggedMap = false;
+        return;
+    }
+        
+        
+    
 }
 
