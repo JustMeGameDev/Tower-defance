@@ -6,48 +6,94 @@ using UnityEngine;
 public class PerkSystem : MonoBehaviour
 {
     [Header("UI")]
-   [SerializeField] Image[] heartImages;
+   [SerializeField] Image[] upgradeImages;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
-    public int maxUpgrade =3;
-    int upgrade = 0;
+    public string upgradeString;
+    public int maxUpgrade;
+   public  int upgrade;
     public GameMaster gameMaster;
     public float money = 100;
+    public float cost;
   // [Header("Cost")]
-   // public float cost;
-   // [Header("PlayerPrefs")]
-    float health = 100;
-     
-    public void UpgradePerk(float cost)
+  // public float cost;
+  // [Header("PlayerPrefs")]
+    public float health = 100;
+
+    private void Awake()
     {
-        PlayerPrefs.SetFloat("Health", gameMaster.PlayerMaxHealth);
-        for (int i = 0; i < heartImages.Length; i++)
+        upgrade = PlayerPrefs.GetInt("maxHealthUpgrade");
+    }
+    private void Start()
+    {
+        for (int i = 0; i < upgradeImages.Length; i++)
         {
-
-            if (i > upgrade)
+            if (i < upgrade)
             {
-                heartImages[i].sprite = emptyHeart;
-
+                upgradeImages[i].sprite = fullHeart;
             }
-            else
-            {
-                heartImages[i].sprite = fullHeart;
-            }
-
 
         }
-        if (money >= cost && upgrade <= maxUpgrade)
-       {
+    }
 
-           upgrade += 1;
-            // Debug.Log();
-           health = PlayerPrefs.GetFloat("Health");
-            health += 100;
-            Debug.Log(PlayerPrefs.GetFloat("Health"));
-       } else
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.F))
         {
-            Debug.Log("Upgrade Limit");
+          PlayerPrefs.DeleteKey("maxHealthUpgrade");
+                }
+    }
+    public void UpgradePerk()
+    {
+       // PlayerPrefs.GetInt("maxHealthUpgrade");
+        PlayerPrefs.SetFloat("Health", health);
+        if (money >= cost && upgrade < maxUpgrade)//
+        {
+            PlayerPrefs.SetInt("maxHealthUpgrade", upgrade);
+            upgrade += 1;
+            switch (upgrade)
+            {
+                case 1:
+                    Debug.Log("Upgrade" + upgrade);
+
+                    upgradeImages[0].sprite = fullHeart;
+                    return;
+                case 2:
+                    Debug.Log("Upgrade" + upgrade);
+
+                    upgradeImages[1].sprite = fullHeart;
+                    return;
+                case 3:
+                    Debug.Log("Upgrade" + upgrade);
+
+                    upgradeImages[2].sprite = fullHeart;
+                    return;
+                case 4:
+                    Debug.Log("Upgrade" + upgrade);
+                    upgradeImages[3].sprite = fullHeart;
+                    return;
+                case 5:
+                    Debug.Log("Upgrade" + upgrade);
+                    upgradeImages[4].sprite = fullHeart;
+                    return;
+                case 6:
+                    Debug.Log("Upgrade" + upgrade);
+                    PlayerPrefs.SetInt("maxHealthUpgrade", upgrade);
+                    upgradeImages[5].sprite = fullHeart;
+                    return;
+                default:
+                    Debug.Log("No Upgrades");
+                    return;
+            }
+
+           
+
+            //} else
+            // {
+            //     PlayerPrefs.SetInt("maxHealthUpgrade", upgrade);
+            //     Debug.Log("Upgrade Limit");
+            // }
         }
     }
 }
