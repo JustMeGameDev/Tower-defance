@@ -8,6 +8,12 @@ public class MainMenu : MonoBehaviour
     public Canvas MainMmnu;
     private bool menu;
     private bool settings;
+
+    void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("maintheme");
+    }
+
     public void ModeSelect()
     {
         SceneManager.LoadScene(+1);

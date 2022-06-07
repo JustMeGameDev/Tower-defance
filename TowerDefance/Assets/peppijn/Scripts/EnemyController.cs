@@ -93,6 +93,7 @@ public class EnemyController : MonoBehaviour
         {
             death = true;
             animetion.SetBool("die", true);
+            FindObjectOfType<AudioManager>().Play("EnemyDeath");
             StartCoroutine(Dead());
         }
       
