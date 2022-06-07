@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 670867824696091667}
   - component: {fileID: 670867824696091669}
   - component: {fileID: 670867824696091666}
+  - component: {fileID: 278258013}
   m_Layer: 5
   m_Name: contract
   m_TagString: Untagged
@@ -81,6 +82,29 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &278258013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670867824696091664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15eaf9e0553d72a43aaf2f6d8bdfedf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 1852568147275490740}
+  descriptionText: {fileID: 4646363969363492869}
+  rewardText: {fileID: 4673580443681603837}
+  seedText: {fileID: 542326907893240112}
+  nameText: {fileID: 7682776515234306288}
+  image: {fileID: 0}
+  title: 
+  description: 
+  reward: 0
+  seed: 0
+  name: 
 --- !u!1 &1747028944918879446
 GameObject:
   m_ObjectHideFlags: 0

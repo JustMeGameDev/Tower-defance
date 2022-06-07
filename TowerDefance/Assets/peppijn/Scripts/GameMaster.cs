@@ -48,50 +48,64 @@ public class GameMaster : MonoBehaviour
     public Vault vault;
     public float agentAvoidenceTime;
 
+    [Header("simmulation")]
+    public bool isSimmed;
+
+
+
     void Start()
-    {
-        vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
-        enemyWave = new List<GameObject>();
-        Towers = new List<PopUp>();
-        money = money + StartMoney;
-        WaveCounter.text = "Wave: " + currentWave;
-        PlayerHealth = PlayerMaxHealth;
-        healthbar.maxValue = PlayerMaxHealth;
-        healthbar.minValue = 0;
-        healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
-        isAlive = true;
+    {   if (!isSimmed)
+        {
+            vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
+            enemyWave = new List<GameObject>();
+            Towers = new List<PopUp>();
+            money = money + StartMoney;
+            WaveCounter.text = "Wave: " + currentWave;
+            PlayerHealth = PlayerMaxHealth;
+            healthbar.maxValue = PlayerMaxHealth;
+            healthbar.minValue = 0;
+            healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
+            isAlive = true;
+        }
     }
 
     void Update()
     {
-        if (spawnPoints.Length < 1 & mapBuilder.finishedMap)
+        if (!isSimmed)
         {
-            spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
+            if (spawnPoints.Length < 1 & mapBuilder.finishedMap)
+            {
+                spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
+            }
+            SpawnWave();
+            Timer();
+            HandleEconemy();
+            if (money > 1000)
+            {
+
+                string TempMoney = (money / 1000).ToString("F") + "K";
+                moneyText.text = TempMoney;
+            }
+            else
+            {
+                moneyText.text = Mathf.Round(money) + "";
+            }
+            healthbar.value = PlayerHealth;
+            health.text = PlayerHealth + " / " + PlayerMaxHealth;
+            if (PlayerHealth <= 0)
+            {
+                isAlive = false;
+            }
+            if (!isAlive)
+            {
+                Time.timeScale = 0;
+            }
+            NavMesh.avoidancePredictionTime = agentAvoidenceTime;
         }
-        SpawnWave();
-        Timer();
-        HandleEconemy();
-        if (money > 1000)
+        else if (isSimmed)
         {
-           
-           string TempMoney = (money / 1000).ToString("F") + "K";
-            moneyText.text = TempMoney;
+            SpawnWave();
         }
-        else
-        {
-            moneyText.text = Mathf.Round(money) + "";
-        }
-        healthbar.value = PlayerHealth;
-        health.text = PlayerHealth + " / " + PlayerMaxHealth;
-        if (PlayerHealth <= 0)
-        {
-            isAlive = false;
-        }
-        if (!isAlive)
-        {
-            Time.timeScale = 0;
-        }
-        NavMesh.avoidancePredictionTime = agentAvoidenceTime;
     }
     void FixedUpdate()
     {
@@ -138,9 +152,17 @@ public class GameMaster : MonoBehaviour
                     int rdm = Random.Range(0, enemyTypes.Count);
                     enemyToSpawn = enemyTypes[rdm];
                     //Debug.Log("now spawning: " + enemyToSpawn + "at: " + i.name );
-                    GameObject enemySpawned = Instantiate(enemyToSpawn, spawnPoints[i].transform.position,spawnPoints[i].transform.rotation);
-                    waveSize -= enemySpawned.GetComponent<EnemyController>().spawnValue;
-                    enemyWave.Add(enemySpawned);
+                    if (!isSimmed)
+                    {
+                        GameObject enemySpawned = Instantiate(enemyToSpawn, spawnPoints[i].transform.position, spawnPoints[i].transform.rotation);
+
+                        waveSize -= enemySpawned.GetComponent<EnemyController>().spawnValue;
+                        enemyWave.Add(enemySpawned);
+                    }
+                    else if (isSimmed)
+                    {
+
+                    }
                 }
             }
             spawnTime += spawnTimeValue;
