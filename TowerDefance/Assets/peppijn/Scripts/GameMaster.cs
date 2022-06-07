@@ -48,7 +48,7 @@ public class GameMaster : MonoBehaviour
     public Vault vault;
     public float agentAvoidenceTime;
 
-    public float isSimmed;
+    public bool isSimmed;
 
     void Start()
     {   if (!isSimmed)
