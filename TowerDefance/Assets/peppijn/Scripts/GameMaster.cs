@@ -48,6 +48,8 @@ public class GameMaster : MonoBehaviour
     public Vault vault;
     public float agentAvoidenceTime;
 
+    
+
     void Start()
     {
         vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
