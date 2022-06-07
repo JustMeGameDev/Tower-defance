@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370ef4a15b50dcb40870667c52b4cd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: mage
   range: 15
   damage: 10
   attackSpeed: 10
@@ -267,6 +268,9 @@ MonoBehaviour:
   firePoint: {fileID: 4712158325359069770}
   cannonBall: {fileID: 0}
   specialCanBall: {fileID: 0}
+  fireCannonBall: {fileID: 0}
+  cannonExplosion: {fileID: 0}
+  useCannon: 0
   cannonNormal: 0
   cannonUpOne: 0
   cannonUpTwo: 0
@@ -280,6 +284,14 @@ MonoBehaviour:
   useFire: 0
   useMage: 1
   fireDelay: 1
+  arrow: {fileID: 0}
+  arrowUpgradeOne: {fileID: 0}
+  arrowUpgradeTwo: {fileID: 0}
+  ballistaDelay: 2
+  useBallista: 0
+  ballistaNormal: 0
+  ballistaUpgradeOne: 0
+  ballistaUpgradeTwo: 0
   fireRotation: {fileID: 7061346948427697583}
   lightingFX: {fileID: 4692807813502227484}
   towerMsh:

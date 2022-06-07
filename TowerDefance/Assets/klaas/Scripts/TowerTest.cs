@@ -5,8 +5,9 @@ using UnityEngine;
 public class TowerTest : MonoBehaviour
 {
     private Transform target;
-    
-    
+
+    public string tower;
+   
     [Header("Stats")]
     public float range = 15;
     public float damage = 10;
@@ -76,7 +77,7 @@ public class TowerTest : MonoBehaviour
     {    
         InvokeRepeating("SelectTarget", 0, 1f);
     }
-  
+
     void Update()
     {
 
@@ -95,19 +96,29 @@ public class TowerTest : MonoBehaviour
 
         }
         LookAtTarget();
-
-        if (useMage)
-        {
-            Laser();
+       switch (tower)
+       {
+            case "mage": Laser();
+                return;
+            case "cannon": CannonShoot();
+                return;
+            case "ballista": BallistaShoot();
+                return;
         }
-        if(useCannon)
-        {
-            CannonShoot();
-        }
-        if(useBallista)
-        {
-            BallistaShoot();
-        }
+        
+        //if (useMage)
+        //{
+        //    Laser();
+        //}
+        //if (useCannon)
+        //{
+        //    CannonShoot();
+        //}
+        //if (useBallista)
+        //{
+        //    BallistaShoot();
+        //}
+  
     }
 
     void SelectTarget()
