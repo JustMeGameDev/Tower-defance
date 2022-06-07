@@ -2,10 +2,10 @@ using UnityEngine;
 using TMPro;
 
 public class GameSpeed : MonoBehaviour
-{
-    public GameObject prefab;
+{   [Header("text")]
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI dayText;
+    [Header("value's")]
     public float timeFloat;
     public float timeStart;
     public float timeEnd;
@@ -13,6 +13,7 @@ public class GameSpeed : MonoBehaviour
     public bool bloodNight;
     public int day = 1;
    
+    [Header("materials")]
     public Material skyboxDay;
     public Material skyboxDawn;
     public Material skyboxSunset;
