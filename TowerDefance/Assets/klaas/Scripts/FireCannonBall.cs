@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBall : MonoBehaviour
+public class FireCannonBall : MonoBehaviour
 {
     public float speed = 2f;
-    public float damage = 30f;
+    public float explosiveDamage = 50f;
     public Transform target;
-    public bool upgradeOne;
+    public GameObject fireRing;
+  
+
+
 
     void Update()
     {
@@ -26,11 +29,21 @@ public class FireBall : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        Instantiate(fireRing, transform.position, Quaternion.identity);
         if (other.gameObject.tag == "Enemy")
         {
-            target.gameObject.GetComponent<EnemyController>().health -= damage;
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f, 1 << 10);
+
+
+            foreach (var enemy in hitColliders)
+            {
+                if (enemy.gameObject.CompareTag("Enemy"))
+                {
+                    enemy.gameObject.GetComponent<EnemyController>().health -= explosiveDamage;
+                }
+            }
+            target.gameObject.GetComponent<EnemyController>().health -= explosiveDamage;
             Destroy(gameObject);
         }
     }
 }
-    

@@ -32,7 +32,7 @@ public class BallistaTower : MonoBehaviour
             if (fireDelay <= 0 && Mathf.Abs(angle) <= angleTreshold)
             {
                 Shoot();
-                fireDelay = 10f;
+                fireDelay = 4f;
             }
         }
 

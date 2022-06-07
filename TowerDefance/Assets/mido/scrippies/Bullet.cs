@@ -23,9 +23,10 @@ public class Bullet : MonoBehaviour
         {
            // HitTarget();
         }
-
+        //dir.normalized
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-        transform.LookAt(target);
+    
+       //transform.LookAt(target, Vector3.up);
     }
 
 
@@ -35,13 +36,14 @@ public class Bullet : MonoBehaviour
         {
             target.gameObject.GetComponent<EnemyController>().health -= damage;
             Destroy(gameObject);
+
         }
     }
-    void HitTarget()
-    {
-        target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
-        Destroy(gameObject);
-    }
+    //void HitTarget()
+    //{
+    //    target.gameObject.GetComponent<EnemyController>().health -= damage * Time.deltaTime;
+    //    Destroy(gameObject);
+    //}
 }
 
 
