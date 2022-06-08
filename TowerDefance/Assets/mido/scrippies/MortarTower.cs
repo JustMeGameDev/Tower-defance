@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MortarTower : MonoBehaviour
+
 {
 
     [Range(20.0f, 75.0f)] public float LaunchAngle;
     public float waitTime;
 
-    public GameObject Bullet;
+    public GameObject Shell;
     public GameObject Canon;
     public GameObject Mark;
 
@@ -35,12 +36,13 @@ public class MortarTower : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 Debug.DrawLine(Camera.main.transform.position, hit.point, Color.red);
-                //Debug.Log(hit.transform.position.x);
+
                 if (hit.transform != null & Reloading == false)
                 {
                     Instantiate(Mark, hit.point + Vector3.up * 0.01f, Quaternion.Euler(-90, 0, 0));
-                    Instantiate(Bullet, Canon.transform.position, Quaternion.Euler(new Vector3(90, 0, 90)));
+                    Instantiate(Shell, Canon.transform.position, Quaternion.Euler(new Vector3(90, 0, 90)));
                     StartCoroutine(Reload(waitTime));
+
                 }
             }
 

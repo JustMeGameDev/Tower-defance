@@ -24,7 +24,7 @@ public class Shell : MonoBehaviour
     }
     void Launch(Vector3 hit, float LaunchAngle)
     {
-        //GameObject Disparo = Instantiate(Bullet, Canon.transform.position, Quaternion.identity);
+        //GameObject Disparo = Instantiate(Shell, Canon.transform.position, Quaternion.identity);
 
    
         Vector3 projectileXZPos = new Vector3(transform.position.x, 0.0f, transform.position.z);
@@ -53,7 +53,7 @@ public class Shell : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Mark")
         {
             Destroy(other.gameObject);
             Destroy(this.gameObject);

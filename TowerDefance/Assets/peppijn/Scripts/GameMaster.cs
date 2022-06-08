@@ -44,11 +44,11 @@ public class GameMaster : MonoBehaviour
     public Slider healthbar;
     public TextMeshProUGUI health;
 
-    public Vault vault;
+    
 
     void Start()
     {
-        vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
+        
         enemyWave = new List<GameObject>();
         Towers = new List<PopUp>();
         money = money + StartMoney;
