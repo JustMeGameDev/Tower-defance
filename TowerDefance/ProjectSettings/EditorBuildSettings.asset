@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/kornee/Scenes/test kornee.unity
-    guid: 395d2719bfd7b3e42a2784bf76422ea8
+    path: Assets/build 0.1/Mainmenu.unity
+    guid: 73fd9eaeae5ac7a4aa0fe56034c65f90
   - enabled: 1
-    path: Assets/Main/MainScene.unity
-    guid: 67bc83f1dc5699844871d5fee8db9692
+    path: Assets/build 0.1/ModeSelect.unity
+    guid: b4f1ced28abeea04f95295140bf4c8ed
+  - enabled: 1
+    path: Assets/build 0.1/MainScene.unity
+    guid: 15bff49c948ddb647936ee312ffca8bd
+  - enabled: 1
+    path: Assets/build 0.1/settings menu.unity
+    guid: 9ee0b8286b7a8bc4396585be0aef5592
   m_configObjects: {}

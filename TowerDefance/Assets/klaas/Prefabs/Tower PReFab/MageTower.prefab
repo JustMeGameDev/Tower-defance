@@ -267,6 +267,9 @@ MonoBehaviour:
   firePoint: {fileID: 4712158325359069770}
   cannonBall: {fileID: 0}
   specialCanBall: {fileID: 0}
+  fireCannonBall: {fileID: 0}
+  cannonExplosion: {fileID: 0}
+  useCannon: 0
   cannonNormal: 0
   cannonUpOne: 0
   cannonUpTwo: 0
@@ -280,6 +283,14 @@ MonoBehaviour:
   useFire: 0
   useMage: 1
   fireDelay: 1
+  arrow: {fileID: 0}
+  arrowUpgradeOne: {fileID: 0}
+  arrowUpgradeTwo: {fileID: 0}
+  ballistaDelay: 2
+  useBallista: 0
+  ballistaNormal: 0
+  ballistaUpgradeOne: 0
+  ballistaUpgradeTwo: 0
   fireRotation: {fileID: 7061346948427697583}
   lightingFX: {fileID: 4692807813502227484}
   towerMsh:
@@ -5762,6 +5773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: -1656680797454660470}
@@ -5799,6 +5815,21 @@ PrefabInstance:
         type: 3}
       propertyPath: costMultiplier
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138819987391987063, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -1656680797454660470}
+    - target: {fileID: 4138819987391987063, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LightingUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138819987391987063, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerTest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}

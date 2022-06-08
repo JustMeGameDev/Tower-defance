@@ -576,6 +576,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105482804511, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6362866261802991322}
@@ -594,6 +599,21 @@ PrefabInstance:
       propertyPath: towerTest
       value: 
       objectReference: {fileID: 6362866261802991322}
+    - target: {fileID: 4138819987391987063, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6362866261802991322}
+    - target: {fileID: 4138819987391987063, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BallistaUpgradeOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138819987391987063, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerTest, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: towerTest

@@ -4,11 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    public Canvas Settings;
-    public Canvas MainMmnu;
-    private bool menu;
-    private bool settings;
-
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("maintheme");
@@ -20,40 +15,17 @@ public class MainMenu : MonoBehaviour
         Debug.Log("+1");
 
     }
-    public void MenuBack()
+    public void quit()
     {
-        SceneManager.LoadScene(-1);
-        Debug.Log("-1");
+        Application.Quit();
     }
 
-    private void FixedUpdate()
+    public void Settings()
     {
-        if(menu)
-        {
-            Settings.enabled = false;
-            MainMmnu.enabled = true;
-            settings = false;
-        }
-        else if (settings)
-        {
-            MainMmnu.enabled = false;
-            Settings.enabled = true;
-            menu = false;
-        }
-    }
-
-    public void SettingsMenu()
+        SceneManager.LoadScene("settings menu");
+    }   
+    public void Mainmenu()
     {
-        if (!settings)
-        {
-            settings = true;
-            menu = false;
-        }
-        else if(settings)
-        {
-            menu = true;
-            settings = false;
-        }
+        SceneManager.LoadScene("Mainmenu");
     }
-    
 }
