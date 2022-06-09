@@ -214,7 +214,7 @@ MonoBehaviour:
   upgradeTower: {fileID: 8379727484735660369}
   rotator: {fileID: 2336372346730696254}
   firePoint: {fileID: 2336372347415852015}
-  cannonBall: {fileID: 313608266486151592, guid: 2e6b7dc0278cc7544a8bf52a21792987,
+  cannonBall: {fileID: 313608266486151592, guid: 5d0e11f8cbbd12f47aff6a64632d9a7c,
     type: 3}
   specialCanBall: {fileID: 313608266486151592, guid: 02ff328ebac554a42855af0aa0c1041e,
     type: 3}

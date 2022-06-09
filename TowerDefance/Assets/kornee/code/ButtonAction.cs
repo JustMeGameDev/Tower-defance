@@ -13,7 +13,7 @@ public class ButtonAction : MonoBehaviour
 
     public void SceneUp()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MainScene");
     }
      
 }
