@@ -45,7 +45,7 @@ public class GameMaster : MonoBehaviour
     public Slider healthbar;
     public TextMeshProUGUI health;
 
-    public Vault vault;
+
     public float agentAvoidenceTime;
 
     public bool isSimmed;
@@ -53,7 +53,7 @@ public class GameMaster : MonoBehaviour
     void Start()
     {   if (!isSimmed)
         {
-            vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
+            
             enemyWave = new List<GameObject>();
             Towers = new List<PopUp>();
             money = money + StartMoney;
@@ -63,6 +63,19 @@ public class GameMaster : MonoBehaviour
             healthbar.minValue = 0;
             healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
             isAlive = true;
+        }
+        
+        switch (PlayerPrefs.GetString("gameMode"))
+        {
+            case "Carreer":
+                                
+                break;
+            case "Custom":
+                
+                break;
+            case "Random":
+                
+                break;
         }
     }
 
