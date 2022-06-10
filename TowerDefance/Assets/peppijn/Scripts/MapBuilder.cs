@@ -52,19 +52,22 @@ public class MapBuilder : MonoBehaviour
 
     void Awake()
     {
-        
-        //vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
-        //if (!vault.contractseed)
-        //{
-           
-        //}
-        //else
-        //{
-        //  useRandomSeed = false;
-        //  seed = PlayerPrefs.GetInt("SelectedSeed");
-        //  Random.InitState(seed);
-        // GenarateWorld();
-        //}
+        switch (PlayerPrefs.GetString("gameMode"))
+        {
+            case "Carreer":
+                useRandomSeed = false;
+                seed = PlayerPrefs.GetInt("seed");
+                pathLength = PlayerPrefs.GetInt("mapLength");
+                break;
+            case "Custom":
+                useRandomSeed = false;
+                seed = PlayerPrefs.GetInt("seed");
+                pathLength = PlayerPrefs.GetInt("mapLength");
+                break;
+            case "Random":
+                useRandomSeed = true;
+                break;
+        }
     }
 
     private void Update()

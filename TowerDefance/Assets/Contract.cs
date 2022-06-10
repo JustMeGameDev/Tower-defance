@@ -9,7 +9,6 @@ public class Contract : MonoBehaviour
 {
     [Header("UI")]
     public TextMeshProUGUI titleText;
-    public TextMeshProUGUI descriptionText;
     public TextMeshProUGUI rewardText;
     public TextMeshProUGUI seedText;
     public TextMeshProUGUI nameText;
@@ -19,23 +18,47 @@ public class Contract : MonoBehaviour
     public string description;
     public int reward;
     public int seed;
-    public string name;
+    public string namePerson;
     public int waves;
+    public int finalWave;
+    public int mapLength;
+    public float difficulty;
 
-    public Contract(string title_, string name_, string description_,Image image_)
+    public void ContractAssemble(string title_, string name_,Sprite image_)
     {
         title = title_;
-        name = name_;
-        description = description_;
-        image = image_;
+        namePerson = name_;
+        image.sprite = image_;
         seed = Random.Range(0,999999999);
+        mapLength = Random.Range(10,25);
+        finalWave = Random.Range(30,40);
+        difficulty = Random.Range(0.5f,1.5f);
+        CalculateReward();
+        Render();
     }
 
     public void CalculateReward()
     {
-
+        reward = Random.Range(0, 50);
     }
 
+    public void PickContract()
+    {
+        PlayerPrefs.SetString("gameMode","Carreer");
+        PlayerPrefs.SetInt("seed",seed);
+        PlayerPrefs.SetInt("reward", reward);
+        PlayerPrefs.SetInt("mapLength", mapLength);
+        PlayerPrefs.SetInt("finalWave", finalWave);
+        PlayerPrefs.SetFloat("difficulty",difficulty);
+        SceneManager.LoadScene("MainScene");
+    }
+    public void Render()
+    {
+        nameText.text = namePerson;
+        titleText.text = title;
+        seedText.text = "seed: " + seed.ToString();
+        rewardText.text = reward.ToString();
+    }
 
 
 }
