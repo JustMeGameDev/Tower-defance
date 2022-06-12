@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 184167093}
   - component: {fileID: 184167092}
   - component: {fileID: 184167091}
-  - component: {fileID: 184167090}
+  - component: {fileID: 184167094}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -188,19 +188,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &184167090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184167088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e21fccafb61dc294395b443333a029d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Meteor: {fileID: 885036592374074845, guid: 7192a67d3f83e694aaa3621681453d73, type: 3}
 --- !u!114 &184167091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,8 +232,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 184167090}
-        m_TargetAssemblyTypeName: SpawnMeteor, Assembly-CSharp
+      - m_Target: {fileID: 184167094}
+        m_TargetAssemblyTypeName: MeteorSpawner, Assembly-CSharp
         m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
@@ -295,6 +282,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184167088}
   m_CullTransparentMesh: 1
+--- !u!114 &184167094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184167088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb6bc582e176594c9f35919e81a34fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMaster: {fileID: 1452164180}
+  MetoerMark: {fileID: 1773841600900103546, guid: d8c6a2e021bb6e0438d12a5a375ebcdf,
+    type: 3}
+  cost: 100
 --- !u!1 &210868056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,6 +1217,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c373e3782464c0428645f9c2c8e27f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1452164180 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136573336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d564e92fc07fb4eab9cc1f6febfe52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1465955265
@@ -2344,7 +2359,7 @@ PrefabInstance:
     - target: {fileID: 2815073933936092340, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4616.5728
+      value: -118641.484
       objectReference: {fileID: 0}
     - target: {fileID: 4870080142580125482, guid: 29123bd7613c82a49a984b4f21b9c21c,
         type: 3}
