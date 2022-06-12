@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7341120954508204911}
   - component: {fileID: 3384174491066772136}
   - component: {fileID: 2019915090192697889}
+  - component: {fileID: -5614273745014962266}
   m_Layer: 0
   m_Name: MortarExplosion
   m_TagString: Untagged
@@ -289,7 +290,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 5.04
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -752,7 +753,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.0001
+      value: 4.66
       mode: 0
       spread: 0
       speed:
@@ -4889,6 +4890,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-5614273745014962266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966245275766088286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f11a7d5487ac7d4cafee0c25165f4f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTime: 2
 --- !u!1001 &119478004645076323
 PrefabInstance:
   m_ObjectHideFlags: 0

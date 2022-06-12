@@ -4,19 +4,10 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject impactExplosion;
     private void OnCollisionEnter(Collision collision)
     {
+        Instantiate(impactExplosion, transform.position,transform.rotation);
         if(collision.gameObject.tag == "Enemy")
         {
 
