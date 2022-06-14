@@ -11,9 +11,13 @@ public class ButtonAction : MonoBehaviour
         Application.Quit();
     }
 
-    public void SceneUp()
+    public void SceneRandom()
     {
         SceneManager.LoadScene("MainScene");
+    }
+    public void CareerMode()
+    {
+        SceneManager.LoadScene("contract menu");
     }
      
 }

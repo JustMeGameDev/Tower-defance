@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/build 0.1/settings menu.unity
     guid: 9ee0b8286b7a8bc4396585be0aef5592
+  - enabled: 1
+    path: Assets/kornee/Scenes/contract menu.unity
+    guid: 67802cb01736d554a8760dcb377b0d73
   m_configObjects: {}
