@@ -73,7 +73,7 @@ public class Contract : MonoBehaviour
         PlayerPrefs.SetString("gameMode","Carreer");
         PlayerPrefs.SetInt("seed",seed);
         PlayerPrefs.SetInt("reward", reward);
-        PlayerPrefs.SetInt("mapLength", mapLength);
+        PlayerPrefs.SetInt("pathLength", mapLength);
         PlayerPrefs.SetInt("finalWave", finalWave);
         PlayerPrefs.SetFloat("difficulty",difficulty);
         SceneManager.LoadScene("MainScene");
