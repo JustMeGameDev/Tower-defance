@@ -52,6 +52,7 @@ public class MapBuilder : MonoBehaviour
 
     void Awake()
     {
+
         switch (PlayerPrefs.GetString("gameMode"))
         {
             case "Carreer":
