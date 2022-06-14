@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 1115088762882407189}
   - component: {fileID: 6985715035248290900}
   - component: {fileID: 3952152142925948010}
+  - component: {fileID: 2723346850687896384}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -193,10 +194,10 @@ SphereCollider:
   m_GameObject: {fileID: 7958254437816202877}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.5013171
+  m_Center: {x: -0.20978248, y: 0.9715892, z: 0.10911083}
 --- !u!54 &6985715035248290900
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -227,6 +228,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactExplosion: {fileID: 1966245275766088286, guid: fc87bd5b7312d49d791633293250d799,
     type: 3}
+  range: 20
+  damage: 100
+--- !u!65 &2723346850687896384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7958254437816202877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.2326336, y: 1.4375668, z: 4.59876}
+  m_Center: {x: 0.017859936, y: 0.21878338, z: -0.0223248}
 --- !u!1001 &5247022663013105249
 PrefabInstance:
   m_ObjectHideFlags: 0
