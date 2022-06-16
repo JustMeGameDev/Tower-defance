@@ -17,13 +17,14 @@ public class GameMaster : MonoBehaviour
 
     public MapBuilder mapBuilder;
     public GameObject[] spawnPoints;
-    public int difficulty;
+    public float difficulty;
     public int currentWave;
     public List<GameObject> enemyWave;
     public int waveSize = 1;
     public int spawnTimeValue;
     private float spawnTime = 0f;
     public TextMeshProUGUI WaveCounter;
+    public int finalWave;
 
     [Header("Economy")]
     public float money = 1000;
@@ -68,13 +69,14 @@ public class GameMaster : MonoBehaviour
         switch (PlayerPrefs.GetString("gameMode"))
         {
             case "Carreer":
-                                
+                difficulty = PlayerPrefs.GetFloat("difficulty");
+                finalWave = PlayerPrefs.GetInt("finalWave");
                 break;
             case "Custom":
                 
                 break;
             case "Random":
-                
+                difficulty = Random.Range(0.5f,1.5f);
                 break;
         }
     }
@@ -135,7 +137,8 @@ public class GameMaster : MonoBehaviour
         //waveSetup
         if (enemyWave.Count == 0 && waveSize == 0)
         {
-            waveSize = currentWave * difficulty * 3;
+           float waveSizeTemp = currentWave * difficulty * 3 ;
+            waveSize = (int) waveSizeTemp;
             currentWave++;
             int WaveCount = currentWave - 1;
             WaveCounter.text = "Wave: " + WaveCount;
