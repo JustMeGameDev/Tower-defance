@@ -26,8 +26,11 @@ public class GameMaster : MonoBehaviour
     public TextMeshProUGUI WaveCounter;
     public int finalWave;
     [Header("BossWave")]
-    public float bossSpawnChance;
-
+    public int bossSpawnChance;
+    public GameObject[] Bosses;
+    public GameObject bossToSpawn;
+    public bool isBossWave;
+    public Transform BossSpawn;
 
     [Header("Economy")]
     public float money = 0;
@@ -74,7 +77,7 @@ public class GameMaster : MonoBehaviour
         }
         if (!isSimmed)
         {
-
+            
             enemyWave = new List<GameObject>();
             Towers = new List<PopUp>();
             money += StartMoney;
@@ -94,7 +97,12 @@ public class GameMaster : MonoBehaviour
             if (spawnPoints.Length < 1 & mapBuilder.finishedMap)
             {
                 spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
+                foreach (GameObject i in spawnPoints)
+                {
+
+                }
             }
+            
             SpawnWave();
             Timer();
             HandleEconemy();
@@ -139,7 +147,10 @@ public class GameMaster : MonoBehaviour
 
     private void SpawnWave()
     {
-        
+        if (isBossWave)
+        {
+            
+        }
         //waveSetup
         if (enemyWave.Count == 0 && waveSize == 0)
         {
