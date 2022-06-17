@@ -70,7 +70,7 @@ public class TowerTest : MonoBehaviour
     private void Awake()
     {
         gameMaster = GameObject.Find("GameMaster").GetComponent<GameMaster>();
-
+        
     }
     void Start()
     {    

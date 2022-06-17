@@ -25,9 +25,12 @@ public class GameMaster : MonoBehaviour
     private float spawnTime = 0f;
     public TextMeshProUGUI WaveCounter;
     public int finalWave;
+    [Header("BossWave")]
+    public float bossSpawnChance;
+
 
     [Header("Economy")]
-    public float money = 1000;
+    public float money = 0;
     private float roundReward = 25;
     private float ecoTimer = 1;
     private float passiveIncome = 12;
@@ -52,25 +55,15 @@ public class GameMaster : MonoBehaviour
     public bool isSimmed;
 
     void Start()
-    {   if (!isSimmed)
-        {
-            
-            enemyWave = new List<GameObject>();
-            Towers = new List<PopUp>();
-            money = money + StartMoney;
-            WaveCounter.text = "Wave: " + currentWave;
-            PlayerHealth = PlayerMaxHealth;
-            healthbar.maxValue = PlayerMaxHealth;
-            healthbar.minValue = 0;
-            healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
-            isAlive = true;
-        }
+    {   
         
         switch (PlayerPrefs.GetString("gameMode"))
         {
             case "Carreer":
                 difficulty = PlayerPrefs.GetFloat("difficulty");
                 finalWave = PlayerPrefs.GetInt("finalWave");
+                PlayerMaxHealth += PlayerPrefs.GetFloat("Health");
+                StartMoney += PlayerPrefs.GetFloat("startMoney");
                 break;
             case "Custom":
                 
@@ -78,6 +71,19 @@ public class GameMaster : MonoBehaviour
             case "Random":
                 difficulty = Random.Range(0.5f,1.5f);
                 break;
+        }
+        if (!isSimmed)
+        {
+
+            enemyWave = new List<GameObject>();
+            Towers = new List<PopUp>();
+            money += StartMoney;
+            WaveCounter.text = "Wave: " + currentWave;
+            PlayerHealth = PlayerMaxHealth;
+            healthbar.maxValue = PlayerMaxHealth;
+            healthbar.minValue = 0;
+            healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
+            isAlive = true;
         }
     }
 

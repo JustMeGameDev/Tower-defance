@@ -48,6 +48,8 @@ public class MapBuilder : MonoBehaviour
     public float testTimer;
     public Vault vault;
 
+    [Header("Enviorment")]
+    public GameObject[] enviorment;
 
 
     void Awake()

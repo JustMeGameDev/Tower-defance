@@ -28,6 +28,18 @@ public class UpgradeTower : MonoBehaviour
     {
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
         CostText.text = "Cost: " + cost + " $";
+        switch (PlayerPrefs.GetString("gameMode"))
+        {
+            case "Carreer":
+                maxLevel += PlayerPrefs.GetInt("towerLevel");
+                break;
+            case "Custom":
+
+                break;
+            case "Random":
+
+                break;
+        }
     }
 
     public void Upgrade()
