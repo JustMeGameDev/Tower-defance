@@ -56,7 +56,7 @@ public class GameMaster : MonoBehaviour
         enemyWave = new List<GameObject>();
         Towers = new List<PopUp>();
         money = money + StartMoney;
-        WaveCounter.text = "Wave: " + currentWave;
+        WaveCounter.text = "Wave: " + currentWave;  
         PlayerHealth = PlayerMaxHealth;
         healthbar.maxValue = PlayerMaxHealth;
         healthbar.minValue = 0;

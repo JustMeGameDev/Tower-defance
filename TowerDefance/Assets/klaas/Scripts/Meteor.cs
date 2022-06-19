@@ -26,10 +26,7 @@ public class Meteor : MonoBehaviour
             Destroy(gameObject);
         } else
         {
-            foreach (var e in hitCollider)
-            {
-                e.gameObject.GetComponent<EnemyController>().health -= damage;
-            }
+          
             Destroy(gameObject);
        }
     }
