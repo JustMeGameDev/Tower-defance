@@ -4916,9 +4916,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94691785747ef844b2c0f1ae6c17d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 25
+  towerTest: {fileID: 7963384845881228304}
   flame: {fileID: 5204574420849774858}
   isActive: 0
-  Damage: 25
 --- !u!1 &2359833765969757069
 GameObject:
   m_ObjectHideFlags: 0
@@ -9835,9 +9836,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94691785747ef844b2c0f1ae6c17d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 25
+  towerTest: {fileID: 7963384845881228304}
   flame: {fileID: 3300214905658408078}
   isActive: 0
-  Damage: 25
 --- !u!1 &2486066285401502600
 GameObject:
   m_ObjectHideFlags: 0
@@ -14754,9 +14756,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94691785747ef844b2c0f1ae6c17d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 25
+  towerTest: {fileID: 7963384845881228304}
   flame: {fileID: 6197309233515825704}
   isActive: 0
-  Damage: 25
 --- !u!1 &2836326554609519026
 GameObject:
   m_ObjectHideFlags: 0
@@ -15026,6 +15029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3828436391036026427}
   - component: {fileID: 5985791175043592421}
+  - component: {fileID: 7963384845881228304}
   - component: {fileID: -108324922220870681}
   - component: {fileID: -1864592382495749775}
   m_Layer: 8
@@ -15070,6 +15074,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 6585087754507702045}
   IsOpen: 0
+--- !u!114 &7963384845881228304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497554725147845761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370ef4a15b50dcb40870667c52b4cd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  damage: 10
+  attackSpeed: 10
+  fireDamage: 0
+  burnDamage: 0
+  gameMaster: {fileID: 0}
+  upgradeTower: {fileID: 0}
+  rotator: {fileID: 0}
+  firePoint: {fileID: 0}
+  cannonBall: {fileID: 0}
+  specialCanBall: {fileID: 0}
+  fireCannonBall: {fileID: 0}
+  cannonExplosion: {fileID: 0}
+  useCannon: 0
+  cannonNormal: 0
+  cannonUpOne: 0
+  cannonUpTwo: 0
+  lightningBolt: {fileID: 0}
+  fireParticleSystem: {fileID: 0}
+  lineRenderer: {fileID: 0}
+  fireBall: {fileID: 0}
+  useNormal: 0
+  useLightning: 0
+  useFire: 0
+  useMage: 0
+  fireDelay: 1
+  arrow: {fileID: 0}
+  arrowUpgradeOne: {fileID: 0}
+  arrowUpgradeTwo: {fileID: 0}
+  ballistaDelay: 2
+  useBallista: 0
+  ballistaNormal: 0
+  ballistaUpgradeOne: 0
+  ballistaUpgradeTwo: 0
+  fireRotation: {fileID: 0}
+  lightingFX: {fileID: 0}
+  towerMsh: []
+  upgradeOne: []
+  upgradeTwo: []
 --- !u!114 &-108324922220870681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20197,9 +20252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94691785747ef844b2c0f1ae6c17d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 25
+  towerTest: {fileID: 7963384845881228304}
   flame: {fileID: 9068500752134067065}
   isActive: 0
-  Damage: 25
 --- !u!1001 &6872051159593977866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20317,6 +20373,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: pop-up
       objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: towerTest
+      value: 
+      objectReference: {fileID: 7963384845881228304}
     m_RemovedComponents:
     - {fileID: 3352965189805100705, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}

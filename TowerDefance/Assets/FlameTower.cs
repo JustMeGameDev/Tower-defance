@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class FlameTower : MonoBehaviour
 {
+    [Header("Damage")]
+    public float Damage;
+    [SerializeField] TowerTest towerTest;
+
     [Header("Fire FX")]
     public ParticleSystem flame;
     public bool isActive;
-    public float Damage = 25;
+    
+
+    private void Awake()
+    {
+        Damage = towerTest.damage;
+    }
     void Start()
     {
         //TowerTest towerTest = 

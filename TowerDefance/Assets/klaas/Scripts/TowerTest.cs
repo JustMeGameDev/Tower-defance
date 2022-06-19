@@ -60,6 +60,9 @@ public class TowerTest : MonoBehaviour
     public bool ballistaUpgradeOne;
     public bool ballistaUpgradeTwo;
 
+    [Header("Flame")]
+    public bool useFlame;
+
     [Header("Updrage")]
     public GameObject fireRotation;
     public GameObject lightingFX;
@@ -189,7 +192,9 @@ public class TowerTest : MonoBehaviour
             if (fireDelay <= 0)
             {
                 GameObject projFireBall = Instantiate(fireBall, firePoint.position, Quaternion.identity);
+              //  projFireBall.GetComponent<FireBall>().damage = damage;
                 projFireBall.GetComponent<FireBall>().target = target;
+              
                 fireDelay = 1f;
             }
 
