@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 7958254437816202877}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 50.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5447530394608472112}
@@ -196,8 +196,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 1.5013171
-  m_Center: {x: -0.20978248, y: 0.9715892, z: 0.10911083}
+  m_Radius: 1.7295606
+  m_Center: {x: 0.018460989, y: 0.9715893, z: 0.10911083}
 --- !u!54 &6985715035248290900
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -228,8 +228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactExplosion: {fileID: 1966245275766088286, guid: fc87bd5b7312d49d791633293250d799,
     type: 3}
-  range: 889.9
-  damage: 13851
+  range: 15
+  damage: 100
 --- !u!65 &2723346850687896384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -241,8 +241,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.2326336, y: 1.4375668, z: 4.59876}
-  m_Center: {x: 0, y: 0.21878338, z: 0}
+  m_Size: {x: 0.98484135, y: 1.4375668, z: 1.0627081}
+  m_Center: {x: 0.03996248, y: 0.21878338, z: 0.024532605}
 --- !u!1001 &5247022663013105249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -254,6 +254,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 236631704152436305, guid: 9bfeebfbd0da9e44d8c9d9e9bb427555,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 236631704152436305, guid: 9bfeebfbd0da9e44d8c9d9e9bb427555,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 236631704152436305, guid: 9bfeebfbd0da9e44d8c9d9e9bb427555,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 236631704152436305, guid: 9bfeebfbd0da9e44d8c9d9e9bb427555,
         type: 3}

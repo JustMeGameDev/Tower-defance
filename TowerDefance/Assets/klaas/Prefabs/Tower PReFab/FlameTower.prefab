@@ -15073,7 +15073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 6585087754507702045}
-  IsOpen: 0
+  IsOpen: 1
 --- !u!114 &7963384845881228304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15092,7 +15092,7 @@ MonoBehaviour:
   fireDamage: 0
   burnDamage: 0
   gameMaster: {fileID: 0}
-  upgradeTower: {fileID: 0}
+  upgradeTower: {fileID: 6946516137385974350}
   rotator: {fileID: 0}
   firePoint: {fileID: 0}
   cannonBall: {fileID: 0}
@@ -15120,11 +15120,31 @@ MonoBehaviour:
   ballistaNormal: 0
   ballistaUpgradeOne: 0
   ballistaUpgradeTwo: 0
+  useFlame: 0
   fireRotation: {fileID: 0}
   lightingFX: {fileID: 0}
-  towerMsh: []
-  upgradeOne: []
-  upgradeTwo: []
+  towerMsh:
+  - {fileID: 985070559288971039}
+  - {fileID: 6418624775669824449}
+  - {fileID: 4917584159685148189}
+  - {fileID: 5079756064199323822}
+  - {fileID: 1856848712763996566}
+  upgradeOne:
+  - {fileID: 2100000, guid: 24b26a758b3463244b64fb268bce6558, type: 2}
+  - {fileID: 2100000, guid: 24b26a758b3463244b64fb268bce6558, type: 2}
+  - {fileID: 2100000, guid: fed06537cbab79b4b9f8899f3c3ef753, type: 2}
+  - {fileID: 2100000, guid: 24b26a758b3463244b64fb268bce6558, type: 2}
+  - {fileID: 2100000, guid: 24b26a758b3463244b64fb268bce6558, type: 2}
+  - {fileID: 2100000, guid: 24b26a758b3463244b64fb268bce6558, type: 2}
+  - {fileID: 2100000, guid: 24b26a758b3463244b64fb268bce6558, type: 2}
+  upgradeTwo:
+  - {fileID: 2100000, guid: fed06537cbab79b4b9f8899f3c3ef753, type: 2}
+  - {fileID: 2100000, guid: f567e835ee05d624e9b1b833fd93ca58, type: 2}
+  - {fileID: 2100000, guid: dc951586a7acd1b42a1fdcafd54153e0, type: 2}
+  - {fileID: 2100000, guid: aff1e979421f4e94ea522f39b7a4442d, type: 2}
+  - {fileID: 2100000, guid: 24b26a758b3463244b64fb268bce6558, type: 2}
+  - {fileID: 2100000, guid: 24b26a758b3463244b64fb268bce6558, type: 2}
+  - {fileID: 2100000, guid: 24b26a758b3463244b64fb268bce6558, type: 2}
 --- !u!114 &-108324922220870681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20263,6 +20283,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3828436391036026427}
     m_Modifications:
+    - target: {fileID: 305260104592357887, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7963384845881228304}
+    - target: {fileID: 305260104592357887, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FlameUpgradeOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260104592357887, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerTest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105039807168, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6946516137385974350}
+    - target: {fileID: 305260105039807168, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Upgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105039807168, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeTower, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 305260105423505172, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: m_Pivot.x
@@ -20373,6 +20423,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: pop-up
       objectReference: {fileID: 0}
+    - target: {fileID: 4138819987391987063, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7963384845881228304}
+    - target: {fileID: 4138819987391987063, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FlameUpgradeTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138819987391987063, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerTest, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: towerTest
@@ -20393,3 +20458,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6872051159593977866}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6946516137385974350 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 6872051159593977866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148c7257656e28440acb7abe93d8e83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

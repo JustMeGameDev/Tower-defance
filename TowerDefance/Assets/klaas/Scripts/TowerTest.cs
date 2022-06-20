@@ -356,4 +356,21 @@ public class TowerTest : MonoBehaviour
             ballistaUpgradeTwo = true;
         }
     }
+
+    public void FlameUpgradeOne()
+    {
+        towerMsh[1].materials = upgradeOne;
+        towerMsh[0].materials = upgradeOne;
+
+        upgradeTower.upgradeOne.interactable = false;
+        upgradeTower.upgradeTwo.interactable = false;
+    }
+    public void FlameUpgradeTwo()
+    {
+        towerMsh[1].materials = upgradeTwo;
+        towerMsh[0].materials = upgradeTwo;
+
+        upgradeTower.upgradeOne.interactable = false;
+        upgradeTower.upgradeTwo.interactable = false;
+    }
 }

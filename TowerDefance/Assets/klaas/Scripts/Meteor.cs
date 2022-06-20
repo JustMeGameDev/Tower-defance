@@ -14,20 +14,19 @@ public class Meteor : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         Instantiate(impactExplosion, transform.position,transform.rotation);
-        Collider[] hitCollider = Physics.OverlapSphere(transform.position, range, 10);
-       
-        if(collision.gameObject.tag == "Enemy")
-       {
-           collision.gameObject.GetComponent<EnemyController>().health -= damage;
-            foreach (var e in hitCollider)
-            {
-                e.gameObject.GetComponent<EnemyController>().health -= damage;
-            }
-            Destroy(gameObject);
-        } else
+        Collider[] hitCollider = Physics.OverlapSphere(transform.position, range);
+        foreach (var a in hitCollider)
         {
-          
+
+            if (a.gameObject.tag == "Enemy")
+            {
+                a.gameObject.GetComponent<EnemyController>().health -= damage;
+                Destroy(gameObject);
+            }
+        } 
+
+       
             Destroy(gameObject);
-       }
+       
     }
 }
