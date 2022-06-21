@@ -243,6 +243,7 @@ MonoBehaviour:
   ballistaNormal: 0
   ballistaUpgradeOne: 0
   ballistaUpgradeTwo: 0
+  useFlame: 0
   fireRotation: {fileID: 0}
   lightingFX: {fileID: 0}
   towerMsh:
@@ -659,12 +660,12 @@ PrefabInstance:
     - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: specialUpgradeOne
-      value: 100
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: specialUpgradeTwo
-      value: 100
+      value: 2100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
