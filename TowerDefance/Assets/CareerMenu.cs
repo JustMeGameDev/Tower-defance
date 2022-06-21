@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CareerMenu : MonoBehaviour
 {   
@@ -11,6 +12,17 @@ public class CareerMenu : MonoBehaviour
     public Canvas perkCanvas;
     public Canvas contractCanvas;
     public Canvas MainCanvas;
+ 
+    [Header("MoneyManager")]
+    public TextMeshProUGUI balanceText;
+    public int balance;
+    public void Update()
+    {
+        balance = PlayerPrefs.GetInt("balance");
+        balanceText.text = balance.ToString();
+    }
+
+
 
     public void PerkStart()
     {

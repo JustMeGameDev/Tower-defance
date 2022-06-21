@@ -142,62 +142,71 @@ public class GameMaster : MonoBehaviour
 
 
     private void SpawnWave()
-    {
-        if (isBossWave)
-        {
-            
-        }
-        //waveSetup
-        if (enemyWave.Count == 0 && waveSize == 0)
-        {
-           float waveSizeTemp = currentWave * difficulty * 3 ;
-            waveSize = (int) waveSizeTemp;
-            currentWave++;
-            int WaveCount = currentWave - 1;
-            WaveCounter.text = "Wave: " + WaveCount;
-            roundReward = roundReward * 1.05f;
-            money = money + roundReward;
-            ecoCounter++;
-            if (ecoCounter == 5)
+    { 
+        if (currentWave <= finalWave ) {
+            //waveSetup
+            if (enemyWave.Count == 0 && waveSize == 0)
             {
-                passiveIncome = passiveIncome * 1.1f;
-                ecoCounter = 0;
+                bossSpawnChance += 5;
+                float chance = Random.Range(0, 100);
+                if (bossSpawnChance < chance)
+                {
+                    isBossWave = true;
+                }
+                float waveSizeTemp = currentWave * difficulty * 3;
+                waveSize = (int)waveSizeTemp;
+
+                currentWave++;
+                int WaveCount = currentWave - 1;
+                WaveCounter.text = "Wave: " + WaveCount;
+                roundReward = roundReward * 1.05f;
+                money = money + roundReward;
+                ecoCounter++;
+                if (ecoCounter == 5)
+                {
+                    passiveIncome = passiveIncome * 1.1f;
+                    ecoCounter = 0;
+                }
+
+
             }
 
-            
-        }
 
-
-        //waveEnemySpawning
-        //Load The wave
-        if (spawnTime == 0) {
-            for (int i = 0; i<spawnPoints.Length;i++)
-            {
-                if (waveSize > 0)
+            //waveEnemySpawning
+            //Load The wave
+            if (spawnTime == 0 && !isBossWave) {
+                for (int i = 0; i < spawnPoints.Length; i++)
                 {
-                    int rdm = Random.Range(0, enemyTypes.Count);
-                    enemyToSpawn = enemyTypes[rdm];
-                    //Debug.Log("now spawning: " + enemyToSpawn + "at: " + i.name );
-                    if (!isSimmed)
+                    if (waveSize > 0)
                     {
-                        GameObject enemySpawned = Instantiate(enemyToSpawn, spawnPoints[i].transform.position, spawnPoints[i].transform.rotation);
+                        int rdm = Random.Range(0, enemyTypes.Count);
+                        enemyToSpawn = enemyTypes[rdm];
+                        //Debug.Log("now spawning: " + enemyToSpawn + "at: " + i.name );
+                        if (!isSimmed)
+                        {
+                            GameObject enemySpawned = Instantiate(enemyToSpawn, spawnPoints[i].transform.position, spawnPoints[i].transform.rotation);
 
-                        waveSize -= enemySpawned.GetComponent<EnemyController>().spawnValue;
-                        enemyWave.Add(enemySpawned);
-                    }
-                    else if (isSimmed)
-                    {
-
+                            waveSize -= enemySpawned.GetComponent<EnemyController>().spawnValue;
+                            enemyWave.Add(enemySpawned);
+                        }
                     }
                 }
+                spawnTime += spawnTimeValue;
             }
-            spawnTime += spawnTimeValue;
+            else if (spawnTime == 0 && isBossWave)
+            {
+
+            }
+
+
+            if (waveSize < 0)
+            {
+                waveSize = 0;
+            }
         }
-            
+        else 
+        { 
         
-        if (waveSize < 0)
-        {
-            waveSize = 0;
         }
     }
 

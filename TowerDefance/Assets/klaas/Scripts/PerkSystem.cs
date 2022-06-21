@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class PerkSystem : MonoBehaviour
 {
     [Header("Money & Upgrade")]
     public int maxUpgrade;
-    public float money;
-    public float cost;
+    public int money;
+    public int costHealth;
+    public int costTower;
+    public int costStart;
+    public int costMeteor;
+    public TextMeshProUGUI costHealthText;
+    public TextMeshProUGUI costTowerText;
+    public TextMeshProUGUI costStartText;
+    public TextMeshProUGUI costMeteorText;
 
     [Header("HealthPerk")]
     [SerializeField] Image[] upgradeImages;
@@ -46,19 +54,20 @@ public class PerkSystem : MonoBehaviour
         //Health Upgrade
         health = PlayerPrefs.GetFloat("Health");
         upgrade = PlayerPrefs.GetInt("maxHealthUpgrade");
-
+        costHealth = 5 + upgrade * 5;
         //Tower Upgrade
         towerLevel = PlayerPrefs.GetInt("towerLevel");
         towerUpgrade = PlayerPrefs.GetInt("towerUpgrade");
-
+        costTower = 5 + towerUpgrade * 5;
         //Money Upgrade
         startMoney = PlayerPrefs.GetFloat("startMoney");
         moneyUpgrade = PlayerPrefs.GetInt("moneyUpgrade");
-
+        costStart = 5 + moneyUpgrade * 5;
         //Meteor Upgrade
         unlocked = PlayerPrefs.GetInt("meteorUnlocked");
         meteorUpgrade = PlayerPrefs.GetInt("meteorUpgrade");
         meteorDamage = PlayerPrefs.GetFloat("meteorDamage");
+        costMeteor = 5 + meteorUpgrade * 5;
     }
     private void Start()
     {
@@ -95,6 +104,7 @@ public class PerkSystem : MonoBehaviour
 
     private void Update()
     {
+        money = PlayerPrefs.GetInt("balance");
         if (Input.GetKey(KeyCode.F))
         {
           PlayerPrefs.DeleteKey("Health");
@@ -110,12 +120,19 @@ public class PerkSystem : MonoBehaviour
           PlayerPrefs.DeleteKey("meteorUpgrade");
           PlayerPrefs.DeleteKey("meteorDamage");
         }
-    }
+
+        costHealthText.text = costHealth.ToString();
+        costTowerText.text = costTower.ToString();
+        costStartText.text = costStart.ToString();
+        costMeteorText.text = costMeteor.ToString();
+}
     public void UpgradeHealth()
     {
        
-        if (money >= cost && upgrade < maxUpgrade)//
+        if (money >= costHealth && upgrade < maxUpgrade)//
         {
+            PlayerPrefs.SetInt("balance",PlayerPrefs.GetInt("balance") - costHealth);
+            costHealth = 5 * upgrade; 
            // PlayerPrefs.SetInt("maxHealthUpgrade", upgrade);
             upgrade += 1;
             switch (upgrade)
@@ -190,8 +207,10 @@ public class PerkSystem : MonoBehaviour
     }
     public void UpgradeTower()
     {
-        if (money >= cost && towerUpgrade < maxUpgrade)
+        if (money >= costTower && towerUpgrade < maxUpgrade)
         {
+            PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") - costTower);
+            costTower = 5 * towerUpgrade;
             towerUpgrade += 1;
             switch (towerUpgrade)
             {
@@ -250,124 +269,136 @@ public class PerkSystem : MonoBehaviour
     }
     public void UpgradeMoney()
     {
-        moneyUpgrade += 1;
-        switch(moneyUpgrade)
-        { 
-            case 1:
-                PlayerPrefs.SetFloat("startMoney", startMoney);
-                PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
+        if (money >= costStart && towerUpgrade < maxUpgrade)
+        {
+            PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") - costStart);
+            costStart = 5 * moneyUpgrade;
+            moneyUpgrade += 1;
+            switch (moneyUpgrade)
+            {
+                case 1:
+                    PlayerPrefs.SetFloat("startMoney", startMoney);
+                    PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
 
-                startMoney += 100;
-                moneyImage[0].sprite = moneyFull;
-                return;
+                    startMoney += 100;
+                    moneyImage[0].sprite = moneyFull;
+                    return;
 
-            case 2:
-                PlayerPrefs.SetFloat("startMoney", startMoney);
-                PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
+                case 2:
+                    PlayerPrefs.SetFloat("startMoney", startMoney);
+                    PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
 
-                startMoney += 100;
-                moneyImage[1].sprite = moneyFull;
-                return;
+                    startMoney += 100;
+                    moneyImage[1].sprite = moneyFull;
+                    return;
 
-            case 3:
-                PlayerPrefs.SetFloat("startMoney", startMoney);
-                PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
+                case 3:
+                    PlayerPrefs.SetFloat("startMoney", startMoney);
+                    PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
 
-                startMoney += 100;
-                moneyImage[2].sprite = moneyFull;
-                return;
+                    startMoney += 100;
+                    moneyImage[2].sprite = moneyFull;
+                    return;
 
-            case 4:
-                PlayerPrefs.SetFloat("startMoney", startMoney);
-                PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
+                case 4:
+                    PlayerPrefs.SetFloat("startMoney", startMoney);
+                    PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
 
-                startMoney += 100;
-                moneyImage[3].sprite = moneyFull;
-                return;
+                    startMoney += 100;
+                    moneyImage[3].sprite = moneyFull;
+                    return;
 
-            case 5:
-                PlayerPrefs.SetFloat("startMoney", startMoney);
-                PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
+                case 5:
+                    PlayerPrefs.SetFloat("startMoney", startMoney);
+                    PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
 
-                startMoney += 100;
-                moneyImage[4].sprite = moneyFull;
-                return;
+                    startMoney += 100;
+                    moneyImage[4].sprite = moneyFull;
+                    return;
 
-            case 6:
-                PlayerPrefs.SetFloat("startMoney", startMoney);
-                PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
+                case 6:
+                    PlayerPrefs.SetFloat("startMoney", startMoney);
+                    PlayerPrefs.SetInt("moneyUpgrade", moneyUpgrade);
 
-                startMoney += 100;
-                moneyImage[5].sprite = moneyFull;
-                return;
+                    startMoney += 100;
+                    moneyImage[5].sprite = moneyFull;
+                    return;
 
-            default: Debug.Log("Something Wrong");
-                return;
+                default:
+                    Debug.Log("Something Wrong");
+                    return;
+            }
         }
     }
     public void UpgradeMeteor()
     {
-        meteorUpgrade += 1;
-        switch(meteorUpgrade)
+        if (money >= costMeteor && towerUpgrade < maxUpgrade)
         {
-            case 1:
-                PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
-                PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
+            PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") - costMeteor);
+            costMeteor = 5 * meteorUpgrade;
+            meteorUpgrade += 1;
+            switch (meteorUpgrade)
+            {
+                case 1:
+                    PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
+                    PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
 
-                meteorDamage += 50;
-                meteorImage[0].sprite = meteorFull;
-                return;
+                    meteorDamage += 50;
+                    meteorImage[0].sprite = meteorFull;
+                    return;
 
-            case 2:
-                PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
-                PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
+                case 2:
+                    PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
+                    PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
 
-                meteorDamage += 50;
-                meteorImage[1].sprite = meteorFull;
-                return;
+                    meteorDamage += 50;
+                    meteorImage[1].sprite = meteorFull;
+                    return;
 
-            case 3:
-                PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
-                PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
+                case 3:
+                    PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
+                    PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
 
-                meteorDamage += 50;
-                meteorImage[2].sprite = meteorFull;
-                return;
+                    meteorDamage += 50;
+                    meteorImage[2].sprite = meteorFull;
+                    return;
 
-            case 4:
-                PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
-                PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
+                case 4:
+                    PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
+                    PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
 
-                meteorDamage += 50;
-                meteorImage[3].sprite = meteorFull;
-                return;
+                    meteorDamage += 50;
+                    meteorImage[3].sprite = meteorFull;
+                    return;
 
-            case 5:
-                PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
-                PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
+                case 5:
+                    PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
+                    PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
 
-                meteorDamage += 50;
-                meteorImage[4].sprite = meteorFull;
-                return;
+                    meteorDamage += 50;
+                    meteorImage[4].sprite = meteorFull;
+                    return;
 
-            case 6:
-                PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
-                PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
+                case 6:
+                    PlayerPrefs.SetInt("meteorUpgrade", meteorUpgrade);
+                    PlayerPrefs.SetFloat("meteorDamage", meteorDamage);
 
-                meteorDamage += 50;
-                meteorImage[5].sprite = meteorFull;
-                return;
+                    meteorDamage += 50;
+                    meteorImage[5].sprite = meteorFull;
+                    return;
 
-            default: Debug.Log("Something Wrong");
-                return;
-        }    
+                default:
+                    Debug.Log("Something Wrong");
+                    return;
+            }
+        }
     }
 
     public void UnlockPerk()
     {
         // unlocked 1 = true - unlocked 2 = false 
         unlocked = PlayerPrefs.GetInt("meteorUnlocked");
-        if (money >= cost)
+        if (money >= costMeteor)
         {
             unlocked = 1;
             PlayerPrefs.SetInt("meteorUnlocked", unlocked);
