@@ -487,6 +487,7 @@ MonoBehaviour:
   Damage: 420
   death: 0
   navStopped: 0
+  spawnValue: 10
   animetion: {fileID: 1366827707421186186}
 --- !u!195 &6678965668666164615
 NavMeshAgent:
@@ -507,7 +508,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 6
+  m_BaseOffset: 4
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!136 &1672620348383005515

@@ -56,9 +56,7 @@ public class EnemyController : MonoBehaviour
                 navStopped = true;
                     }
             
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            
 
         }
         else if (transform.position != target.position )
@@ -112,6 +110,9 @@ public class EnemyController : MonoBehaviour
 
     private void Die(bool ReachedEnd)
     {
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
         gameMaster.enemyWave.Remove(gameObject);
         if (!ReachedEnd)
         {

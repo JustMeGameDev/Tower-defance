@@ -17,17 +17,23 @@ public class GameMaster : MonoBehaviour
 
     public MapBuilder mapBuilder;
     public GameObject[] spawnPoints;
-    public int difficulty;
+    public float difficulty;
     public int currentWave;
     public List<GameObject> enemyWave;
     public int waveSize = 1;
     public int spawnTimeValue;
     private float spawnTime = 0f;
     public TextMeshProUGUI WaveCounter;
-    public int Rounds;
+    public int finalWave;
+    [Header("BossWave")]
+    public int bossSpawnChance;
+    public GameObject[] Bosses;
+    public GameObject bossToSpawn;
+    public bool isBossWave;
+    public Transform BossSpawn;
 
     [Header("Economy")]
-    public float money = 1000;
+    public float money = 0;
     private float roundReward = 25;
     private float ecoTimer = 1;
     private float passiveIncome = 12;
@@ -52,12 +58,29 @@ public class GameMaster : MonoBehaviour
     public bool isSimmed;
 
     void Start()
-    {   if (!isSimmed)
+    {   
+        
+        switch (PlayerPrefs.GetString("gameMode"))
+        {
+            case "Carreer":
+                difficulty = PlayerPrefs.GetFloat("difficulty");
+                finalWave = PlayerPrefs.GetInt("finalWave");
+                PlayerMaxHealth += PlayerPrefs.GetFloat("Health");
+                StartMoney += PlayerPrefs.GetFloat("startMoney");
+                break;
+            case "Custom":
+                
+                break;
+            case "Random":
+                difficulty = Random.Range(0.5f,1.5f);
+                break;
+        }
+        if (!isSimmed)
         {
             
             enemyWave = new List<GameObject>();
             Towers = new List<PopUp>();
-            money = money + StartMoney;
+            money += StartMoney;
             WaveCounter.text = "Wave: " + currentWave;
             PlayerHealth = PlayerMaxHealth;
             healthbar.maxValue = PlayerMaxHealth;
@@ -65,19 +88,6 @@ public class GameMaster : MonoBehaviour
             healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
             isAlive = true;
             Rounds = 0;
-        }
-        
-        switch (PlayerPrefs.GetString("gameMode"))
-        {
-            case "Carreer":
-                                
-                break;
-            case "Custom":
-                
-                break;
-            case "Random":
-                
-                break;
         }
     }
 
@@ -88,7 +98,12 @@ public class GameMaster : MonoBehaviour
             if (spawnPoints.Length < 1 & mapBuilder.finishedMap)
             {
                 spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
+                foreach (GameObject i in spawnPoints)
+                {
+
+                }
             }
+            
             SpawnWave();
             Timer();
             HandleEconemy();
@@ -124,11 +139,15 @@ public class GameMaster : MonoBehaviour
 
     private void SpawnWave()
     {
-        
+        if (isBossWave)
+        {
+            
+        }
         //waveSetup
         if (enemyWave.Count == 0 && waveSize == 0)
         {
-            waveSize = currentWave * difficulty * 3;
+           float waveSizeTemp = currentWave * difficulty * 3 ;
+            waveSize = (int) waveSizeTemp;
             currentWave++;
             int WaveCount = currentWave - 1;
             WaveCounter.text = "Wave: " + WaveCount;
