@@ -194,7 +194,7 @@ public class TowerTest : MonoBehaviour
                 GameObject projFireBall = Instantiate(fireBall, firePoint.position, Quaternion.identity);
               //  projFireBall.GetComponent<FireBall>().damage = damage;
                 projFireBall.GetComponent<FireBall>().target = target;
-              
+                damage += projFireBall.GetComponent<FireBall>().damage;
                 fireDelay = 1f;
             }
 
@@ -213,16 +213,19 @@ public class TowerTest : MonoBehaviour
                 Instantiate(cannonExplosion, firePoint.position, Quaternion.identity);
                 GameObject projCannonBall = Instantiate(cannonBall, firePoint.position, Quaternion.identity);
                 projCannonBall.GetComponent<Bullet>().target = target;
+                damage += projCannonBall.GetComponent<Bullet>().damage;
             } else if (cannonUpOne == true)
             {
                 Instantiate(cannonExplosion, firePoint.position, Quaternion.identity);
                 GameObject projCannonBall = Instantiate(specialCanBall, firePoint.position, Quaternion.identity);
                 projCannonBall.GetComponent<SpecialBall>().target = target;
+                damage += projCannonBall.GetComponent<SpecialBall>().explosiveDamage;
             } else if (cannonUpTwo == true)
             {
                 Instantiate(cannonExplosion, firePoint.position, Quaternion.identity);
                 GameObject projCannonBall = Instantiate(fireCannonBall, firePoint.position, Quaternion.identity);
                 projCannonBall.GetComponent<FireCannonBall>().target = target;
+                damage += projCannonBall.GetComponent<FireCannonBall>().explosiveDamage;
             }
            
             fireDelay = 1f;
@@ -239,16 +242,19 @@ public class TowerTest : MonoBehaviour
             {
                 GameObject BulletGO = Instantiate(arrow, firePoint);
                 BulletGO.GetComponent<Bullet>().target = target;
+                damage += BulletGO.GetComponent<Bullet>().damage;
             }
             else if (ballistaUpgradeOne == true)
             {
                 GameObject BulletGO = Instantiate(arrowUpgradeOne, firePoint);
                 BulletGO.GetComponent<Bullet>().target = target;
+                damage += BulletGO.GetComponent<Bullet>().damage;
             }
             else if (ballistaUpgradeTwo == true)
             {
                 GameObject BulletGO = Instantiate(arrowUpgradeTwo, firePoint);
                 BulletGO.GetComponent<Bullet>().target = target;
+                damage += BulletGO.GetComponent<Bullet>().damage;
             }
             fireDelay = ballistaDelay;
         }
@@ -332,7 +338,7 @@ public class TowerTest : MonoBehaviour
             upgradeTower.upgradeOne.interactable = false;
             upgradeTower.upgradeTwo.interactable = false;
 
-            arrowUpgradeOne.GetComponent<Bullet>().damage = 200;
+          arrowUpgradeOne.GetComponent<Bullet>().damage = 150;
             ballistaDelay = 5;
 
             ballistaNormal = false;
@@ -349,7 +355,7 @@ public class TowerTest : MonoBehaviour
             upgradeTower.upgradeOne.interactable = false;
             upgradeTower.upgradeTwo.interactable = false;
 
-            arrowUpgradeTwo.GetComponent<Bullet>().damage = 50;
+           arrowUpgradeTwo.GetComponent<Bullet>().damage = 50;
             ballistaDelay = 0.5f;
 
             ballistaNormal = false;
