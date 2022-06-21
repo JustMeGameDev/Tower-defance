@@ -209,6 +209,8 @@ public class GameMaster : MonoBehaviour
         else 
         {
             win = true;
+            int menyget = PlayerPrefs.GetInt("balance") + PlayerPrefs.GetInt("reward");
+            PlayerPrefs.SetInt("balance",menyget);
         }
     }
 
