@@ -6,14 +6,13 @@ public class MainMenu : MonoBehaviour
 {
     void Start()
     {
+        
         FindObjectOfType<AudioManager>().Play("maintheme");
     }
 
     public void ModeSelect()
     {
-        SceneManager.LoadScene(+1);
-        Debug.Log("+1");
-
+        SceneManager.LoadScene("ModeSelect");
     }
     public void quit()
     {
@@ -27,5 +26,17 @@ public class MainMenu : MonoBehaviour
     public void Mainmenu()
     {
         SceneManager.LoadScene("Mainmenu");
+    }
+    public void Custom()
+    {
+        SceneManager.LoadScene("custom");
+    }
+    public void perks()
+    {
+        SceneManager.LoadScene("perks");
+    }
+    public void start()
+    {
+        SceneManager.LoadScene("MainScene");
     }
 }

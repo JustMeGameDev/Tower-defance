@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent navAgent;
     public Transform target;
     public GameMaster gameMaster;
+    public slimedeath Slimedeath;
 
     [Header("EnemyValues")]
     public float health;
@@ -17,6 +18,7 @@ public class EnemyController : MonoBehaviour
     public bool death = false;
     public bool navStopped = false;
     public int spawnValue;
+    public bool isSLime;
     
 
     [Header("Animation")]
@@ -89,11 +91,21 @@ public class EnemyController : MonoBehaviour
 
     private void Health()
     {
-        if(health <= 0 )
+        if(health <= 0)
         {
-            death = true;
+           
             animetion.SetBool("die", true);
-            StartCoroutine(Dead());
+            if(!isSLime && !death)
+            {
+                death = true;
+                StartCoroutine(Dead());
+            }
+            else if (isSLime && !death)
+            {
+                death = true;
+                Slimedeath.death();
+                StartCoroutine(Dead());
+            }
         }
       
     }
