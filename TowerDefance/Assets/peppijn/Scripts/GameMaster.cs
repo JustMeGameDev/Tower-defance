@@ -24,6 +24,7 @@ public class GameMaster : MonoBehaviour
     public int spawnTimeValue;
     private float spawnTime = 0f;
     public TextMeshProUGUI WaveCounter;
+    public int Rounds;
 
     [Header("Economy")]
     public float money = 1000;
@@ -63,6 +64,7 @@ public class GameMaster : MonoBehaviour
             healthbar.minValue = 0;
             healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
             isAlive = true;
+            Rounds = 0;
         }
         
         switch (PlayerPrefs.GetString("gameMode"))
@@ -106,10 +108,7 @@ public class GameMaster : MonoBehaviour
             {
                 isAlive = false;
             }
-            if (!isAlive)
-            {
-                Time.timeScale = 0;
-            }
+          
             NavMesh.avoidancePredictionTime = agentAvoidenceTime;
         }
         else if (isSimmed)
@@ -119,13 +118,7 @@ public class GameMaster : MonoBehaviour
     }
     void FixedUpdate()
     {
-        PopUpHandler();
-        
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(0);
-        }
-            
+        PopUpHandler();            
     }
 
 
