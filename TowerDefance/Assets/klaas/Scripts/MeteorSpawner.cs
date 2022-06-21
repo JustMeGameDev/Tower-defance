@@ -38,6 +38,7 @@ public class MeteorSpawner : MonoBehaviour
         {
             Instantiate(MetoerMark, transform.position, transform.rotation);
             countDown = 10;
+            gameMaster.money -= cost;
         }
     }    
 
