@@ -88,7 +88,6 @@ public class GameMaster : MonoBehaviour
             healthbar.minValue = 0;
             healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
             isAlive = true;
-            //Rounds = 0;
         }
     }
 
@@ -99,10 +98,6 @@ public class GameMaster : MonoBehaviour
             if (spawnPoints.Length < 1 & mapBuilder.finishedMap)
             {
                 spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
-                foreach (GameObject i in spawnPoints)
-                {
-
-                }
             }
             
             SpawnWave();
@@ -124,7 +119,10 @@ public class GameMaster : MonoBehaviour
             {
                 isAlive = false;
             }
-          
+            if (!isAlive)
+            {
+                Time.timeScale = 0;
+            }
             NavMesh.avoidancePredictionTime = agentAvoidenceTime;
         }
         else if (isSimmed)
@@ -134,7 +132,13 @@ public class GameMaster : MonoBehaviour
     }
     void FixedUpdate()
     {
-        PopUpHandler();            
+        PopUpHandler();
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+            
     }
 
 

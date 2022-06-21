@@ -90,7 +90,6 @@ public class MapBuilder : MonoBehaviour
         navOgre.UpdateNavMesh(navOgre.navMeshData);
         navBat.UpdateNavMesh(navBat.navMeshData);
         navChicken.UpdateNavMesh(navChicken.navMeshData);
-        navDragon.UpdateNavMesh(navDragon.navMeshData);
         navSlime.UpdateNavMesh(navSlime.navMeshData);   
     }
 
