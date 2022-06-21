@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 3788107827490540287}
   m_Layer: 8
   m_Name: MageTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,6 +291,7 @@ MonoBehaviour:
   ballistaNormal: 0
   ballistaUpgradeOne: 0
   ballistaUpgradeTwo: 0
+  useFlame: 0
   fireRotation: {fileID: 7061346948427697583}
   lightingFX: {fileID: 4692807813502227484}
   towerMsh:

@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 6362866261802991322}
   m_Layer: 8
   m_Name: Ballista
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,6 +410,7 @@ MonoBehaviour:
   ballistaNormal: 1
   ballistaUpgradeOne: 0
   ballistaUpgradeTwo: 0
+  useFlame: 0
   fireRotation: {fileID: 0}
   lightingFX: {fileID: 0}
   towerMsh:

@@ -25,6 +25,7 @@ public class GameMaster : MonoBehaviour
     private float spawnTime = 0f;
     public TextMeshProUGUI WaveCounter;
     public int finalWave;
+
     [Header("BossWave")]
     public int bossSpawnChance;
     public GameObject[] Bosses;
@@ -87,7 +88,7 @@ public class GameMaster : MonoBehaviour
             healthbar.minValue = 0;
             healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
             isAlive = true;
-            Rounds = 0;
+            //Rounds = 0;
         }
     }
 
