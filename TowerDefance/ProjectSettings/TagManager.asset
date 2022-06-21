@@ -21,6 +21,7 @@ TagManager:
   - ShopMaster
   - Tiles
   - Mark
+  - Tower
   layers:
   - Default
   - TransparentFX

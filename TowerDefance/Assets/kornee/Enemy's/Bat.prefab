@@ -319,6 +319,7 @@ MonoBehaviour:
   navAgent: {fileID: 75107018802578823}
   target: {fileID: 0}
   gameMaster: {fileID: 0}
+  Slimedeath: {fileID: 0}
   health: 60
   maxHealth: 60
   baseValue: 7
@@ -326,6 +327,7 @@ MonoBehaviour:
   death: 0
   navStopped: 0
   spawnValue: 1
+  isSLime: 0
   animetion: {fileID: 8966638448320047733}
 --- !u!195 &75107018802578823
 NavMeshAgent:
@@ -346,7 +348,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 6
+  m_BaseOffset: 4
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!136 &2437302174665404452

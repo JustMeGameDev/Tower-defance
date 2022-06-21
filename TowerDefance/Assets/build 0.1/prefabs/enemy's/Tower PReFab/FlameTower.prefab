@@ -15034,7 +15034,7 @@ GameObject:
   - component: {fileID: -1864592382495749775}
   m_Layer: 8
   m_Name: FlameTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15087,7 +15087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 0
-  damage: 10
+  damage: 30
   attackSpeed: 10
   fireDamage: 0
   burnDamage: 0
@@ -20445,9 +20445,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
+      propertyPath: cost
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
       propertyPath: towerTest
       value: 
       objectReference: {fileID: 7963384845881228304}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: costMultiplier
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: specialUpgradeOne
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: specialUpgradeTwo
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3352965189805100705, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}

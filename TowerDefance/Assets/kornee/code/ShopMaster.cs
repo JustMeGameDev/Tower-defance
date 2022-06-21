@@ -7,21 +7,18 @@ public class ShopMaster : MonoBehaviour
 {
     [Header("blueprints")]
     public GameObject Mage_blueprint;
-    public GameObject Morter_blueprint;
     public GameObject Cannon_blueprint;
     public GameObject Balista_blueprint;
     public GameObject Flame_Blueprint;
 
     [Header("price definition")]
     public float priceMage = 45f;
-    public float priceMorter = 65f;
     public float priceCannon = 25f;
     public float priceBalista = 50f;
     public float priceFlame = 200f;
 
     [Header("price text")]
     public TextMeshProUGUI CannonPrice;
-    public TextMeshProUGUI MorterPrice;
     public TextMeshProUGUI MagePrice;
     public TextMeshProUGUI BalisPrice;
     public TextMeshProUGUI FlamePrice;
@@ -34,11 +31,9 @@ public class ShopMaster : MonoBehaviour
 
     private void Awake()
     {
-        vault = GameObject.FindWithTag("Vault").GetComponent<Vault>();
         Close = GameObject.FindWithTag("ShopMenu").GetComponent<PopUpZonderCheck>();
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
         CannonPrice.text = "$ " + priceCannon;
-        MorterPrice.text = "$ " + MorterPrice;
         MagePrice.text = "$ " + priceMage;
         BalisPrice.text = "$ " + priceBalista;
         FlamePrice.text = "$ " + priceFlame;
@@ -69,22 +64,6 @@ public class ShopMaster : MonoBehaviour
             Close.Placing = true;
             gameMaster.money -= priceMage;
             
-        }
-        else
-        {
-            Message.text = "Not Enough Funds";
-        }
-    }
-    public void spawn_Morter_blueprint()
-    {
-        if (gameMaster.money >= priceMorter)
-        {
-            Instantiate(Morter_blueprint);
-            Close.IsOpen = false;
-            Close.canvas.enabled = false;
-            Close.Placing = true;
-            gameMaster.money -= priceMorter;
-
         }
         else
         {

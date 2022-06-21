@@ -25,6 +25,7 @@ public class GameMaster : MonoBehaviour
     private float spawnTime = 0f;
     public TextMeshProUGUI WaveCounter;
     public int finalWave;
+
     [Header("BossWave")]
     public int bossSpawnChance;
     public GameObject[] Bosses;

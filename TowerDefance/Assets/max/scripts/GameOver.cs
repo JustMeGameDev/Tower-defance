@@ -15,7 +15,6 @@ public class GameOver : MonoBehaviour
 
     void OnEnable()
     {
-        roundsText.text = TempScore;
     }
 
     public Canvas gameOver;
@@ -28,7 +27,9 @@ public class GameOver : MonoBehaviour
 
     void Update()
     {
-        TempScore = gameMaster.currentWave.ToString();
+        int tempscore = gameMaster.currentWave - 1;
+        TempScore = tempscore.ToString();
+        roundsText.text = "rounds survived: " + TempScore;
         if (!gameMaster.isAlive)
         {
             gameOver.enabled = true;
