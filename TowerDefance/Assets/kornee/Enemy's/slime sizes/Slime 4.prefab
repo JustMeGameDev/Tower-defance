@@ -394,10 +394,10 @@ MonoBehaviour:
   target: {fileID: 0}
   gameMaster: {fileID: 0}
   Slimedeath: {fileID: 0}
-  health: 1500
-  maxHealth: 1500
-  baseValue: 150
-  Damage: 150
+  health: 100
+  maxHealth: 100
+  baseValue: 75
+  Damage: 25
   death: 0
   navStopped: 0
   spawnValue: 0
