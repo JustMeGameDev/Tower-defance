@@ -329,13 +329,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2689808684291898618}
   - component: {fileID: 2512630095682726978}
+  - component: {fileID: 1026052306636171000}
   - component: {fileID: 5629411665577794407}
   - component: {fileID: 1490061289464394790}
   - component: {fileID: -7274409272071300577}
   - component: {fileID: 349295539138711994}
   - component: {fileID: 9056768048956691952}
   m_Layer: 10
-  m_Name: Slime
+  m_Name: Slime 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,7 +351,7 @@ Transform:
   m_GameObject: {fileID: 3323601634751866432}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 6.390554, y: 0, z: 0.11821747}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6477526385824984164}
@@ -378,6 +379,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1026052306636171000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3323601634751866432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ce01e353724e24bab0ba060d8a88bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyController: {fileID: 5629411665577794407}
+  enemyToSpawn: {fileID: 3323601634751866432, guid: 1d9c64fec87ca904daf59aea8d7ddf1d,
+    type: 3}
+  spawn: {fileID: 3323601634751866432}
 --- !u!114 &5629411665577794407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,12 +410,15 @@ MonoBehaviour:
   navAgent: {fileID: 1490061289464394790}
   target: {fileID: 0}
   gameMaster: {fileID: 0}
-  health: 1500
-  maxHealth: 1500
-  baseValue: 150
-  Damage: 150
+  Slimedeath: {fileID: 1026052306636171000}
+  health: 1250
+  maxHealth: 1250
+  baseValue: 75
+  Damage: 20
   death: 0
   navStopped: 0
+  spawnValue: 0
+  isSLime: 1
   animetion: {fileID: 2512630095682726978}
 --- !u!195 &1490061289464394790
 NavMeshAgent:
@@ -408,10 +428,10 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3323601634751866432}
   m_Enabled: 1
-  m_AgentTypeID: -1923039037
+  m_AgentTypeID: -629701670
   m_Radius: 0.5
-  m_Speed: 3
-  m_Acceleration: 20
+  m_Speed: 3.5
+  m_Acceleration: 25
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
