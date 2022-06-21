@@ -29,7 +29,7 @@ public class UpgradeTower : MonoBehaviour
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
         CostText.text = "Cost: " + cost + " $";
     }
-
+    
     public void Upgrade()
     {
         if (gameMaster.money > cost && level < maxLevel)

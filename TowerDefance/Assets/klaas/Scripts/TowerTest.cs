@@ -60,6 +60,9 @@ public class TowerTest : MonoBehaviour
     public bool ballistaUpgradeOne;
     public bool ballistaUpgradeTwo;
 
+    [Header("Flame")]
+    public bool useFlame;
+
     [Header("Updrage")]
     public GameObject fireRotation;
     public GameObject lightingFX;
@@ -189,7 +192,9 @@ public class TowerTest : MonoBehaviour
             if (fireDelay <= 0)
             {
                 GameObject projFireBall = Instantiate(fireBall, firePoint.position, Quaternion.identity);
+              //  projFireBall.GetComponent<FireBall>().damage = damage;
                 projFireBall.GetComponent<FireBall>().target = target;
+              
                 fireDelay = 1f;
             }
 
@@ -350,5 +355,24 @@ public class TowerTest : MonoBehaviour
             ballistaNormal = false;
             ballistaUpgradeTwo = true;
         }
+    }
+
+    public void FlameUpgradeOne()
+    {
+        towerMsh[1].materials = upgradeOne;
+        towerMsh[0].materials = upgradeOne;
+
+        upgradeTower.upgradeOne.interactable = false;
+        upgradeTower.upgradeTwo.interactable = false;
+    }
+    public void FlameUpgradeTwo()
+    {
+        towerMsh[1].materials = upgradeTwo;
+        towerMsh[0].materials = upgradeTwo;
+
+        upgradeTower.upgradeOne.interactable = false;
+        upgradeTower.upgradeTwo.interactable = false;
+
+       
     }
 }
