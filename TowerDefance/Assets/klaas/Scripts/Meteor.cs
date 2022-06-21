@@ -29,4 +29,5 @@ public class Meteor : MonoBehaviour
             Destroy(gameObject);
        
     }
+
 }

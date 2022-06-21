@@ -15073,7 +15073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 6585087754507702045}
-  IsOpen: 1
+  IsOpen: 0
 --- !u!114 &7963384845881228304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15161,12 +15161,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5985791175043592421}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: PopUp, Assembly-CSharp
+        m_MethodName: open
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -20416,6 +20416,11 @@ PrefabInstance:
     - target: {fileID: 305260105423505172, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 305260105423505175, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 305260105423505176, guid: 60a24a16f3d3ef04dbe62be76c339949,

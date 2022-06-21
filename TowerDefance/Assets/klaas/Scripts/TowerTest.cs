@@ -372,5 +372,7 @@ public class TowerTest : MonoBehaviour
 
         upgradeTower.upgradeOne.interactable = false;
         upgradeTower.upgradeTwo.interactable = false;
+
+       
     }
 }

@@ -10,7 +10,7 @@ public class MeteorSpawner : MonoBehaviour
     public Button button;
     public int unlocked = 0;
     public float cost;
-
+   public float countDown;
     private void Awake()
     {
         unlocked = PlayerPrefs.GetInt("meteorUnlocked");
@@ -27,11 +27,17 @@ public class MeteorSpawner : MonoBehaviour
             button.interactable = false;
         }
     }
+    private void Update()
+    {
+        countDown -= Time.deltaTime;
+    }
+
     public void Spawn()
     {
-        if (gameMaster.money >= cost && unlocked == 1)
+        if (gameMaster.money >= cost && unlocked == 1 && countDown <= 0)
         {
             Instantiate(MetoerMark, transform.position, transform.rotation);
+            countDown = 10;
         }
     }    
 
