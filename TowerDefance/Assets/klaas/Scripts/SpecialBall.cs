@@ -8,7 +8,7 @@ public class SpecialBall : MonoBehaviour
     public float explosiveDamage = 200f;
     public Transform target;
     public GameObject explosion;
-    
+    public bool hit = false;   
 
   
    
@@ -30,20 +30,17 @@ public class SpecialBall : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         Instantiate(explosion, transform.position, Quaternion.identity);
-        if (other.gameObject.tag == "Enemy")
-        {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f, 1<< 10);
-           
 
-            foreach(var enemy in hitColliders)
+
+        foreach (var enemy in hitColliders)
+        {
+            if (enemy.gameObject.CompareTag("Enemy"))
             {
-              if(enemy.gameObject.CompareTag("Enemy"))
-              {
-                    enemy.gameObject.GetComponent<EnemyController>().health -= explosiveDamage;
-              }
+                enemy.gameObject.GetComponent<EnemyController>().health -= explosiveDamage;
+
             }
-            target.gameObject.GetComponent<EnemyController>().health -= explosiveDamage;
-            Destroy(gameObject);
         }
+            Destroy(gameObject); 
     }
 }
