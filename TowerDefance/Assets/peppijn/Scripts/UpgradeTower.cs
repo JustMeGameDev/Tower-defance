@@ -20,6 +20,8 @@ public class UpgradeTower : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI CostText;
+    public TextMeshProUGUI CostText1;
+    public TextMeshProUGUI CostText2;
     public Button upgradeOne;
     public Button upgradeTwo;
 
@@ -28,6 +30,8 @@ public class UpgradeTower : MonoBehaviour
     {
         gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
         CostText.text = "Cost: " + cost + " $";
+        CostText1.text = "" + specialUpgradeOne + " $";
+        CostText2.text = "" + specialUpgradeTwo + " $";
         switch (PlayerPrefs.GetString("gameMode"))
         {
             case "Carreer":
