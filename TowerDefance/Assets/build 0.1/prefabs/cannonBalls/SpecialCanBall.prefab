@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  explosiveDamage: 200
+  explosiveDamage: 75
   target: {fileID: 0}
   explosion: {fileID: 6519082187826855582, guid: 333cb407bd051464898c89b94fff814d,
     type: 3}
+  hit: 0

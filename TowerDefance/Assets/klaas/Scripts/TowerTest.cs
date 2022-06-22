@@ -272,6 +272,7 @@ public class TowerTest : MonoBehaviour
 
             cannonNormal = false;
             cannonUpOne = true;
+            gameMaster.money -= upgradeTower.specialUpgradeOne;
         }
     }
     public void CannonUpgradeTwo()
@@ -286,6 +287,7 @@ public class TowerTest : MonoBehaviour
 
             cannonNormal = false;
             cannonUpTwo = true;
+            gameMaster.money -= upgradeTower.specialUpgradeTwo;
         }
     }
 
@@ -300,7 +302,7 @@ public class TowerTest : MonoBehaviour
 
             towerMsh[1].material = upgradeOne[0];
             towerMsh[0].materials = upgradeOne;
-
+            damage += 50;
             upgradeTower.upgradeOne.interactable = false;
             upgradeTower.upgradeTwo.interactable = false;
 
@@ -339,10 +341,12 @@ public class TowerTest : MonoBehaviour
             upgradeTower.upgradeTwo.interactable = false;
 
           arrowUpgradeOne.GetComponent<Bullet>().damage = 150;
+            arrowUpgradeOne.GetComponent<Bullet>().iceUpgrade = true;
             ballistaDelay = 5;
 
             ballistaNormal = false;
             ballistaUpgradeOne = true;
+            gameMaster.money -= upgradeTower.specialUpgradeOne;
         }
     }
     public void BallistaUpgradeTwo()
@@ -360,25 +364,31 @@ public class TowerTest : MonoBehaviour
 
             ballistaNormal = false;
             ballistaUpgradeTwo = true;
+            gameMaster.money -= upgradeTower.specialUpgradeTwo;
         }
     }
 
     public void FlameUpgradeOne()
     {
-        towerMsh[1].materials = upgradeOne;
-        towerMsh[0].materials = upgradeOne;
+        if (gameMaster.money > upgradeTower.specialUpgradeOne)
+        {
+            towerMsh[1].materials = upgradeOne;
+            towerMsh[0].materials = upgradeOne;
 
-        upgradeTower.upgradeOne.interactable = false;
-        upgradeTower.upgradeTwo.interactable = false;
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
+        }
     }
     public void FlameUpgradeTwo()
     {
-        towerMsh[1].materials = upgradeTwo;
-        towerMsh[0].materials = upgradeTwo;
+        if (gameMaster.money > upgradeTower.specialUpgradeTwo)
+        {
+            towerMsh[1].materials = upgradeTwo;
+            towerMsh[0].materials = upgradeTwo;
 
-        upgradeTower.upgradeOne.interactable = false;
-        upgradeTower.upgradeTwo.interactable = false;
+            upgradeTower.upgradeOne.interactable = false;
+            upgradeTower.upgradeTwo.interactable = false;
 
-       
+        }
     }
 }

@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 50
-  damage: 10
+  damage: 15
   attackSpeed: 10
   fireDamage: 0
   burnDamage: 0

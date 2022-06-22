@@ -20458,6 +20458,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
+      propertyPath: CostText1
+      value: 
+      objectReference: {fileID: 1393106269503733309}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: CostText2
+      value: 
+      objectReference: {fileID: 5360556220271480841}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
       propertyPath: towerTest
       value: 
       objectReference: {fileID: 7963384845881228304}
@@ -20479,6 +20489,30 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3352965189805100705, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
+--- !u!114 &1393106269503733309 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5479509500317316663, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 6872051159593977866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5360556220271480841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1529793845391513603, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 6872051159593977866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!223 &6585087754507702045 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 305260105423505175, guid: 60a24a16f3d3ef04dbe62be76c339949,

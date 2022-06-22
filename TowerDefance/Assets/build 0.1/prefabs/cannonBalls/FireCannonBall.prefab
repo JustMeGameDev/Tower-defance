@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b51d60c5fb1bbd48a4358193224681a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  explosiveDamage: 25
+  speed: 20
+  explosiveDamage: 50
   target: {fileID: 0}
   fireRing: {fileID: 8611386904513712558, guid: bbcd2628684c00d4fb2fe5d68e06fa2a,
     type: 3}
