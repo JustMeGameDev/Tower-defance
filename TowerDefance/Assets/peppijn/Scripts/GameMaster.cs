@@ -46,6 +46,7 @@ public class GameMaster : MonoBehaviour
     [Header("Pop Up")]
     public List<PopUp> Towers;
     public PopUp OpenTower;
+    public PauseMenu pause;
 
     [Header("PlayerHealth")]
     public float PlayerHealth;
@@ -61,7 +62,7 @@ public class GameMaster : MonoBehaviour
 
     void Start()
     {   
-        
+        pause = GameObject.FindWithTag("pauze").GetComponent<PauseMenu>();
         switch (PlayerPrefs.GetString("gameMode"))
         {
             case "Carreer":
@@ -137,7 +138,7 @@ public class GameMaster : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            pause.open();
         }
             
     }
@@ -215,9 +216,10 @@ public class GameMaster : MonoBehaviour
         else 
         {
             win = true;
-            int menyget = PlayerPrefs.GetInt("balance") + PlayerPrefs.GetInt("reward");
-            PlayerPrefs.SetInt("balance",menyget);
-            SceneManager.LoadScene("contract menu");
+            if (win == true) { int menyget = PlayerPrefs.GetInt("balance") + PlayerPrefs.GetInt("reward"); PlayerPrefs.SetInt("balance", menyget); }
+
+            
+           
             return;
         }
     }

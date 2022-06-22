@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.AI.Navigation;
+using UnityEngine.SceneManagement;
 
 public class MapBuilder : MonoBehaviour
 {
-
+    
     [Header("Tiles")]
     public GameObject pathTile;
     public GameObject grassTile;
@@ -55,6 +56,8 @@ public class MapBuilder : MonoBehaviour
     void Awake()
     {
 
+
+        .
         switch (PlayerPrefs.GetString("gameMode"))
         {
             case "Carreer":

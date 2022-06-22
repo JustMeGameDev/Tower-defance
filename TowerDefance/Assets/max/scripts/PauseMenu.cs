@@ -9,9 +9,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
 
     // Update is called once per frame
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+    public void open() 
+    {
+        
             if (GameIsPaused)
             {
                 Resume();
@@ -20,30 +20,24 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
-        }
+        
     }
 
     void Resume ()
     {
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 1;
         GameIsPaused = false;
     }
 
     void Pause ()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0;
         GameIsPaused = true;
     }
 
-    public void LoadMenu()
-    {
-        Debug.Log("Loading menu...");
-    }
+    
 
-    public void QuitGame()
-    {
-        Debug.Log("Quitting Game...");
-    }
+    
 }

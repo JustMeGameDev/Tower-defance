@@ -390,6 +390,9 @@ MonoBehaviour:
   specialCanBall: {fileID: 0}
   fireCannonBall: {fileID: 0}
   cannonExplosion: {fileID: 0}
+  cannonupgrade1: {fileID: 0}
+  cannonupgrade2: {fileID: 0}
+  cannonupgrade3: {fileID: 0}
   useCannon: 0
   cannonNormal: 0
   cannonUpOne: 0
@@ -403,6 +406,9 @@ MonoBehaviour:
   useFire: 0
   useMage: 0
   fireDelay: 1
+  magupgrade1: {fileID: 0}
+  magupgrade2: {fileID: 0}
+  magupgrade3: {fileID: 0}
   arrow: {fileID: 7875202901303753751, guid: afa4e1b952223164a9bf042b0287bcc8, type: 3}
   arrowUpgradeOne: {fileID: 7875202901303753751, guid: 74db9d0cd67099e44932669645a59062,
     type: 3}

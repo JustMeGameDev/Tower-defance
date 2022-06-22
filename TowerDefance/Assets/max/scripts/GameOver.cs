@@ -38,6 +38,8 @@ public class GameOver : MonoBehaviour
         int tempscore = gameMaster.currentWave - 1;
         TempScore = tempscore.ToString();
         roundsText.text = "rounds survived: " + TempScore;
+        roundsTextE.text = "rounds survived: " + TempScore;
+        roundsTextC.text = "rounds survived: " + TempScore;
         
         switch (PlayerPrefs.GetString("gameMode"))
         {

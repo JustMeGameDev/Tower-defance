@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TowerTest : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class TowerTest : MonoBehaviour
     public GameObject specialCanBall = null;
     public GameObject fireCannonBall = null;
     public GameObject cannonExplosion = null;
+    public TextMeshProUGUI cannonupgrade1;
+    public TextMeshProUGUI cannonupgrade2;
+    public TextMeshProUGUI cannonupgrade3;
     public bool useCannon= false;
     public bool cannonNormal = false;
     public bool cannonUpOne = false;
@@ -49,6 +53,10 @@ public class TowerTest : MonoBehaviour
     public bool useFire = false;
     public bool useMage;
     public float fireDelay = 1f;
+    public TextMeshProUGUI magupgrade1;
+    public TextMeshProUGUI magupgrade2;
+    public TextMeshProUGUI magupgrade3;
+
 
     [Header("BallistaTower")]
     public GameObject arrow;
