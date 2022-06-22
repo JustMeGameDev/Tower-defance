@@ -15074,6 +15074,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 6585087754507702045}
   IsOpen: 0
+  gameMaster: {fileID: 0}
+  buttonObject: {fileID: -108324922220870681}
 --- !u!114 &7963384845881228304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15157,6 +15159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a00f2d2a9b8cb745a353035148bbd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopactive: 0
   interactEvent:
     m_PersistentCalls:
       m_Calls:
@@ -20427,6 +20430,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pop-up
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204468060587548346, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4138819987391987063, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}

@@ -364,7 +364,7 @@ MonoBehaviour:
   canvas: {fileID: 4413577627595158651}
   IsOpen: 0
   gameMaster: {fileID: 0}
-  buttonObject: {fileID: 0}
+  buttonObject: {fileID: 5598000521479209393}
 --- !u!114 &6362866261802991322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,6 +602,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TowerTest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204468060587548346, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3352965189805100705, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}

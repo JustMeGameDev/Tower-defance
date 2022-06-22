@@ -214,7 +214,7 @@ MonoBehaviour:
   upgradeTower: {fileID: 8379727484735660369}
   rotator: {fileID: 2336372346730696254}
   firePoint: {fileID: 2336372347415852015}
-  cannonBall: {fileID: 313608266486151592, guid: 2e6b7dc0278cc7544a8bf52a21792987,
+  cannonBall: {fileID: 313608266486151592, guid: 5d0e11f8cbbd12f47aff6a64632d9a7c,
     type: 3}
   specialCanBall: {fileID: 313608266486151592, guid: 02ff328ebac554a42855af0aa0c1041e,
     type: 3}
@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a00f2d2a9b8cb745a353035148bbd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopactive: 0
   interactEvent:
     m_PersistentCalls:
       m_Calls:
@@ -323,6 +324,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 5714734005897868290}
   IsOpen: 0
+  gameMaster: {fileID: 0}
+  buttonObject: {fileID: 5224493230730295085}
 --- !u!1 &8572991810297300094
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +585,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TowerTest, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1204468060587548346, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204468060587548346, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: buttonObject
+      value: 
+      objectReference: {fileID: 5224493230730295085}
     - target: {fileID: 1394083266207025831, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
       propertyPath: CostText
@@ -644,6 +657,16 @@ PrefabInstance:
       objectReference: {fileID: 5355692813096082139}
     - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
         type: 3}
+      propertyPath: CostText1
+      value: 
+      objectReference: {fileID: 538585763214017826}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
+      propertyPath: CostText2
+      value: 
+      objectReference: {fileID: 6793886039998802710}
+    - target: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
+        type: 3}
       propertyPath: levelText
       value: 
       objectReference: {fileID: 1032669508375712933}
@@ -669,6 +692,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60a24a16f3d3ef04dbe62be76c339949, type: 3}
+--- !u!114 &538585763214017826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5479509500317316663, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 5436495928292733717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1032669508375712933 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4982836392110483376, guid: 60a24a16f3d3ef04dbe62be76c339949,
@@ -705,6 +740,18 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 5436495928292733717}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6793886039998802710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1529793845391513603, guid: 60a24a16f3d3ef04dbe62be76c339949,
+    type: 3}
+  m_PrefabInstance: {fileID: 5436495928292733717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8379727484735660369 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4555555408101626436, guid: 60a24a16f3d3ef04dbe62be76c339949,
