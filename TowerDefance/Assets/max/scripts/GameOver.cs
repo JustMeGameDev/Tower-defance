@@ -65,7 +65,7 @@ public class GameOver : MonoBehaviour
                     Time.timeScale = 0;
 
                 }
-                else if (gameMaster.win)
+                else if (gameMaster.win == true)
                 {
                     gameOverCW.SetActive(true);
                     Time.timeScale = 0;

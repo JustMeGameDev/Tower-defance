@@ -80,8 +80,11 @@ public class GameMaster : MonoBehaviour
                 StartMoney += PlayerPrefs.GetFloat("startMoney");
                 break;
             case "Custom":
+                difficulty = PlayerPrefs.GetFloat("difficulty");
+                finalWave = PlayerPrefs.GetInt("finalWave");
                 break;
             case "Random":
+                finalWave = 999999999;
                 difficulty = Random.Range(0.5f,1.5f);
                 break;
         }

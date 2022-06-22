@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         
-        FindObjectOfType<AudioManager>().Play("maintheme");
+        
     }
 
     public void ModeSelect()
@@ -43,5 +43,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MainScene");
         Time.timeScale = 1;
 
+    }
+    public void random()
+    {
+        PlayerPrefs.DeleteKey("gameMode");
+        PlayerPrefs.SetString("gameMode", "Random");
+        SceneManager.LoadScene("MainScene");
     }
 }

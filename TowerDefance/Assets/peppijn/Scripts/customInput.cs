@@ -21,7 +21,14 @@ public class customInput : MonoBehaviour
     public TextMeshProUGUI count2;
     public TextMeshProUGUI count3;
 
- 
+    private void Awake()
+    {
+        PlayerPrefs.DeleteKey("seed");
+        PlayerPrefs.DeleteKey("mapLength");
+        PlayerPrefs.DeleteKey("finalWave");
+        PlayerPrefs.DeleteKey("difficulty");
+        PlayerPrefs.DeleteKey("gameMode");
+    }
     public void Seed()
     {
         SEED = inputField.text;

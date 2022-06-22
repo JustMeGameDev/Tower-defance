@@ -21,7 +21,7 @@ public class PopUpZonderCheck : MonoBehaviour
     }
     private void Awake()
     {
-        gameMaster.win = false;
+       
     }
     public void open()
     {

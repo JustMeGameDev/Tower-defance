@@ -48,16 +48,17 @@ public class MapBuilder : MonoBehaviour
     public float testTimerValue;
     public float testTimer;
     public Vault vault;
-
+    public GameMaster gameMaster;
     [Header("Enviorment")]
     public GameObject[] enviorment;
 
 
     void Awake()
     {
+        gameMaster = GameObject.FindWithTag("GameMaster").GetComponent<GameMaster>();
+        gameMaster.win = false;
 
-
-
+        Time.timeScale = 1;
         switch (PlayerPrefs.GetString("gameMode"))
         {
             case "Carreer":
