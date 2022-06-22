@@ -34,6 +34,9 @@ public class MainMenu : MonoBehaviour
     public void perks()
     {
         SceneManager.LoadScene("perks");
+    }public void contract()
+    {
+        SceneManager.LoadScene("contract menu");
     }
     public void start()
     {
