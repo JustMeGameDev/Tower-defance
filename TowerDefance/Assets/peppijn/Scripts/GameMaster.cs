@@ -149,9 +149,9 @@ public class GameMaster : MonoBehaviour
             //waveSetup
             if (enemyWave.Count == 0 && waveSize == 0)
             {
-                bossSpawnChance += 5;
+                bossSpawnChance += (int) (10 * difficulty);
                 float chance = Random.Range(0, 100);
-                if (bossSpawnChance < chance)
+                if (bossSpawnChance > chance)
                 {
                     isBossWave = true;
                 }
@@ -195,9 +195,15 @@ public class GameMaster : MonoBehaviour
                 }
                 spawnTime += spawnTimeValue;
             }
-            else if (spawnTime == 0 && isBossWave)
+            else if (spawnTime == 0 && isBossWave && waveSize > 0)
             {
+                int random = Random.Range(0,Bosses.Length);
+                GameObject enemySpawned = Instantiate(Bosses[random], spawnPoints[1].transform.position, spawnPoints[1].transform.rotation);
 
+                waveSize -= enemySpawned.GetComponent<EnemyController>().spawnValue;
+                enemyWave.Add(enemySpawned);
+                bossSpawnChance = 20;
+                isBossWave = false;
             }
 
 
@@ -211,6 +217,8 @@ public class GameMaster : MonoBehaviour
             win = true;
             int menyget = PlayerPrefs.GetInt("balance") + PlayerPrefs.GetInt("reward");
             PlayerPrefs.SetInt("balance",menyget);
+            SceneManager.LoadScene("contract menu");
+            return;
         }
     }
 
