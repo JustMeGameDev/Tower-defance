@@ -131,9 +131,10 @@ public class PerkSystem : MonoBehaviour
         if (money >= costHealth && upgrade < maxUpgrade)//
         {
             PlayerPrefs.SetInt("balance",PlayerPrefs.GetInt("balance") - costHealth);
-            costHealth = 5 * upgrade; 
+            
            // PlayerPrefs.SetInt("maxHealthUpgrade", upgrade);
             upgrade += 1;
+            costHealth = 5 + 5 * upgrade;
             switch (upgrade)
             {
                 case 1:
@@ -209,14 +210,15 @@ public class PerkSystem : MonoBehaviour
         if (money >= costTower && towerUpgrade < maxUpgrade)
         {
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") - costTower);
-            costTower = 5 * towerUpgrade;
+            
             towerUpgrade += 1;
+            
             switch (towerUpgrade)
             {
                 case 1:
                     PlayerPrefs.SetInt("towerUpgrade", towerUpgrade);
                     PlayerPrefs.SetInt("towerLevel", towerLevel);
-
+                    costTower = 10;
                     towerLevel += 3;
                     towerImage[0].sprite = towerFull;
                     return;
@@ -224,7 +226,7 @@ public class PerkSystem : MonoBehaviour
                 case 2:
                     PlayerPrefs.SetInt("towerUpgrade", towerUpgrade);
                     PlayerPrefs.SetInt("towerLevel", towerLevel);
-
+                    costTower = 20;
                     towerLevel += 3;
                     towerImage[1].sprite = towerFull;
                     return;
@@ -232,7 +234,7 @@ public class PerkSystem : MonoBehaviour
                 case 3:
                     PlayerPrefs.SetInt("towerUpgrade", towerUpgrade);
                     PlayerPrefs.SetInt("towerLevel", towerLevel);
-
+                    costTower = 40;
                     towerLevel += 3;
                     towerImage[2].sprite = towerFull;
                     return;
@@ -240,7 +242,7 @@ public class PerkSystem : MonoBehaviour
                 case 4:
                     PlayerPrefs.SetInt("towerUpgrade", towerUpgrade);
                     PlayerPrefs.SetInt("towerLevel", towerLevel);
-
+                    costTower = 60;
                     towerLevel += 3;
                     towerImage[3].sprite = towerFull;
                     return;
@@ -248,7 +250,7 @@ public class PerkSystem : MonoBehaviour
                 case 5:
                     PlayerPrefs.SetInt("towerUpgrade", towerUpgrade);
                     PlayerPrefs.SetInt("towerLevel", towerLevel);
-
+                    costTower = 90;
                     towerLevel += 3;
                     towerImage[4].sprite = towerFull;
                     return;
@@ -256,7 +258,7 @@ public class PerkSystem : MonoBehaviour
                 case 6:
                     PlayerPrefs.SetInt("towerUpgrade", towerUpgrade);
                     PlayerPrefs.SetInt("towerLevel", towerLevel);
-
+                    costTower = 100;
                     towerLevel += 3;
                     towerImage[5].sprite = towerFull;
                     return;
@@ -271,8 +273,8 @@ public class PerkSystem : MonoBehaviour
         if (money >= costStart && towerUpgrade < maxUpgrade)
         {
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") - costStart);
-            costStart = 5 * moneyUpgrade;
             moneyUpgrade += 1;
+            costStart = 5 + 5 * moneyUpgrade;
             switch (moneyUpgrade)
             {
                 case 1:
@@ -334,8 +336,8 @@ public class PerkSystem : MonoBehaviour
         if (money >= costMeteor && towerUpgrade < maxUpgrade)
         {
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") - costMeteor);
-            costMeteor = 5 * meteorUpgrade;
             meteorUpgrade += 1;
+            costMeteor = 5 + 5 * meteorUpgrade;
             switch (meteorUpgrade)
             {
                 case 1:

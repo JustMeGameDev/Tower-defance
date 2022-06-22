@@ -265,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 7169984672600810226, guid: c1aabe3a43fdbd248b525ba10b415384,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -22055
+      value: -24200
       objectReference: {fileID: 0}
     - target: {fileID: 7169984672660993640, guid: c1aabe3a43fdbd248b525ba10b415384,
         type: 3}
@@ -1775,11 +1775,6 @@ PrefabInstance:
       propertyPath: navChicken
       value: 
       objectReference: {fileID: 1939665992}
-    - target: {fileID: 3015944786359741361, guid: 08ba92574c35d034aa42524ec9c5c319,
-        type: 3}
-      propertyPath: pathLength
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 3015944786359741361, guid: 08ba92574c35d034aa42524ec9c5c319,
         type: 3}
       propertyPath: useRandomSeed

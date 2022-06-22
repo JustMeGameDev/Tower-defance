@@ -481,13 +481,15 @@ MonoBehaviour:
   navAgent: {fileID: 6678965668666164615}
   target: {fileID: 0}
   gameMaster: {fileID: 0}
-  health: 1200
-  maxHealth: 1200
+  Slimedeath: {fileID: 0}
+  health: 2500
+  maxHealth: 2500
   baseValue: 100
   Damage: 420
   death: 0
   navStopped: 0
   spawnValue: 10
+  isSLime: 0
   animetion: {fileID: 1366827707421186186}
 --- !u!195 &6678965668666164615
 NavMeshAgent:

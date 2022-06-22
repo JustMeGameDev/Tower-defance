@@ -37,8 +37,8 @@ public class Contract : MonoBehaviour
         namePerson = name_;
         image.sprite = image_;
         seed = Random.Range(0,999999999);
-        mapLength = Random.Range(10,25);
-        finalWave = 2;
+        mapLength = Random.Range(10,20);
+        finalWave = Random.Range(15,44);
         float difficultyTemp = Random.Range(0.5f,1.5f);
         difficulty = Mathf.Round(difficultyTemp * 100.0f) * 0.01f;
         CalculateReward();
