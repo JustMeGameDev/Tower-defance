@@ -265,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 7169984672600810226, guid: c1aabe3a43fdbd248b525ba10b415384,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -24200
+      value: -195965
       objectReference: {fileID: 0}
     - target: {fileID: 7169984672660993640, guid: c1aabe3a43fdbd248b525ba10b415384,
         type: 3}
@@ -763,7 +763,7 @@ PrefabInstance:
     - target: {fileID: 3619165856016222943, guid: 87c46f1f6cb8fda4ab6bb42f4dc60407,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 60
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87c46f1f6cb8fda4ab6bb42f4dc60407, type: 3}
@@ -1009,6 +1009,18 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: dc7a142185d049a4aad79597bf05aee9, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &908806598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136573336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d564e92fc07fb4eab9cc1f6febfe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1125232536 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3619165855612178727, guid: 87c46f1f6cb8fda4ab6bb42f4dc60407,
@@ -2207,5 +2219,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1133470225}
+    - target: {fileID: 7912076312799741908, guid: 4a6acf3b91b1a50429b4a594eda0ca47,
+        type: 3}
+      propertyPath: gameMaster
+      value: 
+      objectReference: {fileID: 908806598}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a6acf3b91b1a50429b4a594eda0ca47, type: 3}

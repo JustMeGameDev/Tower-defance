@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed = 2f;
     public float damage = 25f;
     public Transform target;
-
+    public bool iceUpgrade = false;
     void Update()
     {
         if (target == null)
@@ -35,6 +35,10 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             target.gameObject.GetComponent<EnemyController>().health -= damage;
+            if (iceUpgrade == true)
+            {
+                target.gameObject.GetComponent<EnemyController>().navAgent.speed -= 1;
+            }
             Destroy(gameObject);
 
         }
