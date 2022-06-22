@@ -39,6 +39,7 @@ public class FlameTower : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<EnemyController>().health -= Damage * Time.deltaTime;
+           // other.gameObject.GetComponent<EnemyController>().navAgent.speed -= 10;
             isActive = true;
             Debug.Log("true");
         } 
