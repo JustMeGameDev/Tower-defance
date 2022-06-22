@@ -176,7 +176,7 @@ public class GameMaster : MonoBehaviour
 
             //waveEnemySpawning
             //Load The wave
-            if (spawnTime == 0 && !isBossWave) {
+            if (spawnTime == 0 && (!isBossWave || currentWave < 10)) {
                 for (int i = 0; i < spawnPoints.Length; i++)
                 {
                     if (waveSize > 0)

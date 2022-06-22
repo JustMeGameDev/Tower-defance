@@ -265,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 7169984672600810226, guid: c1aabe3a43fdbd248b525ba10b415384,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -24200
+      value: -26290
       objectReference: {fileID: 0}
     - target: {fileID: 7169984672660993640, guid: c1aabe3a43fdbd248b525ba10b415384,
         type: 3}
@@ -763,7 +763,7 @@ PrefabInstance:
     - target: {fileID: 3619165856016222943, guid: 87c46f1f6cb8fda4ab6bb42f4dc60407,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 60
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87c46f1f6cb8fda4ab6bb42f4dc60407, type: 3}
@@ -1181,19 +1181,19 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyTypes.Array.data[0]
       value: 
-      objectReference: {fileID: 1414049513661073067, guid: c04935dea0a8d4d4d80d9a83d2f62483,
+      objectReference: {fileID: 2433098635134921397, guid: 2e678e518daa82449a0939a9aee17b51,
         type: 3}
     - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
         type: 3}
       propertyPath: enemyTypes.Array.data[1]
       value: 
-      objectReference: {fileID: 6198154284575115056, guid: 95f2e4563802bed4e9980a3fcc644648,
+      objectReference: {fileID: 1414049513661073067, guid: c04935dea0a8d4d4d80d9a83d2f62483,
         type: 3}
     - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
         type: 3}
       propertyPath: enemyTypes.Array.data[2]
       value: 
-      objectReference: {fileID: 2433098635134921397, guid: 2e678e518daa82449a0939a9aee17b51,
+      objectReference: {fileID: 6198154284575115056, guid: 95f2e4563802bed4e9980a3fcc644648,
         type: 3}
     - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
         type: 3}
@@ -1739,11 +1739,6 @@ PrefabInstance:
       propertyPath: navBat
       value: 
       objectReference: {fileID: 881856050}
-    - target: {fileID: 3015944786359741361, guid: 08ba92574c35d034aa42524ec9c5c319,
-        type: 3}
-      propertyPath: mapSize
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3015944786359741361, guid: 08ba92574c35d034aa42524ec9c5c319,
         type: 3}
       propertyPath: navOgre

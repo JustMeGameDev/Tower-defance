@@ -86,11 +86,7 @@ public class MapBuilder : MonoBehaviour
             finishedMap = false;
             useRandomSeed = true;
         }
-        navHuman.UpdateNavMesh(navHuman.navMeshData);
-        navOgre.UpdateNavMesh(navOgre.navMeshData);
-        navBat.UpdateNavMesh(navBat.navMeshData);
-        navChicken.UpdateNavMesh(navChicken.navMeshData);
-        navSlime.UpdateNavMesh(navSlime.navMeshData);   
+  
     }
 
 
