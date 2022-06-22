@@ -80,7 +80,7 @@ public class EnemyController : MonoBehaviour
     {
         if (col.gameObject.tag == "TargetEnd")
         {
-            gameMaster.PlayerHealth -= Damage;
+            gameMaster.playerHealth -= Damage;
             animetion.SetBool("attack", true);
             StartCoroutine(TargetDead());
 

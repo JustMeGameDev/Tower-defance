@@ -49,11 +49,12 @@ public class GameMaster : MonoBehaviour
     public PauseMenu pause;
 
     [Header("PlayerHealth")]
-    public float PlayerHealth;
+    public float playerHealth;
     public bool isAlive;
     public float PlayerMaxHealth;
     public Slider healthbar;
     public TextMeshProUGUI health;
+    public bool healthIsSet = false;
 
 
     public float agentAvoidenceTime;
@@ -62,46 +63,53 @@ public class GameMaster : MonoBehaviour
 
     void Start()
     {   
-        pause = GameObject.FindWithTag("pauze").GetComponent<PauseMenu>();
+        //pause = GameObject.FindWithTag("pauze").GetComponent<PauseMenu>();
         switch (PlayerPrefs.GetString("gameMode"))
         {
             case "Carreer":
                 difficulty = PlayerPrefs.GetFloat("difficulty");
                 finalWave = PlayerPrefs.GetInt("finalWave");
+                if (PlayerPrefs.GetInt("finalWave") != 0)
+                {
+                    finalWave = PlayerPrefs.GetInt("finalWave");
+                }
+                else {
+                    finalWave = 20;
+                }
                 PlayerMaxHealth += PlayerPrefs.GetFloat("Health");
                 StartMoney += PlayerPrefs.GetFloat("startMoney");
                 break;
             case "Custom":
-                
                 break;
             case "Random":
                 difficulty = Random.Range(0.5f,1.5f);
                 break;
         }
-        if (!isSimmed)
-        {
-            
+ 
             enemyWave = new List<GameObject>();
             Towers = new List<PopUp>();
             money += StartMoney;
             WaveCounter.text = "Wave: " + currentWave;
-            PlayerHealth = PlayerMaxHealth;
+            
             healthbar.maxValue = PlayerMaxHealth;
             healthbar.minValue = 0;
             healthbar = GameObject.FindWithTag("Healthbar").GetComponent<Slider>();
             isAlive = true;
-        }
+
     }
 
     void Update()
     {
-        if (!isSimmed)
+        if (!healthIsSet)
         {
+            playerHealth = PlayerMaxHealth;
+            healthIsSet = true;
+        }
             if (spawnPoints.Length < 1 & mapBuilder.finishedMap)
             {
                 spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
             }
-            
+
             SpawnWave();
             Timer();
             HandleEconemy();
@@ -115,9 +123,9 @@ public class GameMaster : MonoBehaviour
             {
                 moneyText.text = Mathf.Round(money) + "";
             }
-            healthbar.value = PlayerHealth;
-            health.text = PlayerHealth + " / " + PlayerMaxHealth;
-            if (PlayerHealth <= 0)
+            healthbar.value = playerHealth;
+            health.text = playerHealth + " / " + PlayerMaxHealth;
+            if (playerHealth <= 0)
             {
                 isAlive = false;
             }
@@ -126,11 +134,6 @@ public class GameMaster : MonoBehaviour
                 Time.timeScale = 0;
             }
             NavMesh.avoidancePredictionTime = agentAvoidenceTime;
-        }
-        else if (isSimmed)
-        {
-            SpawnWave();
-        }
     }
     void FixedUpdate()
     {
@@ -213,10 +216,11 @@ public class GameMaster : MonoBehaviour
                 waveSize = 0;
             }
         }
-        else 
+        else if (currentWave > finalWave)
         {
             win = true;
-            if (win == true) { int menyget = PlayerPrefs.GetInt("balance") + PlayerPrefs.GetInt("reward"); PlayerPrefs.SetInt("balance", menyget); }
+            if (win == true) { int menyget = PlayerPrefs.GetInt("balance") + PlayerPrefs.GetInt("reward"); 
+                PlayerPrefs.SetInt("balance", menyget); }
 
             
            

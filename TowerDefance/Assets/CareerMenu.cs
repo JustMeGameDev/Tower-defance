@@ -18,10 +18,15 @@ public class CareerMenu : MonoBehaviour
     public int balance;
     public void Update()
     {
+        
         balance = PlayerPrefs.GetInt("balance");
         balanceText.text = balance.ToString();
     }
 
+    public void GiveGems(int i)
+    {
+        PlayerPrefs.SetInt("balance",i);
+    }
 
 
     public void PerkStart()

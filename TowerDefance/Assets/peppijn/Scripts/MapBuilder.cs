@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MapBuilder : MonoBehaviour
 {
-    
+
     [Header("Tiles")]
     public GameObject pathTile;
     public GameObject grassTile;
     public GameObject EnemySpawn;
     public GameObject EnemyTarget;
-    
+
 
     [Header("Tile Logic")]
     public GameObject activeTile;
@@ -57,7 +57,7 @@ public class MapBuilder : MonoBehaviour
     {
 
 
-        .
+
         switch (PlayerPrefs.GetString("gameMode"))
         {
             case "Carreer":
@@ -75,6 +75,7 @@ public class MapBuilder : MonoBehaviour
                 break;
         }
     }
+
 
     private void Update()
     {

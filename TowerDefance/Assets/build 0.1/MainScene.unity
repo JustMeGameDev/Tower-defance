@@ -624,6 +624,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
         type: 3}
+      propertyPath: isAlive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
+        type: 3}
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 721566671}
@@ -654,23 +659,18 @@ PrefabInstance:
       objectReference: {fileID: 113542967}
     - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
         type: 3}
-      propertyPath: currentWave
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
-        type: 3}
       propertyPath: spawnTimeValue
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
         type: 3}
-      propertyPath: PlayerMaxHealth
-      value: 1000
+      propertyPath: Bosses.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
         type: 3}
-      propertyPath: Bosses.Array.size
-      value: 2
+      propertyPath: agentAvoidenceTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8020690669108446635, guid: ea2ff639793346142871d56ad4e5da7f,
         type: 3}
@@ -1314,6 +1314,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4947682425974116855, guid: ff948019545fd994b898f5c50e5796c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4951216599347856569, guid: ff948019545fd994b898f5c50e5796c8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1362,7 +1367,7 @@ PrefabInstance:
     - target: {fileID: 6514335462165440671, guid: ff948019545fd994b898f5c50e5796c8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -143990
+      value: -173415
       objectReference: {fileID: 0}
     - target: {fileID: 6514335462661831685, guid: ff948019545fd994b898f5c50e5796c8,
         type: 3}

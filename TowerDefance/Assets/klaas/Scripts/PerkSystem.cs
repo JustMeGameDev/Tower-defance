@@ -22,7 +22,7 @@ public class PerkSystem : MonoBehaviour
     [SerializeField] Image[] upgradeImages;
     public Sprite fullHeart;
     public int upgrade;
-    public float health;
+    public float health = 900;
 
     [Header("TowerPerk")]
     [SerializeField] Image[] towerImage;
@@ -270,7 +270,7 @@ public class PerkSystem : MonoBehaviour
     }
     public void UpgradeMoney()
     {
-        if (money >= costStart && towerUpgrade < maxUpgrade)
+        if (money >= costStart && moneyUpgrade < maxUpgrade)
         {
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") - costStart);
             moneyUpgrade += 1;
@@ -333,7 +333,7 @@ public class PerkSystem : MonoBehaviour
     }
     public void UpgradeMeteor()
     {
-        if (money >= costMeteor && towerUpgrade < maxUpgrade)
+        if (money >= costMeteor && meteorUpgrade < maxUpgrade)
         {
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") - costMeteor);
             meteorUpgrade += 1;
