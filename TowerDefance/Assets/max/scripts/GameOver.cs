@@ -9,15 +9,23 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
 
-
+    [Header("death screen custom")]
     public TextMeshProUGUI roundsText;
-    string TempScore;
+    public GameObject gameOver;
+    [Header("death screen endless")]
+    public TextMeshProUGUI roundsTextE;
+    public GameObject gameOverE;
+    [Header("death screen career")]
+    public TextMeshProUGUI roundsTextC;
+    public GameObject gameOverC;
+    [Header("win screen career")]
+    public TextMeshProUGUI rewardsTextCw;
+    public GameObject gameOverCw;
+    [Header("win screen custom")]
+    public GameObject gameOverCW;
+    [Header("")]
 
-    void OnEnable()
-    {
-    }
-
-    public Canvas gameOver;
+    public string TempScore;
     public GameMaster gameMaster;
     void Start()
     {
@@ -30,12 +38,51 @@ public class GameOver : MonoBehaviour
         int tempscore = gameMaster.currentWave - 1;
         TempScore = tempscore.ToString();
         roundsText.text = "rounds survived: " + TempScore;
-        if (!gameMaster.isAlive)
+        
+        switch (PlayerPrefs.GetString("gameMode"))
         {
-            gameOver.enabled = true;
-            Time.timeScale = 0;
+            case "Carreer":
+                if (!gameMaster.isAlive)
+                {
+                    gameOverC.SetActive(true);
+                    Time.timeScale = 0;
 
+                }
+                else if (gameMaster.win)
+                {
+                    gameOverCw.SetActive(true);
+                    int tempreward = PlayerPrefs.GetInt("reward");
+                    rewardsTextCw.text = "your reward is " + tempreward.ToString() + " gems";
+                    Time.timeScale = 0;
+                }
+                break;
+            case "Custom":
+                if (!gameMaster.isAlive)
+                {
+                    gameOver.SetActive(true);
+                    Time.timeScale = 0;
+
+                }
+                else if (gameMaster.win)
+                {
+                    gameOverCW.SetActive(true);
+                    Time.timeScale = 0;
+                }
+                break;
+            case "Random":
+                if (!gameMaster.isAlive)
+                {
+                    gameOverE.SetActive(true);
+                    Time.timeScale = 0;
+
+                }
+                break;
         }
+
+
+
+
+        
     }
     public void Retry()
     {
